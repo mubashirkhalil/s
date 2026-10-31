@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 680" role="img" aria-label="Illustration of grilled fish and prawns">
+ <defs><radialGradient id="plate" cx="42%" cy="35%"><stop stop-color="#fff"/><stop offset=".8" stop-color="#fafaf5"/><stop offset="1" stop-color="#dde1d9"/></radialGradient><filter id="s"><feDropShadow dx="0" dy="20" stdDeviation="17" flood-color="#283c32" flood-opacity=".2"/></filter></defs>
+ <rect width="720" height="680" rx="45" fill="#e1f0ee"/>
+ <g filter="url(#s)"><ellipse cx="360" cy="330" rx="264" ry="237" fill="url(#plate)"/><ellipse cx="360" cy="320" rx="221" ry="197" fill="#f3f1e4" stroke="#e8e8df" stroke-width="5"/></g>
+ <g transform="rotate(-12 361 322)">
+ <ellipse cx="335" cy="325" rx="175" ry="115" fill="#e6cda7" opacity=".7"/>
+ <!-- salmon filet -->
+ <path d="M241 284Q289 214 361 264Q384 282 398 316Q356 351 293 344Z" fill="#ee8e70" stroke="#c56555" stroke-width="6"/><path d="M263 288q43-38 99 7m-92 13q56-27 96 3m-75 18q51-10 70-10" fill="none" stroke="#ffc8ae" stroke-width="10" stroke-linecap="round"/>
+ <!-- seared whole fish -->
+ <path d="M308 381Q397 301 475 355Q497 377 485 404Q408 465 308 409Q293 399 308 381Z" fill="#7fada3" stroke="#466f68" stroke-width="6"/>
+ <path d="M470 369 525 341 514 390 527 429 470 407Z" fill="#69978e" stroke="#416e62" stroke-width="6"/>
+ <circle cx="336" cy="396" r="7" fill="#25483f"/><path d="M374 343q4 38-7 65m31-69q10 40 0 74m32-66q13 35 12 53" stroke="#dce8d5" stroke-width="6" stroke-linecap="round"/>
+ <!-- shrimp arcs -->
+ <g fill="none" stroke="#e67d51" stroke-width="23" stroke-linecap="round"><path d="M229 369q-26 44 30 65q42 10 57-22"/><path d="M429 229q-22 45 31 63q43 5 47-29"/></g>
+ <g fill="none" stroke="#f7be82" stroke-width="7" stroke-linecap="round"><path d="m218 393 25 9m4 26 14-19m192-157 25 13"/></g>
+ </g><g transform="translate(226 246) rotate(-24)"><path d="M0 -42A42 42 0 0 1 42 0H0Z" fill="#ffe19a" stroke="#ffefc9" stroke-width="5"/><path d="M0-30V-4m25-24L6-4" stroke="#fff8cf" stroke-width="4"/></g>
+ <g fill="#44885f"><path d="M210 336q-29-43 7-57q10 26-7 57"/><path d="M225 330q32-35 52-12q-22 16-52 12"/><path d="M461 470q-21-41 10-55q13 26-10 55"/><circle cx="518" cy="309" r="10"/><circle cx="535" cy="320" r="11"/></g>
+ <circle cx="591" cy="115" r="8" fill="#87b3ae"/><circle cx="139" cy="530" r="11" fill="#87b3ae"/><circle cx="579" cy="541" r="4" fill="#87b3ae"/>
+ </svg>

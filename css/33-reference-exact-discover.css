@@ -1,0 +1,71 @@
+/* Discover promotional trio, matched to owner-provided 794x93 reference image. */
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-cards {
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:7px!important;margin:18px 0 20px!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card,
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-seafood {
+ grid-column:auto!important;position:relative!important;height:clamp(115px,11vw,153px)!important;
+ min-height:115px!important;border-radius:9px!important;
+ border:1px solid rgba(255,255,255,.52)!important;
+ box-shadow:0 3px 8px rgba(29,19,15,.13)!important;background:#21150f!important;
+ text-align:left!important;overflow:hidden!important;padding:0!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card > img {
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+ object-fit:cover!important;object-position:68% 51%!important;transform:none!important;
+ filter:saturate(1.16) contrast(1.05)!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-biryani > img {
+ object-position:64% 53%!important;transform:scale(1.03)!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card::after,
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-biryani::after,
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-seafood::after {
+ content:""!important;position:absolute!important;inset:0!important;z-index:1!important;
+ background:linear-gradient(90deg,rgba(24,13,10,.91) 0%,rgba(26,15,11,.69) 31%,rgba(24,12,9,.10) 71%,rgba(0,0,0,.03) 100%)!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-seafood::after {
+ background:linear-gradient(90deg,rgba(7,27,30,.92) 0%,rgba(6,23,28,.67) 33%,rgba(4,25,33,.05) 77%)!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card::before {display:none!important;}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card .ao-feature-card-copy {
+ z-index:3!important;position:absolute!important;inset:0!important;
+ display:flex!important;flex-direction:column!important;align-items:flex-start!important;
+ justify-content:center!important;gap:0!important;padding:12px 15px!important;
+ text-shadow:0 1px 5px rgba(0,0,0,.4)!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy strong {
+ display:block!important;font:600 clamp(17px,1.65vw,23px)/.99 Georgia,serif!important;
+ letter-spacing:-.35px!important;color:#fff!important;margin:0 0 6px!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-detail {
+ display:block!important;font:400 clamp(9px,.85vw,11px)/1.25 Arial,sans-serif!important;
+ color:rgba(255,255,255,.95)!important;white-space:nowrap!important;
+ margin:0 0 11px!important;max-width:none!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy b {
+ display:inline-flex!important;gap:7px!important;align-items:center!important;
+ margin:0!important;font:500 clamp(10px,.9vw,12px)/1.1 Arial,sans-serif!important;
+ text-transform:none!important;letter-spacing:0!important;color:#fff!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-cta-icon {
+ display:inline!important;width:auto!important;height:auto!important;background:none!important;
+ color:#fff!important;border-radius:0!important;font:400 16px Arial,sans-serif!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card:hover,
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card:focus-visible {
+ transform:translateY(-3px)!important;box-shadow:0 10px 22px rgba(29,19,15,.24)!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card:hover > img,
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-biryani:hover > img {transform:scale(1.08)!important;}
+@media(max-width:760px){
+ html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-cards {grid-template-columns:1fr!important;gap:9px!important;margin:15px 0!important;}
+ html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card,
+ html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-seafood {height:132px!important;min-height:132px!important;grid-column:auto!important;}
+ html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card .ao-feature-card-copy {padding:13px 18px!important;}
+ html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy strong {font-size:22px!important;}
+ html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-detail {font-size:10px!important;}
+ html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy b {font-size:11px!important;}
+}
+@media(prefers-reduced-motion:reduce){html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card,html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card > img{transition:none!important;}}

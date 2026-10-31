@@ -1,0 +1,268 @@
+/* AFGR — verified gallery/cart and compact-card refinement.
+ * App-only scope: original admin, staff, Supabase, pricing and checkout untouched.
+ */
+
+/* More dish in view, less empty vertical padding — preserve full tap targets. */
+html body #website.ao-arabian-app #aoApp .ao-product-art,
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .media {
+  height:144px!important;min-height:144px!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-product-content,
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content {
+  padding:9px 11px 10px!important;gap:2px!important;min-height:0!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-product-content>small,
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .ao-menu-category {
+  line-height:1.15!important;font-size:8.5px!important;letter-spacing:.25px!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-product-content h3,
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content h4 {
+  font-size:16px!important;line-height:1.18!important;margin:2px 0 3px!important;
+  min-height:0!important;display:-webkit-box!important;-webkit-line-clamp:2!important;
+  -webkit-box-orient:vertical!important;overflow:hidden!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-product-content p,
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content>p {
+  display:block!important;min-height:0!important;max-height:1.5em!important;
+  white-space:nowrap!important;text-overflow:ellipsis!important;overflow:hidden!important;
+  font-size:10.5px!important;line-height:1.5!important;margin:0 0 2px!important;
+  -webkit-line-clamp:unset!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-product-bottom,
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content .price {
+  padding-top:6px!important;margin-top:5px!important;min-height:36px!important;
+  gap:6px!important;flex-shrink:0!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-product-bottom>button,
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content .price button {
+  position:relative!important;display:flex!important;align-items:center!important;
+  justify-content:center!important;width:36px!important;height:36px!important;
+  min-width:36px!important;min-height:36px!important;max-height:36px!important;
+  flex:0 0 36px!important;border-radius:50%!important;border:0!important;
+  background:linear-gradient(135deg,#406f39,#2e5835)!important;color:white!important;
+  margin:0!important;padding:0!important;line-height:1!important;
+  box-shadow:0 4px 11px #284f3335!important;
+  transition:transform .2s cubic-bezier(.2,.9,.3,1),background .2s,box-shadow .2s!important;
+  isolation:isolate!important;overflow:visible!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-product-bottom>button svg{
+  display:block!important;width:17px!important;height:17px!important;position:relative!important;
+  margin:0!important;flex-shrink:0!important;stroke-width:2!important;
+}
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content .price button{
+  font-size:0!important;
+}
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content .price button::after{
+  content:'+'!important;display:grid!important;place-items:center!important;
+  width:100%!important;height:100%!important;position:absolute!important;inset:0!important;
+  font:500 25px/1 'DM Sans',sans-serif!important;color:white!important;
+  pointer-events:none!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-product-bottom>button:hover,
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content .price button:hover{
+  background:linear-gradient(135deg,#f5a044,#db6d20)!important;
+  transform:translateY(-3px) scale(1.08)!important;box-shadow:0 7px 16px #ba703a50!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-product-bottom>button:focus-visible,
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content .price button:focus-visible {
+  outline:3px solid #ffbe63!important;outline-offset:3px!important;
+}
+/* Product image flight is launched by successful Cart.add (see JS). */
+html body>.ao-fly-photo {
+  position:fixed!important;z-index:2147483000!important;pointer-events:none!important;
+  will-change:transform,opacity!important;filter:saturate(1.2)!important;
+  transform-origin:center!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-cart-land {
+  animation:afgrCartArrival .55s cubic-bezier(.24,.85,.3,1) both!important;
+}
+@keyframes afgrCartArrival {
+  0%,100%{transform:scale(1)}40%{transform:scale(1.22) rotate(-9deg)}66%{transform:scale(.92) rotate(3deg)}
+}
+/* Gallery: food-editorial collage rather than a flat horizontal slideshow. */
+html body #website.ao-arabian-app #aoApp #gallery .gallery-shell{max-width:1180px!important;margin-inline:auto!important;}
+html body #website.ao-arabian-app #aoApp #gallery #galleryGrid.gallery-grid{
+  display:block!important;position:relative!important;width:100%!important;max-width:1180px!important;
+  height:clamp(335px,35vw,465px)!important;min-height:0!important;
+  border:1px solid #e8d6ba!important;border-radius:30px!important;
+  background:linear-gradient(125deg,#fcf3df,#efddbd)!important;
+  box-shadow:0 25px 58px #64472820!important;
+  overflow:hidden!important;margin:13px 0 0!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-carousel-viewport,
+html body #website.ao-arabian-app #aoApp #gallery .gallery-carousel-track{
+  height:100%!important;width:100%!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-carousel-track{
+  display:flex!important;transition:transform .78s cubic-bezier(.25,.74,.18,1)!important;
+  will-change:transform!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-carousel-track.no-transition{
+  transition:none!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-slide{
+  min-width:100%!important;flex:0 0 100%!important;height:100%!important;
+  display:grid!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;
+  grid-template-rows:repeat(8,minmax(0,1fr))!important;
+  gap:10px!important;padding:13px!important;
+  background:linear-gradient(145deg,#fff7e8,#f0dfc8)!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-card{
+  position:relative!important;display:block!important;height:100%!important;min-height:0!important;
+  border-radius:21px!important;overflow:hidden!important;padding:0!important;border:0!important;
+  background:#614935!important;box-shadow:0 7px 18px #5d341b30!important;
+  transition:box-shadow .28s,transform .3s!important;isolation:isolate!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-card:hover{
+  transform:translateY(-4px) scale(1.01)!important;box-shadow:0 16px 28px #5d341b4a!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-card img{
+  width:100%!important;height:100%!important;object-fit:cover!important;
+  filter:saturate(1.10) contrast(1.04)!important;
+  transform:scale(1.035)!important;
+  transition:transform .75s cubic-bezier(.2,.8,.2,1),filter .45s!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-card:hover img{
+  transform:scale(1.13) rotate(.5deg)!important;
+  filter:saturate(1.22) contrast(1.06)!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-card::after{
+  content:''!important;position:absolute!important;inset:0!important;
+  pointer-events:none!important;z-index:1!important;opacity:.78!important;
+  background:linear-gradient(0deg,#1d24178c,transparent 50%)!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-photo-index{
+  position:absolute;top:13px;left:14px;z-index:2;
+  background:#fdf2dbe6;color:#3d5438;font:800 10px/1 'DM Sans',sans-serif;
+  padding:8px 10px;border-radius:10px;letter-spacing:.8px;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-photo-action{
+  position:absolute;bottom:13px;left:14px;z-index:2;
+  color:#fffaf0;font:800 12px/1.2 'DM Sans',sans-serif;
+  text-shadow:0 2px 10px #0008;transform:translateY(4px);opacity:.85;
+  transition:transform .3s,opacity .3s;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-card:hover .gallery-photo-action{
+  transform:translateY(0);opacity:1;
+}
+/* Four distinct editorial layouts; the JS cycles through them. */
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-signature .gallery-collage-card:nth-child(1){grid-column:1/span 6!important;grid-row:1/span 8!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-signature .gallery-collage-card:nth-child(2){grid-column:7/span 3!important;grid-row:1/span 4!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-signature .gallery-collage-card:nth-child(3){grid-column:10/span 3!important;grid-row:1/span 4!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-signature .gallery-collage-card:nth-child(4){grid-column:7/span 6!important;grid-row:5/span 4!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-b .gallery-collage-card:nth-child(1){grid-column:1/span 5!important;grid-row:1/span 4!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-b .gallery-collage-card:nth-child(2){grid-column:1/span 3!important;grid-row:5/span 4!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-b .gallery-collage-card:nth-child(3){grid-column:4/span 2!important;grid-row:5/span 4!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-b .gallery-collage-card:nth-child(4){grid-column:6/span 7!important;grid-row:1/span 8!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-c .gallery-collage-card:nth-child(1){grid-column:1/span 8!important;grid-row:1/span 5!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-c .gallery-collage-card:nth-child(2){grid-column:9/span 4!important;grid-row:1/span 3!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-c .gallery-collage-card:nth-child(3){grid-column:9/span 4!important;grid-row:4/span 5!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-c .gallery-collage-card:nth-child(4){grid-column:1/span 8!important;grid-row:6/span 3!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-a .gallery-collage-card:nth-child(1){grid-column:5/span 8!important;grid-row:1/span 6!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-a .gallery-collage-card:nth-child(2){grid-column:1/span 4!important;grid-row:1/span 4!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-a .gallery-collage-card:nth-child(3){grid-column:1/span 4!important;grid-row:5/span 4!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-a .gallery-collage-card:nth-child(4){grid-column:5/span 8!important;grid-row:7/span 2!important;}
+/* Gallery tiles spring into place while the collage slides; 4s cadence. */
+html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-slide.is-arriving .gallery-collage-card{
+  animation:afgrTileReveal .67s cubic-bezier(.18,.82,.27,1) both!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-slide.is-arriving .gallery-collage-card:nth-child(2){animation-delay:.07s!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-slide.is-arriving .gallery-collage-card:nth-child(3){animation-delay:.13s!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-slide.is-arriving .gallery-collage-card:nth-child(4){animation-delay:.19s!important;}
+@keyframes afgrTileReveal{
+  from{opacity:.35;transform:translateY(23px) scale(.955)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-carousel-controls{
+  display:flex!important;width:max-content!important;max-width:100%!important;
+  align-items:center!important;justify-content:center!important;gap:11px!important;
+  padding:7px 10px!important;margin:13px auto 0!important;
+  background:#fff9eb!important;border:1px solid #e9d8c0!important;
+  box-shadow:0 6px 17px #80683b1b!important;border-radius:24px!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-nav-btn{
+  display:grid!important;place-items:center!important;width:37px!important;height:37px!important;
+  border:1px solid #e6d6be!important;background:#f4ebdb!important;
+  border-radius:50%!important;color:#345b39!important;font:700 23px/1 'DM Sans',sans-serif!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-nav-btn:hover{background:#dce7d1!important;transform:scale(1.06)!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-dot{
+  width:9px!important;height:9px!important;border-radius:30px!important;background:#bbc6ab!important;opacity:1!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-dot.active{width:27px!important;background:#39673e!important;}
+/* When no photos are uploaded, show a labeled, illustrative food collage. */
+html body #website.ao-arabian-app #aoApp #gallery #galleryGrid.gallery-grid:has(>.afgr-gallery-preview){
+  height:auto!important;min-height:295px!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .afgr-gallery-preview{
+  display:grid!important;grid-template-columns:minmax(220px,.83fr) minmax(0,1.17fr)!important;
+  gap:25px!important;align-items:center!important;padding:19px!important;text-align:left!important;
+  width:100%!important;height:auto!important;min-height:295px!important;
+  color:#2c4a31!important;background:linear-gradient(120deg,#fffaf0,#e9d7b7)!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .afgr-gallery-preview-copy{padding:12px 10px 12px 18px;}
+html body #website.ao-arabian-app #aoApp #gallery .afgr-gallery-preview-copy>span{
+  color:#a56a2d;font:900 10px/1.5 'DM Sans',sans-serif;letter-spacing:1.7px;
+}
+html body #website.ao-arabian-app #aoApp #gallery .afgr-gallery-preview-copy h3{
+  margin:10px 0!important;color:#2a5036!important;font:700 clamp(27px,2.8vw,41px)/1.13 'Fraunces',serif!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .afgr-gallery-preview-copy p{
+  color:#666a5d!important;font:500 12px/1.65 'DM Sans',sans-serif!important;max-width:330px;
+}
+html body #website.ao-arabian-app #aoApp #gallery .afgr-gallery-preview-copy button{
+  margin-top:10px!important;background:#315e39!important;color:white!important;
+  border-radius:14px!important;padding:12px 16px!important;
+}
+html body #website.ao-arabian-app #aoApp #gallery .afgr-gallery-preview-photos{
+  display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:repeat(2,120px);gap:9px;height:249px;
+}
+html body #website.ao-arabian-app #aoApp #gallery .afgr-gallery-preview-photos img{
+  width:100%;height:100%;object-fit:cover;border-radius:16px;box-shadow:0 5px 18px #6b4e2c28;
+}
+html body #website.ao-arabian-app #aoApp #gallery .afgr-gallery-preview-photos img:first-child{grid-row:1/span 2;}
+@media(max-width:740px){
+  html body #website.ao-arabian-app #aoApp .ao-product-art,
+  html body #website.ao-arabian-app #aoApp #menu .items .menu-card .media{height:137px!important;min-height:137px!important;}
+  html body #website.ao-arabian-app #aoApp .ao-product-content,
+  html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content{padding:8px 9px 9px!important;}
+  html body #website.ao-arabian-app #aoApp .ao-product-content h3,
+  html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content h4{font-size:14px!important;}
+  html body #website.ao-arabian-app #aoApp #gallery #galleryGrid.gallery-grid{height:385px!important;border-radius:23px!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-slide{
+    padding:8px!important;gap:7px!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;
+  }
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-signature .gallery-collage-card:nth-child(1){grid-column:1/span 6!important;grid-row:1/span 4!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-signature .gallery-collage-card:nth-child(2){grid-column:1/span 3!important;grid-row:5/span 2!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-signature .gallery-collage-card:nth-child(3){grid-column:4/span 3!important;grid-row:5/span 2!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-signature .gallery-collage-card:nth-child(4){grid-column:1/span 6!important;grid-row:7/span 2!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-b .gallery-collage-card:nth-child(1){grid-column:1/span 3!important;grid-row:1/span 3!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-b .gallery-collage-card:nth-child(2){grid-column:1/span 3!important;grid-row:4/span 3!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-b .gallery-collage-card:nth-child(3){grid-column:1/span 3!important;grid-row:7/span 2!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-b .gallery-collage-card:nth-child(4){grid-column:4/span 3!important;grid-row:1/span 8!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-c .gallery-collage-card:nth-child(1){grid-column:1/span 4!important;grid-row:1/span 6!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-c .gallery-collage-card:nth-child(2){grid-column:5/span 2!important;grid-row:1/span 3!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-c .gallery-collage-card:nth-child(3){grid-column:5/span 2!important;grid-row:4/span 3!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-c .gallery-collage-card:nth-child(4){grid-column:1/span 6!important;grid-row:7/span 2!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-a .gallery-collage-card:nth-child(1){grid-column:1/span 6!important;grid-row:1/span 3!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-a .gallery-collage-card:nth-child(2){grid-column:1/span 3!important;grid-row:4/span 3!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-a .gallery-collage-card:nth-child(3){grid-column:4/span 3!important;grid-row:4/span 3!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-layout-a .gallery-collage-card:nth-child(4){grid-column:1/span 6!important;grid-row:7/span 2!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-card{border-radius:14px!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-photo-index{font-size:8px;top:8px;left:8px;padding:6px 7px;}
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-photo-action{font-size:10px;bottom:8px;left:8px;}
+  html body #website.ao-arabian-app #aoApp #gallery .afgr-gallery-preview{grid-template-columns:1fr!important;padding:13px!important;gap:7px!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .afgr-gallery-preview-copy{padding:10px!important;}
+  html body #website.ao-arabian-app #aoApp #gallery .afgr-gallery-preview-photos{grid-template-rows:repeat(2,77px);height:161px;}
+  html body #website.ao-arabian-app #aoApp #gallery #galleryGrid.gallery-grid:has(>.afgr-gallery-preview){height:auto!important;}
+}
+@media(max-width:380px){
+  html body #website.ao-arabian-app #aoApp .ao-product-art,
+  html body #website.ao-arabian-app #aoApp #menu .items .menu-card .media{height:126px!important;min-height:126px!important;}
+}
+@media(prefers-reduced-motion:reduce){
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-carousel-track,
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-card,
+  html body #website.ao-arabian-app #aoApp #gallery .gallery-collage-card img{animation:none!important;transition:none!important;}
+}
+/* Header stays in normal document flow; it scrolls away with the page. */

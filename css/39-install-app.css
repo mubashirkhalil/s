@@ -1,0 +1,58 @@
+/* AFGR native web-app install entry points. Customer-facing only; admin/staff untouched. */
+#website.ao-arabian-app #aoApp .ao-toolbar-install {
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  flex:0 0 auto;min-height:43px;padding:10px 15px;border-radius:13px;
+  color:#fff!important;background:linear-gradient(135deg,#2a673d,#39864c)!important;
+  border:1px solid #2c7042!important;white-space:nowrap;cursor:pointer;
+  font-size:12px;font-weight:850;letter-spacing:.1px;
+  box-shadow:0 7px 16px rgba(34,106,60,.2);
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+}
+#website.ao-arabian-app #aoApp .ao-toolbar-install:hover{transform:translateY(-2px);box-shadow:0 11px 23px rgba(34,106,60,.28)!important;background:linear-gradient(135deg,#245a33,#2b7744)!important}
+#website.ao-arabian-app #aoApp .ao-toolbar-install svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+#website.ao-arabian-app #aoApp .ao-toolbar-install:focus-visible,
+#website.ao-arabian-app #aoApp .ao-more-install:focus-visible{outline:3px solid #edb34e!important;outline-offset:3px}
+/* Keep Get App physically beside Contact on wide headers, not stranded by auto margin. */
+@media(min-width:1190px){
+  html body #website.ao-arabian-app #aoApp .ao-toolbar .ao-toolbar-install{margin-left:auto!important}
+  html body #website.ao-arabian-app #aoApp .ao-toolbar .ao-toolbar-contact{margin-left:0!important}
+}
+/* The More sheet is the installation entry on phones/tablets. Hide the desktop CTA. */
+@media(max-width:1189px){
+  html body #website.ao-arabian-app #aoApp .ao-toolbar .ao-toolbar-install{display:none!important}
+}
+@media(min-width:1190px) and (max-width:1330px){
+  #website.ao-arabian-app #aoApp .ao-toolbar-install{font-size:11px;padding:9px 11px;gap:5px}
+}
+#website.ao-arabian-app #aoApp .ao-more-actions>.ao-more-install{
+  color:#fff!important;border:1px solid #39784a!important;
+  background:linear-gradient(120deg,#346c43,#235537)!important;
+  box-shadow:0 5px 14px rgba(29,87,49,.14)!important;
+}
+#website.ao-arabian-app #aoApp .ao-more-actions>.ao-more-install:hover{background:linear-gradient(120deg,#3d8052,#2a6740)!important}
+/* The fallback is a friendly modal rather than a broken download link. */
+.afgr-install-layer[hidden]{display:none!important}
+.afgr-install-layer{position:fixed;inset:0;z-index:20010;display:grid;place-items:center;padding:18px;isolation:isolate}
+.afgr-install-shade{position:absolute;inset:0;background:rgba(15,29,20,.71);backdrop-filter:blur(6px)}
+.afgr-install-panel{position:relative;width:min(100%,430px);max-height:calc(100dvh - 36px);overflow:auto;
+  padding:29px 25px 24px;background:#fffdf7;border:1px solid #e8dac4;border-radius:26px;
+  box-shadow:0 24px 80px rgba(9,23,13,.36);color:#263d2c!important;
+  font-family:'Poppins',system-ui,sans-serif!important;text-align:center}
+.afgr-install-panel *{box-sizing:border-box}
+.afgr-install-x{position:absolute;top:12px;right:14px;display:grid;place-items:center;width:35px;height:35px;border:0;
+  border-radius:50%;background:#f0eade;color:#425844;font-size:24px;cursor:pointer}
+.afgr-install-appmark{width:73px;height:73px;display:grid;place-items:center;margin:0 auto 16px;border-radius:21px;
+  background:#f6eee0;box-shadow:0 12px 25px rgba(48,69,41,.13)}
+.afgr-install-appmark img{width:62px;height:62px;object-fit:contain;border-radius:17px}
+.afgr-install-eyebrow{display:block;color:#ab7c45;font-size:9px;letter-spacing:1.25px;font-weight:850}
+.afgr-install-panel h2{font:750 27px/1.14 Georgia,serif;color:#25432e;margin:9px 0 9px}
+.afgr-install-panel p{color:#657266;font-size:13px;line-height:1.6;margin:0 0 13px}
+.afgr-install-steps{display:grid;gap:8px;margin:18px 0 20px;text-align:left}
+.afgr-install-step{display:flex;align-items:flex-start;gap:11px;border:1px solid #e9e3d7;padding:11px 12px;
+  background:#f9f7ee;border-radius:13px;color:#364b3a;font-size:12px;line-height:1.5}
+.afgr-install-step b{display:grid;place-items:center;flex:0 0 24px;width:24px;height:24px;
+  border-radius:50%;background:#dbeadd;color:#2d693d;font-size:11px}
+.afgr-install-done{width:100%;padding:13px;background:#2d7042;color:#fff;border:0;border-radius:13px;font-size:13px;font-weight:850;cursor:pointer}
+.afgr-install-done:hover{background:#245f36}
+@media(max-width:480px){.afgr-install-panel{padding:25px 20px 20px;border-radius:23px}.afgr-install-panel h2{font-size:24px}}
+@media(prefers-reduced-motion:reduce){#website.ao-arabian-app #aoApp .ao-toolbar-install{transition:none!important}}

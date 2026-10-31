@@ -1,0 +1,148 @@
+/* Checkout contrast correction, 2026-10-27.
+   The customer checkout uses a light cream surface. Earlier legacy rules
+   painted several captions white, so they disappeared against the light
+   cards. These overrides are scoped ONLY to checkout. */
+
+html body #checkoutModal.checkout-ecommerce-modal {
+  --checkout-ink: #24392d;
+  --checkout-muted: #536456;
+  --checkout-soft: #647064;
+  --checkout-gold: #914b19;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-ecommerce-content,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-modern-shell {
+  background-color: #f9f7f2 !important;
+  color: var(--checkout-ink) !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-modern-header h3,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-section-title-wrap strong,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-info strong,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-field > span,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-payment-note > label {
+  color: var(--checkout-ink) !important;
+  opacity: 1 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-kicker {
+  color: var(--checkout-gold) !important;
+  opacity: 1 !important;
+  font-weight: 850 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-modern-header p,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-section-head span:not(.checkout-step-number):not(.checkout-section-chip),
+html body #checkoutModal.checkout-ecommerce-modal .checkout-section-title-wrap span:not(.checkout-step-number),
+html body #checkoutModal.checkout-ecommerce-modal .checkout-variation-line,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-info p,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-info small,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-empty-state,
+html body #checkoutModal.checkout-ecommerce-modal #checkoutItemsCount {
+  color: var(--checkout-muted) !important;
+  opacity: 1 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-header-badge,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-header-badge :is(span,i),
+html body #checkoutModal.checkout-ecommerce-modal .checkout-section-chip {
+  color: #294b35 !important;
+  opacity: 1 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-step-card,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-list,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-bill-card {
+  color: var(--checkout-ink) !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row {
+  color: var(--checkout-ink) !important;
+  background: #fbf8f2 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-qty span,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-money span,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-price span,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-unit-price span,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-saved {
+  color: var(--checkout-soft) !important;
+  opacity: 1 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-qty strong,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-money strong,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-unit-price strong {
+  color: #284631 !important;
+  opacity: 1 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-price strong,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-price b {
+  color: #9d4c19 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary .summary-row,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary .summary-row :is(span,strong,b),
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary .summary-row-button,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary .summary-row-button :is(span,strong,b),
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary .summary-row-end,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary :is(p,small,label) {
+  color: #344b3a !important;
+  opacity: 1 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary .summary-row.total,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary .summary-row.total :is(span,strong,b),
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary .discount-total-saved {
+  color: #225036 !important;
+  font-weight: 850 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-promotion-details,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-promotion-details :is(span,strong,small,p),
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary .discount-details,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary .discount-details :is(span,strong,small,p) {
+  color: #34513c !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-deals span {
+  color: #245c36 !important;
+  opacity: 1 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-details-form :is(input,textarea,select) {
+  color: #24392d !important;
+  background: #fffdf8 !important;
+  caret-color: #315739 !important;
+  -webkit-text-fill-color: #24392d !important;
+  opacity: 1 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-details-form :is(input,textarea)::placeholder {
+  color: #637169 !important;
+  -webkit-text-fill-color: #637169 !important;
+  opacity: 1 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-details-form :is(input,textarea):focus {
+  border-color: #a27a4e !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(162,122,78,.14) !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-payment-note,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-payment-note p,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-payment-note p i {
+  color: #294936 !important;
+  opacity: 1 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-address-note,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-address-note :is(p,span,strong,small) {
+  color: #344b3a !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-step-number {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-final-place-btn,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-final-place-btn :is(span,strong,i) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-continue-btn,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-cancel-btn,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-continue-btn :is(span,strong),
+html body #checkoutModal.checkout-ecommerce-modal .checkout-cancel-btn :is(span,strong) {
+  color: #284831 !important;
+  -webkit-text-fill-color: #284831 !important;
+  opacity: 1 !important;
+}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-close-btn {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}

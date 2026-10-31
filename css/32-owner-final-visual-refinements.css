@@ -1,0 +1,323 @@
+/* AFGR / 2026-10-27 — focused owner-requested finishing pass.
+   Public customer app only. Built on the supplied complete ZIP.
+   Navigation, reviews and contact remain connected to the existing JS state. */
+
+/* Secondary rail: the same icon-left language as YOUR FOOD JOURNEY. */
+html body #website.ao-arabian-app #aoApp .ao-rail-lower > button {
+  display:flex!important;align-items:center!important;justify-content:flex-start!important;
+  gap:9px!important;text-align:left!important;transition:background .22s ease,color .22s ease,transform .22s ease!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-rail-lower > button > svg {
+  display:block!important;width:17px!important;height:17px!important;
+  flex:0 0 17px!important;stroke:currentColor!important;stroke-width:1.8!important;
+  stroke-linecap:round!important;stroke-linejoin:round!important;fill:none!important;
+  opacity:.86!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-rail-lower > button > span {
+  min-width:0;flex:1;white-space:nowrap!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-rail-lower > button:hover,
+html body #website.ao-arabian-app #aoApp .ao-rail-lower > button:focus-visible {
+  background:#f0eddd!important;color:#245335!important;transform:translateX(3px)!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-rail-lower > button.is-active {
+  background:#e5efde!important;color:#265337!important;
+}
+
+/* The Discover "Our story" CTA now has a visible, premium hover/focus state. */
+html body #website.ao-arabian-app #aoApp #aoHome .ao-story-link {
+  position:relative!important;isolation:isolate!important;overflow:hidden!important;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,
+    background .3s ease,color .3s ease,border-color .3s ease!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-story-link::before {
+  content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,#315b3b,#1d4933);
+  opacity:0;transform:translateY(100%);transition:transform .38s cubic-bezier(.2,.8,.2,1),opacity .3s ease;
+  pointer-events:none;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-story-link:hover,
+html body #website.ao-arabian-app #aoApp #aoHome .ao-story-link:focus-visible {
+  color:#fffdf3!important;background:#315b3b!important;border-color:#315b3b!important;
+  transform:translateY(-4px)!important;box-shadow:0 14px 27px rgba(33,76,46,.26)!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-story-link:hover::before,
+html body #website.ao-arabian-app #aoApp #aoHome .ao-story-link:focus-visible::before {
+  opacity:1;transform:translateY(0);
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-story-link .ao-story-link-icon {
+  transition:background .3s ease,transform .35s cubic-bezier(.2,.8,.2,1),color .3s ease!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-story-link:hover .ao-story-link-icon,
+html body #website.ao-arabian-app #aoApp #aoHome .ao-story-link:focus-visible .ao-story-link-icon {
+  background:#f2bd75!important;color:#254632!important;transform:rotate(45deg) scale(1.07)!important;
+}
+
+/* Signature Discover editorial cards: fully photographic, sharp 1680/1320px
+   originals, with legible dark fades, restrained gold detailing and true CTA. */
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-cards {
+  display:grid!important;grid-template-columns:1.06fr 1fr 1fr!important;
+  gap:clamp(12px,1.45vw,20px)!important;margin:25px 0 24px!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card {
+  display:block!important;position:relative!important;isolation:isolate!important;overflow:hidden!important;
+  width:100%!important;min-width:0!important;height:270px!important;min-height:270px!important;
+  padding:0!important;text-align:left!important;border-radius:23px!important;
+  border:1px solid rgba(233,206,156,.66)!important;
+  background:#162a20!important;color:#fff!important;
+  box-shadow:0 16px 35px rgba(26,48,32,.18),0 1px 0 rgba(255,255,255,.16) inset!important;
+  cursor:pointer!important;transform:translateZ(0)!important;
+  transition:transform .4s cubic-bezier(.18,.85,.2,1),box-shadow .4s ease,border-color .4s ease!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card > img {
+  display:block!important;position:absolute!important;inset:0!important;
+  width:100%!important;height:100%!important;min-height:100%!important;
+  max-width:none!important;object-fit:cover!important;object-position:50% 45%!important;
+  filter:saturate(1.13) contrast(1.045)!important;z-index:0!important;
+  image-rendering:auto!important;transform:scale(1.005)!important;
+  transition:transform .75s cubic-bezier(.18,.78,.2,1),filter .65s ease!important;
+}
+/* The source biryani photograph has a pale top border. Zoom past it
+   instead of exposing it in the editorial image crop. */
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-biryani > img {
+  transform:scale(1.23)!important;object-position:50% 56%!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card::after {
+  content:""!important;display:block!important;position:absolute!important;inset:0!important;z-index:1!important;
+  background:linear-gradient(180deg,rgba(9,16,11,.4) 0%,rgba(10,21,14,0) 30%,rgba(8,20,12,.38) 47%,rgba(7,23,13,.84) 73%,rgba(5,23,13,.98) 100%)!important;
+  pointer-events:none!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-biryani::after {
+  background:linear-gradient(180deg,rgba(30,14,6,.42) 0%,rgba(30,13,5,0) 29%,rgba(39,20,8,.35) 52%,rgba(34,17,7,.87) 77%,rgba(34,17,7,.98) 100%)!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-seafood::after {
+  background:linear-gradient(180deg,rgba(4,24,29,.47) 0%,rgba(5,35,39,0) 30%,rgba(4,30,35,.35) 50%,rgba(4,30,37,.85) 76%,rgba(4,27,36,.98) 100%)!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card::before {
+  content:""!important;display:block!important;position:absolute!important;inset:8px!important;z-index:3!important;
+  border-radius:17px!important;border:1px solid rgba(255,243,212,.22)!important;pointer-events:none!important;
+  background:none!important;opacity:1!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-topline {
+  position:absolute!important;z-index:4!important;top:19px!important;left:21px!important;right:21px!important;
+  display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;
+  color:#fff3d9!important;font:800 9px/1.2 'DM Sans',Arial,sans-serif!important;
+  letter-spacing:1.3px!important;text-shadow:0 2px 9px rgba(0,0,0,.6)!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-top-icon {
+  display:grid!important;place-items:center!important;flex:0 0 32px!important;
+  width:32px!important;height:32px!important;border-radius:50%!important;
+  background:rgba(255,250,236,.16)!important;border:1px solid rgba(255,240,209,.42)!important;
+  backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-top-icon svg {
+  width:17px!important;height:17px!important;stroke:#fff3d9!important;fill:none!important;
+  stroke-width:1.8!important;stroke-linecap:round!important;stroke-linejoin:round!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card .ao-feature-card-copy {
+  position:absolute!important;inset:auto 0 0!important;z-index:4!important;
+  max-width:none!important;display:flex!important;flex-direction:column!important;
+  align-items:flex-start!important;justify-content:flex-end!important;
+  gap:5px!important;padding:28px 22px 19px!important;text-shadow:none!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy small {
+  display:block!important;margin:0 0 3px!important;color:#efd6a7!important;
+  font:800 9px/1.3 'DM Sans',Arial,sans-serif!important;letter-spacing:1.6px!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy strong {
+  display:block!important;margin:0!important;color:#fffdf5!important;
+  font:700 clamp(25px,2.7vw,36px)/.94 'Fraunces',Georgia,serif!important;letter-spacing:-1.05px!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy strong em {
+  color:#f3ce8d!important;font-weight:650!important;font-style:italic!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-detail {
+  display:block!important;color:rgba(255,250,233,.83)!important;
+  font:500 clamp(10px,.92vw,12px)/1.36 'DM Sans',Arial,sans-serif!important;
+  letter-spacing:0!important;max-width:260px!important;margin-top:1px!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy b {
+  display:inline-flex!important;align-items:center!important;gap:11px!important;
+  margin-top:9px!important;color:#fffef6!important;
+  font:800 10px/1.2 'DM Sans',Arial,sans-serif!important;
+  text-transform:uppercase!important;letter-spacing:1.1px!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-cta-icon {
+  width:27px!important;height:27px!important;display:grid!important;place-items:center!important;
+  border-radius:50%!important;background:#f3ce8d!important;color:#274632!important;
+  transition:transform .3s ease,background .3s ease!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-cta-icon svg {
+  width:14px!important;height:14px!important;stroke:currentColor!important;stroke-width:2!important;
+  fill:none!important;stroke-linecap:round!important;stroke-linejoin:round!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card:hover,
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card:focus-visible {
+  transform:translateY(-7px)!important;border-color:#eecb90!important;
+  box-shadow:0 25px 47px rgba(20,43,29,.28),0 0 0 2px rgba(239,197,120,.22)!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card:hover > img,
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card:focus-visible > img {
+  transform:scale(1.085)!important;filter:saturate(1.22) contrast(1.065)!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-biryani:hover > img,
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-biryani:focus-visible > img {
+  transform:scale(1.32)!important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card:hover .ao-feature-cta-icon,
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card:focus-visible .ao-feature-cta-icon {
+  transform:translateX(4px)!important;background:#fff4d6!important;
+}
+
+/* Reviews: fill the available page width; bring rating immediately in front
+   of the name; tighter rhythm, without an isolated empty star row. */
+html body #website.ao-arabian-app #aoApp #testimonials .testimonials-shell.afgr-review-shell {
+  max-width:none!important;width:100%!important;margin:0!important;padding:0 0 12px!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-reviews-top {
+  padding:4px 0 14px!important;margin:0 0 14px!important;gap:12px!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-reviews-layout {
+  grid-template-columns:minmax(184px,218px) minmax(0,1fr)!important;
+  gap:clamp(10px,1.65vw,20px)!important;align-items:start!important;width:100%!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-insights {
+  padding:17px 14px!important;border-radius:16px!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-rating-big {
+  gap:9px!important;padding-bottom:12px!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-rating-big > strong {
+  font-size:47px!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-rating-histogram {
+  padding:14px 0 0!important;gap:6px!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-feed {
+  width:100%!important;border-radius:16px!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-feed-head {
+  padding:13px 17px!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-entry {
+  padding:13px 17px 14px!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-person {
+  gap:10px!important;min-width:0!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-person-avatar {
+  width:35px!important;height:35px!important;font-size:14px!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-person-name {
+  display:block!important;min-width:0!important;flex:1 1 auto!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-name-line {
+  display:flex!important;flex-wrap:wrap!important;gap:5px 10px!important;align-items:center!important;min-width:0!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-rating-line {
+  display:inline-flex!important;align-items:center!important;flex:0 0 auto!important;
+  margin:0!important;padding:0!important;line-height:1!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-name-line .afgr-review-stars {
+  font-size:14px!important;letter-spacing:.4px!important;line-height:1!important;color:#e7a03a!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-name-line strong {
+  font-size:13px!important;line-height:1.25!important;overflow-wrap:anywhere!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-date {
+  font-size:10px!important;margin-left:auto!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-subtitle {
+  margin-top:3px!important;display:block!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-copy {
+  margin:7px 0 0!important;font-size:12.5px!important;line-height:1.55!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-feed-empty {
+  padding:25px 18px!important;
+}
+
+/* Get in touch: compact equal-height tiles. One six-item flow:
+   FB, Instagram, TikTok, WhatsApp, official saved email, directions. */
+html body #website.ao-arabian-app #aoApp #contact .contact-info-panel {
+  align-self:start!important;width:100%!important;height:max-content!important;min-height:0!important;
+}
+html body #website.ao-arabian-app #aoApp #contact .contact-info-panel .contact-panel-content {
+  padding-top:7px!important;padding-bottom:12px!important;
+}
+html body #website.ao-arabian-app #aoApp #contact .contact-info-title {
+  margin:0 0 12px!important;
+}
+html body #website.ao-arabian-app #aoApp #contact #contactSocials {
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:7px!important;
+}
+html body #website.ao-arabian-app #aoApp #contact #contactSocials .contact-icon-link {
+  display:flex!important;align-items:center!important;min-width:0!important;
+  min-height:40px!important;height:40px!important;max-height:40px!important;
+  padding:4px 9px!important;gap:8px!important;border-radius:12px!important;
+  border:1px solid #e7dbc8!important;background:#fffaf1!important;
+  box-shadow:none!important;transition:background .22s ease,border-color .22s ease,transform .22s ease!important;
+}
+html body #website.ao-arabian-app #aoApp #contact #contactSocials .contact-icon-link:hover,
+html body #website.ao-arabian-app #aoApp #contact #contactSocials .contact-icon-link:focus-visible {
+  transform:translateY(-2px)!important;background:#f6efdF!important;border-color:#dcb986!important;
+}
+html body #website.ao-arabian-app #aoApp #contact #contactSocials .contact-brand-icon {
+  width:27px!important;height:27px!important;min-width:27px!important;padding:1px!important;
+}
+html body #website.ao-arabian-app #aoApp #contact #contactSocials .contact-brand-icon svg {
+  width:24px!important;height:24px!important;max-width:none!important;
+}
+html body #website.ao-arabian-app #aoApp #contact #contactSocials .contact-brand-name {
+  font-size:11px!important;line-height:1.15!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;
+}
+html body #website.ao-arabian-app #aoApp #contact #contactSocials .contact-brand-arrow {
+  font-size:13px!important;flex-shrink:0!important;
+}
+html body #website.ao-arabian-app #aoApp #contact #contactInfo,
+html body #website.ao-arabian-app #aoApp #contact #contactInfo[hidden] {
+  display:none!important;padding:0!important;margin:0!important;height:0!important;
+}
+
+@media(max-width:1110px) and (min-width:871px) {
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card {height:235px!important;min-height:235px!important;}
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card .ao-feature-card-copy {padding:22px 14px 15px!important;}
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-topline {left:14px!important;right:14px!important;top:15px!important;font-size:7.5px!important;}
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy strong {font-size:25px!important;}
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-detail {font-size:10px!important;}
+}
+@media(max-width:870px){
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-cards {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-seafood {grid-column:1/-1!important;}
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-reviews-layout {grid-template-columns:1fr!important;gap:10px!important;}
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-insights {display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr)!important;align-items:center!important;gap:12px!important;}
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-rating-big {padding-bottom:0!important;border-bottom:0!important;}
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-rating-histogram {padding:0!important;}
+}
+@media(max-width:740px){
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-cards {grid-template-columns:1fr!important;gap:12px!important;margin:20px 0!important;}
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card,
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-seafood {grid-column:auto!important;height:245px!important;min-height:245px!important;border-radius:19px!important;}
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card .ao-feature-card-copy {padding:23px 19px 16px!important;}
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy strong {font-size:32px!important;}
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-entry {padding:12px 12px!important;}
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-feed-head {padding:12px!important;}
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-reviews-top {padding:2px 0 12px!important;margin-bottom:11px!important;}
+  html body #website.ao-arabian-app #aoApp #contact #contactSocials {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;}
+  html body #website.ao-arabian-app #aoApp #contact #contactSocials .contact-icon-link {min-height:38px!important;height:38px!important;max-height:38px!important;padding:4px 8px!important;gap:6px!important;}
+  html body #website.ao-arabian-app #aoApp #contact #contactSocials .contact-brand-icon {width:25px!important;height:25px!important;min-width:25px!important;}
+  html body #website.ao-arabian-app #aoApp #contact #contactSocials .contact-brand-icon svg {width:22px!important;height:22px!important;}
+}
+@media(max-width:380px){
+  html body #website.ao-arabian-app #aoApp #contact #contactSocials {grid-template-columns:1fr!important;}
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-insights {grid-template-columns:1fr!important;}
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-rating-big {padding-bottom:8px!important;border-bottom:1px solid #e8e5dd!important;}
+}
+@media(prefers-reduced-motion:reduce){
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card,
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card > img,
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-story-link,
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-story-link::before,
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-story-link-icon {transition:none!important;}
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card:hover {transform:none!important;}
+}

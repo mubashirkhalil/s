@@ -1,0 +1,329 @@
+/* AFGR / 22 — owner-directed final header, review, fixed-LTR language and compact forms.
+   Customer-facing only; no management, authentication or backend modifications. */
+:root{--afgr-topbar-height:72px;--afgr-rail-width:185px;}
+
+/* One shared full-width header, navigation directly BELOW it, single body scroll. */
+html body #website.ao-arabian-app #aoApp{
+  display:grid!important;grid-template-columns:var(--afgr-rail-width) minmax(0,1fr)!important;
+  grid-template-rows:var(--afgr-topbar-height) auto auto!important;
+  align-content:start!important;align-items:start!important;
+  padding:0!important;gap:0!important;min-height:100dvh!important;
+  direction:ltr!important;overflow-x:clip!important;
+}
+html body #website.ao-arabian-app #aoApp>.ao-toolbar{
+  grid-column:1/-1!important;grid-row:1!important;
+  position:relative!important;top:auto!important;z-index:45!important;
+  height:var(--afgr-topbar-height)!important;min-height:var(--afgr-topbar-height)!important;
+  padding:9px clamp(14px,2vw,34px)!important;gap:12px!important;
+  display:flex!important;align-items:center!important;
+  background:#fffdf8!important;border-bottom:1px solid #e9e1d2!important;
+  box-shadow:0 5px 20px rgba(51,70,42,.045)!important;
+}
+html body #website.ao-arabian-app #aoApp>.ao-rail{
+  grid-column:1!important;grid-row:2!important;
+  position:sticky!important;top:0!important;
+  width:var(--afgr-rail-width)!important;max-width:var(--afgr-rail-width)!important;
+  height:calc(100dvh - var(--afgr-topbar-height))!important;
+  min-height:0!important;align-self:start!important;overflow:hidden!important;
+  overscroll-behavior:none!important;scrollbar-width:none!important;
+  padding:19px 10px 10px!important;display:flex!important;flex-direction:column!important;
+  background:#fff9f0!important;direction:ltr!important;
+}
+html body #website.ao-arabian-app #aoApp>.ao-rail::-webkit-scrollbar{display:none!important;}
+html body #website.ao-arabian-app #aoApp>.ao-main-column{
+  grid-column:2!important;grid-row:2!important;min-width:0!important;
+  width:100%!important;max-width:none!important;align-self:start!important;
+  direction:ltr!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-content{padding:15px clamp(12px,1.65vw,26px) 15px!important;}
+/* Original header brand stays fully visible; search receives leftover room. */
+html body #website.ao-arabian-app #aoApp .ao-header-brand{max-width:none!important;flex:0 0 auto!important;min-width:0!important;}
+html body #website.ao-arabian-app #aoApp .ao-header-brand>span{font-size:16px!important;white-space:nowrap!important;}
+html body #website.ao-arabian-app #aoApp .ao-toolbar-search{flex:1 1 220px!important;max-width:420px!important;min-width:105px!important;}
+html body #website.ao-arabian-app #aoApp .ao-toolbar-contact{margin-left:auto!important;}
+
+/* Compact, non-scrollable, always readable left navigation. */
+html body #website.ao-arabian-app #aoApp .ao-rail-caption{margin-bottom:8px!important;padding:0 8px!important;line-height:1.35!important;font-size:9px!important;}
+html body #website.ao-arabian-app #aoApp .ao-rail-links{gap:3px!important;}
+html body #website.ao-arabian-app #aoApp .ao-rail-links>button{
+  min-height:40px!important;height:40px!important;padding:8px 10px!important;
+  font-size:11.5px!important;line-height:1.1!important;gap:9px!important;
+  white-space:nowrap!important;flex-shrink:0!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-rail-lower{margin-top:14px!important;padding-top:13px!important;gap:2px!important;}
+html body #website.ao-arabian-app #aoApp .ao-rail-lower>button{
+  min-height:34px!important;height:34px!important;padding:7px 8px!important;
+  font-size:11.2px!important;line-height:1.15!important;white-space:nowrap!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-rail-links>button:not(.is-active),
+html body #website.ao-arabian-app #aoApp .ao-rail-lower>button{color:#405344!important;}
+html body #website.ao-arabian-app #aoApp .ao-rail-links>button.is-active{color:#fff!important;}
+
+/* Homepage: no decorative kicker before the category title or artificial gap. */
+html body #website.ao-arabian-app #aoApp .ao-categories-heading{margin-top:12px!important;margin-bottom:9px!important;}
+html body #website.ao-arabian-app #aoApp .ao-categories-heading .ao-eyebrow{display:none!important;}
+html body #website.ao-arabian-app #aoApp .ao-categories-heading h2{margin:0!important;}
+html body #website.ao-arabian-app #aoApp .ao-category-track{padding-top:4px!important;}
+/* Do not impose generic claims on every meal. Keep actual dish names/descriptions. */
+html body #website.ao-arabian-app #aoApp .ao-detail-trust{display:none!important;}
+html body #website.ao-arabian-app #aoApp .ao-product-content,
+html body #website.ao-arabian-app #aoApp #menu .menu-card .content{
+  gap:3px!important;padding:10px 11px 11px!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-product-content p,
+html body #website.ao-arabian-app #aoApp #menu .menu-card .content>p{
+  min-height:0!important;margin:0 0 3px!important;line-height:1.4!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-product-content h3,
+html body #website.ao-arabian-app #aoApp #menu .menu-card h4{
+  margin:2px 0 4px!important;min-height:0!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-product-art,
+html body #website.ao-arabian-app #aoApp #menu .menu-card .media{
+  height:150px!important;min-height:150px!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-product-sticker,
+html body #website.ao-arabian-app #aoApp .ao-native-sticker{font-size:8px!important;}
+html body #website.ao-arabian-app #aoApp .ao-products,
+html body #website.ao-arabian-app #aoApp #menu .items{gap:11px!important;}
+
+/* Compact, focused reservation form, designed to fit the visible browser area. */
+html body #website.ao-arabian-app #aoApp[data-ao-route="reservation"] .ao-content{padding-top:10px!important;padding-bottom:12px!important;}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-wrap{max-width:780px!important;width:100%!important;margin:0 auto!important;padding:0!important;}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-shell{
+  padding:13px 17px 14px!important;border-radius:22px!important;
+  max-width:780px!important;min-height:0!important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header{
+  padding:12px 17px!important;margin:0 0 11px!important;border-radius:17px!important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header h3{
+  font-size:clamp(23px,2.2vw,32px)!important;margin:0 0 3px!important;line-height:1.15!important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-intro p{font-size:11px!important;line-height:1.3!important;}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  column-gap:12px!important;row-gap:8px!important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-field{gap:3px!important;min-width:0!important;}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-field label{font-size:11px!important;line-height:1.25!important;margin:0 0 3px!important;}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-field :is(input,select){
+  height:40px!important;min-height:40px!important;padding:0 11px!important;
+  font-size:12px!important;border-radius:11px!important;width:100%!important;min-width:0!important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-field.full-width{grid-column:1/-1!important;}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-submit{
+  min-height:43px!important;height:43px!important;padding:9px 15px!important;
+  margin:12px 0 4px!important;font-size:12px!important;border-radius:12px!important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-note{margin:3px 0 0!important;font-size:10px!important;line-height:1.25!important;}
+/* Contact: remove old heading/spacer completely. */
+html body #website.ao-arabian-app #aoApp #contact .contact-kicker{display:none!important;}
+html body #website.ao-arabian-app #aoApp #contact .contact-header{margin-bottom:12px!important;}
+html body #website.ao-arabian-app #aoApp #contact .contact-info-text{margin-top:0!important;}
+
+/* Guest review page uses existing reviews data and carousel, matched to app palette. */
+html body #website.ao-arabian-app #aoApp #testimonials .testimonials-shell{max-width:1030px!important;padding:0!important;color:#2d4d36!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .testimonials-header{align-items:center!important;margin:0 0 17px!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .testimonial-kicker{color:#aa7b41!important;font-size:10px!important;margin-bottom:6px!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .section-title{font-size:clamp(30px,3vw,45px)!important;line-height:1.15!important;margin:0 0 5px!important;color:#32543b!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .testimonials-subtitle{color:#667666!important;font-size:12px!important;line-height:1.45!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .testimonial-trust-pill{background:#e7f0dd!important;border-color:#d2e0c8!important;color:#35553b!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .testimonials-slider{margin:0!important;min-height:150px!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .testimonial{background:#fffdf9!important;border:1px solid #e7ddcf!important;border-radius:19px!important;box-shadow:0 8px 20px #6e4c2112!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .testimonial .name{color:#243c2c!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .testimonial .testimonial-sub,
+html body #website.ao-arabian-app #aoApp #testimonials .testimonial p{color:#57655a!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .testimonials-empty{
+  background:#fffdf8!important;border:1px solid #e5dac9!important;color:#50624e!important;
+  border-radius:18px!important;text-align:center!important;padding:35px 15px!important;
+}
+
+/* ONE footer band, including copyright + legal on its original first row. */
+html body #website.ao-arabian-app #aoApp>.ao-page-footer{
+  grid-column:1/-1!important;grid-row:3!important;
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  flex-wrap:wrap!important;column-gap:24px!important;row-gap:8px!important;
+  width:100%!important;min-height:66px!important;padding:11px clamp(15px,2.1vw,34px)!important;
+  border-top:1px solid #e5d9c5!important;background:#fff9f0!important;
+  margin:0!important;direction:ltr!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-footer-identity{display:flex!important;align-items:center!important;gap:8px!important;flex:0 0 auto!important;min-width:0!important;}
+html body #website.ao-arabian-app #aoApp .ao-footer-identity>img{width:34px!important;height:34px!important;}
+html body #website.ao-arabian-app #aoApp .ao-footer-identity>strong{font:800 11px/1.3 'DM Sans',Arial,sans-serif!important;color:#2d4e32!important;}
+html body #website.ao-arabian-app #aoApp .ao-footer-nav{display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important;flex-wrap:wrap!important;}
+html body #website.ao-arabian-app #aoApp .ao-footer-legal{display:flex!important;align-items:center!important;justify-content:flex-end!important;flex-wrap:wrap!important;gap:8px 12px!important;}
+html body #website.ao-arabian-app #aoApp .ao-footer-legal>span{font:600 10px/1.5 'DM Sans',sans-serif!important;color:#6e7063!important;white-space:normal!important;}
+html body #website.ao-arabian-app #aoApp .ao-page-footer button{font-size:10px!important;line-height:1.3!important;padding:4px 0!important;min-height:0!important;white-space:nowrap!important;}
+html body #website.ao-arabian-app #aoApp .ao-footer-bottom{display:none!important;}
+
+/* Real Privacy Policy / Terms read as cream cards: no nearly invisible dark-theme text. */
+html body:has(#aoApp) #legalPageModal.legal-page-overlay{
+  z-index:9500!important;background:rgba(27,34,26,.69)!important;
+  padding:clamp(10px,2.5vw,25px)!important;
+  align-items:center!important;justify-content:center!important;
+}
+html body:has(#aoApp) #legalPageModal .legal-page-card{
+  max-width:min(850px,100%)!important;width:100%!important;
+  max-height:calc(100dvh - 30px)!important;min-height:260px!important;
+  background:#fffdf8!important;color:#29402f!important;
+  border:1px solid #e6ddcb!important;border-radius:23px!important;
+  box-shadow:0 30px 90px rgba(16,26,16,.32)!important;
+  overflow:hidden!important;
+}
+html body:has(#aoApp) #legalPageModal .legal-page-header{
+  background:#f1f4e8!important;border-bottom:1px solid #dce5d6!important;
+  padding:17px 21px!important;gap:14px!important;
+}
+html body:has(#aoApp) #legalPageModal .legal-page-title{
+  font:750 clamp(22px,3vw,32px)/1.2 'Fraunces',Georgia,serif!important;
+  color:#2d5239!important;letter-spacing:-.02em!important;
+}
+html body:has(#aoApp) #legalPageModal .legal-page-close{
+  flex-shrink:0!important;width:39px!important;height:39px!important;
+  background:#fff!important;color:#2c5138!important;border:1px solid #d1ddce!important;
+  font-size:18px!important;opacity:1!important;
+}
+html body:has(#aoApp) #legalPageModal .legal-page-body{
+  flex:1 1 auto!important;overflow-y:auto!important;overflow-x:hidden!important;
+  padding:20px clamp(18px,4vw,38px)!important;
+  background:#fffdf8!important;color:#35473b!important;
+  font:500 14px/1.82 'DM Sans',Arial,sans-serif!important;
+  text-align:left!important;direction:ltr!important;
+  overflow-wrap:anywhere!important;
+}
+html body:has(#aoApp) #legalPageModal .legal-page-body p{
+  color:#35473b!important;opacity:1!important;margin:0 0 16px!important;
+}
+html body:has(#aoApp) #legalPageModal .legal-page-body .legal-placeholder{color:#687865!important;font-style:normal!important;}
+
+/* LANGUAGE SWITCHER: translate text only; NEVER swap column sides or text alignment. */
+html[data-lang="ar"] body #website.ao-arabian-app #aoApp,
+html[data-lang="ar"] body #website.ao-arabian-app #aoApp :is(.ao-rail,.ao-main-column,.ao-toolbar,.ao-content,.ao-native-pages,.ao-products,.ao-category-track,.ao-footer-nav,.ao-footer-legal,.ao-page-footer,.ao-hero,.ao-hero-copy,.ao-product-content),
+html[data-lang="ar"] body #website.ao-arabian-app #aoApp #menu .menu-card .content{
+  direction:ltr!important;text-align:left!important;
+}
+html[data-lang="ar"] body #website.ao-arabian-app #aoApp .ao-toolbar-search input{direction:ltr!important;text-align:left!important;}
+html[data-lang="ar"] body #website.ao-arabian-app #aoApp .ao-rail-links>button,
+html[data-lang="ar"] body #website.ao-arabian-app #aoApp .ao-rail-lower>button,
+html[data-lang="ar"] body #website.ao-arabian-app #aoApp .ao-section-heading,
+html[data-lang="ar"] body #website.ao-arabian-app #aoApp :is(.ao-route-heading,.ao-product-info,.ao-product-content,.ao-footer-identity,.ao-footer-legal),
+html[data-lang="ar"] body #website.ao-arabian-app #aoApp #reservation :is(.reservation-form-header,.reservation-form-header h3,.reservation-grid,.reservation-field){
+  direction:ltr!important;text-align:left!important;
+}
+html[data-lang="ar"] body #website.ao-arabian-app #aoApp .ao-footer-legal{flex-direction:row!important;}
+
+@media(max-width:1270px){
+  :root{--afgr-rail-width:172px;}
+  html body #website.ao-arabian-app #aoApp .ao-header-brand>span{font-size:14px!important;}
+  html body #website.ao-arabian-app #aoApp .ao-toolbar-search{max-width:350px!important;}
+  html body #website.ao-arabian-app #aoApp .ao-footer-nav{gap:7px!important;}
+}
+@media(max-width:1080px){
+  html body #website.ao-arabian-app #aoApp .ao-products,
+  html body #website.ao-arabian-app #aoApp #menu .items{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+  html body #website.ao-arabian-app #aoApp .ao-toolbar-contact{display:none!important;}
+}
+@media(max-width:935px){
+  html body #website.ao-arabian-app #aoApp{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:75px auto auto!important;}
+  html body #website.ao-arabian-app #aoApp>.ao-rail{display:none!important;}
+  html body #website.ao-arabian-app #aoApp>.ao-main-column{grid-column:1!important;grid-row:2!important;}
+  html body #website.ao-arabian-app #aoApp>.ao-page-footer{grid-column:1!important;grid-row:3!important;}
+  html body #website.ao-arabian-app #aoApp>.ao-toolbar{grid-column:1!important;grid-row:1!important;height:75px!important;min-height:75px!important;}
+  html body #website.ao-arabian-app #aoApp .ao-footer-nav{justify-content:flex-start!important;}
+}
+@media(max-width:740px){
+  html body #website.ao-arabian-app #aoApp{
+    display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+    grid-template-rows:124px auto auto!important;
+    padding-bottom:calc(76px + env(safe-area-inset-bottom))!important;
+  }
+  html body #website.ao-arabian-app #aoApp>.ao-toolbar{
+    position:relative!important;top:auto!important;
+    display:grid!important;grid-template-columns:minmax(0,1fr) 80px 42px!important;
+    grid-template-rows:54px 43px!important;grid-template-areas:'brand lang cart' 'search search search'!important;
+    height:124px!important;min-height:124px!important;gap:5px 7px!important;
+    padding:8px 13px 9px!important;align-content:start!important;
+  }
+  html body #website.ao-arabian-app #aoApp .ao-header-brand{grid-column:1!important;grid-row:1!important;grid-area:brand!important;}
+  html body #website.ao-arabian-app #aoApp .ao-header-language{grid-column:2!important;grid-row:1!important;grid-area:lang!important;}
+  html body #website.ao-arabian-app #aoApp .ao-toolbar-cart{grid-column:3!important;grid-row:1!important;grid-area:cart!important;}
+  html body #website.ao-arabian-app #aoApp .ao-toolbar-search{grid-column:1/-1!important;grid-row:2!important;grid-area:search!important;max-width:none!important;width:100%!important;}
+  html body #website.ao-arabian-app #aoApp .ao-product-art,
+  html body #website.ao-arabian-app #aoApp #menu .menu-card .media{height:137px!important;min-height:137px!important;}
+  html body #website.ao-arabian-app #aoApp .ao-products,
+  html body #website.ao-arabian-app #aoApp #menu .items{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}
+  html body #website.ao-arabian-app #aoApp .ao-content{padding:0 12px 12px!important;}
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-form-shell{padding:10px!important;border-radius:17px!important;}
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header{padding:10px 12px!important;margin-bottom:8px!important;}
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header h3{font-size:23px!important;}
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    column-gap:8px!important;row-gap:7px!important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-grid .reservation-field:nth-child(1),
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-grid .reservation-field:nth-child(2){grid-column:auto!important;}
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-field :is(input,select){height:38px!important;min-height:38px!important;padding:0 8px!important;font-size:11px!important;}
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-field label{font-size:10px!important;margin-bottom:2px!important;}
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-submit{min-height:41px!important;height:41px!important;margin-top:10px!important;}
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-note{font-size:9px!important;}
+  html body #website.ao-arabian-app #aoApp .ao-page-footer{padding:13px 16px!important;min-height:0!important;row-gap:8px!important;}
+  html body #website.ao-arabian-app #aoApp .ao-footer-legal{justify-content:flex-start!important;gap:7px 11px!important;}
+  html body #website.ao-arabian-app #aoApp #testimonials .testimonial{flex:0 0 min(85%,300px)!important;}
+  html body:has(#aoApp) #legalPageModal .legal-page-card{max-height:calc(100dvh - 20px)!important;}
+}
+@media(max-width:390px){
+  html body #website.ao-arabian-app #aoApp .ao-header-brand>span{font-size:12px!important;}
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-grid{column-gap:6px!important;}
+}
+@media(max-height:700px) and (min-width:936px){
+  html body #website.ao-arabian-app #aoApp>.ao-rail{padding-top:9px!important;padding-bottom:6px!important;}
+  html body #website.ao-arabian-app #aoApp .ao-rail-links{gap:0!important;}
+  html body #website.ao-arabian-app #aoApp .ao-rail-links>button{min-height:35px!important;height:35px!important;padding:6px 8px!important;}
+  html body #website.ao-arabian-app #aoApp .ao-rail-lower{margin-top:7px!important;padding-top:7px!important;gap:0!important;}
+  html body #website.ao-arabian-app #aoApp .ao-rail-lower>button{min-height:30px!important;height:30px!important;padding:5px 8px!important;}
+  html body #website.ao-arabian-app #aoApp .ao-rail-caption{margin-bottom:5px!important;}
+}
+@media(prefers-reduced-motion:reduce){html body #website.ao-arabian-app #aoApp *{scroll-behavior:auto!important;}}
+
+/* Final native reservation grid override (legacy high-specificity mobile CSS). */
+html body #website.ao-arabian-app #aoApp #reservation #reservationForm .reservation-grid{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;column-gap:8px!important;row-gap:6px!important;
+}
+@media(max-width:740px){
+ html body #website.ao-arabian-app #aoApp #reservation #reservationForm .reservation-grid > .reservation-field:nth-child(-n+2){
+   grid-column:1/-1!important;
+ }
+ html body #website.ao-arabian-app #aoApp #reservation #reservationForm .reservation-grid > .reservation-field:nth-child(3),
+ html body #website.ao-arabian-app #aoApp #reservation #reservationForm .reservation-grid > .reservation-field:nth-child(4){
+   grid-column:auto!important;
+ }
+}
+/* The legacy testimonials slider had an obsolete dark filled surface. */
+html body #website.ao-arabian-app #aoApp #testimonials .testimonials-slider{
+ background:transparent!important;background-image:none!important;
+ border:0!important;box-shadow:none!important;padding:0!important;
+ border-radius:0!important;min-height:0!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .testimonials-empty{
+ font-size:14px!important;line-height:1.55!important;
+}
+
+html body:has(#aoApp) #legalPageModal .legal-page-close span{display:block!important;color:#254a33!important;font:800 25px/1 Arial,sans-serif!important;opacity:1!important;}
+@media(max-height:540px) and (min-width:936px){
+ html body #website.ao-arabian-app #aoApp>.ao-rail{padding-top:6px!important;padding-bottom:2px!important;}
+ html body #website.ao-arabian-app #aoApp .ao-rail-caption{margin-bottom:3px!important;}
+ html body #website.ao-arabian-app #aoApp .ao-rail-links>button{min-height:31px!important;height:31px!important;padding:4px 7px!important;font-size:10.4px!important;}
+ html body #website.ao-arabian-app #aoApp .ao-rail-lower{margin-top:5px!important;padding-top:5px!important;}
+ html body #website.ao-arabian-app #aoApp .ao-rail-lower>button{min-height:26px!important;height:26px!important;padding:3px 7px!important;font-size:10px!important;}
+}
+
+@media(max-width:360px) and (max-height:720px){
+ html body #website.ao-arabian-app #aoApp #reservation .reservation-form-shell{padding:8px!important;}
+ html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header{padding:7px 10px!important;margin-bottom:6px!important;}
+ html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header h3{font-size:20px!important;}
+ html body #website.ao-arabian-app #aoApp #reservation .reservation-field :is(input,select){height:34px!important;min-height:34px!important;}
+ html body #website.ao-arabian-app #aoApp #reservation .reservation-field label{margin:0 0 1px!important;font-size:10px!important;}
+ html body #website.ao-arabian-app #aoApp #reservation .reservation-submit{min-height:37px!important;height:37px!important;margin-top:7px!important;}
+ html body #website.ao-arabian-app #aoApp #reservation .reservation-note{font-size:9px!important;margin:2px 0 0!important;}
+}

@@ -1,0 +1,118 @@
+/* AFGR 2026-10-26: Owner-requested contact, review feed pagination, and food visuals.
+   Scoped to public AFGR app. Admin/staff panel styles are untouched. */
+
+/* Contact box: remove wasted top padding and make the saved restaurant address prominent. */
+html body #website.ao-arabian-app #aoApp #contact .contact-info-panel .contact-panel-content {
+  padding-top:8px!important;
+  padding-bottom:15px!important;
+}
+html body #website.ao-arabian-app #aoApp #contact .contact-info-title{
+  margin-top:0!important;
+  margin-bottom:9px!important;
+}
+html body #website.ao-arabian-app #aoApp #contact .afgr-contact-location .afgr-location-copy>span,
+html body #website.ao-arabian-app #aoApp #contact .afgr-contact-location .afgr-location-copy strong{
+  font-weight:850!important;
+  color:#285137!important;
+  line-height:1.36!important;
+}
+
+/* Gallery: no kicker and no leftover spacer above the title. */
+html body #website.ao-arabian-app #aoApp #gallery .gallery-kicker{display:none!important;margin:0!important;padding:0!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-shell{padding-top:4px!important;}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-shell>.section-title{margin-top:0!important;}
+
+/* Restaurant reservation panel: lower slightly on larger screens only.
+   Phone-specific fit-to-screen reservation rules remain intact. */
+@media(min-width:936px) and (min-height:700px){
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-form-shell{margin-top:10px!important;}
+}
+#aoApp .ao-story-copy>button[data-ao-route-target="reservation"]{margin-top:8px!important;}
+
+/* Guest reviews: five per page with real page numbers and accessible navigation. */
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-pagination[hidden]{display:none!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-pagination{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:13px!important;
+  flex-wrap:wrap!important;
+  border-top:1px solid #eee9e2!important;
+  padding:18px 21px!important;
+  background:#fffefb!important;
+  border-radius:0 0 22px 22px!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-page-count{
+  color:#758477!important;font-size:11px!important;font-weight:750!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-page-controls{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:6px!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-page-button{
+  min-width:37px!important;height:37px!important;padding:0 8px!important;
+  border:1px solid #e7e3d9!important;background:#fffaf2!important;color:#36573e!important;
+  border-radius:12px!important;font:800 12px 'DM Sans',system-ui,sans-serif!important;
+  box-shadow:none!important;transition:background .2s,color .2s,transform .2s!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-page-button:hover:not(:disabled){background:#e6efdd!important;transform:translateY(-2px)!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-page-button.is-active{
+  background:#315d3b!important;color:#fff!important;border-color:#315d3b!important;
+}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-page-button:disabled{opacity:.36!important;cursor:not-allowed!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-ellipsis{padding:0 4px!important;color:#9d978c!important;font-weight:900!important;}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-account{
+  padding:13px 16px!important;
+  border:1px solid #d7e5d4!important;
+  border-radius:14px!important;
+  background:linear-gradient(120deg,#edf4e7,#fffaf2)!important;
+  color:#2b5b38!important;
+  font:800 13px/1.5 'DM Sans',system-ui,sans-serif!important;
+}
+
+/* Sharper, legible, genuinely food-led feature cards. Remove the old heavy
+   rotated-photo/drop-shadow treatment that made imagery appear soft. */
+html body #website.ao-arabian-app #aoApp .ao-spotlight-grill,
+html body #website.ao-arabian-app #aoApp .ao-spotlight-rice{overflow:hidden!important;isolation:isolate!important;}
+html body #website.ao-arabian-app #aoApp .ao-spotlight-grill>img,
+html body #website.ao-arabian-app #aoApp .ao-spotlight-rice>img{
+  position:absolute!important;right:-4%!important;top:0!important;bottom:0!important;
+  width:66%!important;height:100%!important;object-fit:cover!important;
+  border-radius:0!important;transform:scale(1.0)!important;rotate:0deg!important;
+  filter:saturate(1.1) contrast(1.06)!important;
+  image-rendering:auto!important;
+  transition:transform .65s cubic-bezier(.17,.75,.2,1)!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-spotlight-grill:hover>img,
+html body #website.ao-arabian-app #aoApp .ao-spotlight-rice:hover>img{transform:scale(1.085)!important;}
+html body #website.ao-arabian-app #aoApp .ao-spotlight-grill::after,
+html body #website.ao-arabian-app #aoApp .ao-spotlight-rice::after{
+  content:''!important;position:absolute!important;inset:0!important;pointer-events:none!important;z-index:1!important;
+  background:linear-gradient(92deg,rgba(17,47,28,.96) 0%,rgba(17,47,28,.9) 31%,rgba(17,47,28,.17) 80%,rgba(17,47,28,0) 100%)!important;
+}
+html body #website.ao-arabian-app #aoApp .ao-spotlight-rice::after{background:linear-gradient(95deg,#f3e0ae 0%,rgba(243,224,174,.93) 33%,rgba(243,224,174,.12) 88%)!important;}
+html body #website.ao-arabian-app #aoApp .ao-spotlight>span{z-index:3!important;}
+html body #website.ao-arabian-app #aoApp .ao-story-image>img{
+  image-rendering:auto!important;filter:saturate(1.07) contrast(1.06)!important;
+  object-fit:cover!important;object-position:center 47%!important;
+}
+@media(max-width:740px){
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-pagination{
+    justify-content:center!important;padding:12px 9px 18px!important;gap:9px!important;
+  }
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-page-count{
+    width:100%!important;text-align:center!important;
+  }
+  html body #website.ao-arabian-app #aoApp .ao-spotlight-grill>img,
+  html body #website.ao-arabian-app #aoApp .ao-spotlight-rice>img{width:65%!important;right:-4%!important;}
+}
+@media(prefers-reduced-motion:reduce){
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-review-page-button,
+  html body #website.ao-arabian-app #aoApp .ao-spotlight>img{transition:none!important;}
+}
+/* Trim just the top margin in the Contact information box. */
+html body #website.ao-arabian-app #aoApp #contact .contact-info-panel{
+  padding-top:11px!important;
+}
+@media(max-width:740px){
+  html body #website.ao-arabian-app #aoApp #contact .contact-info-panel{
+    padding-top:9px!important;
+  }
+}

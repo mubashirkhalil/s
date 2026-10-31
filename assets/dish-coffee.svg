@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 680" role="img" aria-label="Illustration of traditional Arabic coffee">
+ <defs><radialGradient id="plate" cx="42%" cy="35%"><stop stop-color="#fff"/><stop offset=".8" stop-color="#fafaf5"/><stop offset="1" stop-color="#dde1d9"/></radialGradient><filter id="s"><feDropShadow dx="0" dy="20" stdDeviation="17" flood-color="#283c32" flood-opacity=".2"/></filter></defs>
+ <rect width="720" height="680" rx="45" fill="#eee8de"/>
+ <g filter="url(#s)"><ellipse cx="360" cy="330" rx="264" ry="237" fill="url(#plate)"/><ellipse cx="360" cy="320" rx="221" ry="197" fill="#f2ede4" stroke="#e8e8df" stroke-width="5"/></g>
+ <!-- brass dallah pot -->
+ <g transform="translate(128 167) rotate(-14)">
+ <ellipse cx="150" cy="220" rx="92" ry="119" fill="#d7a95b" stroke="#af7536" stroke-width="7"/>
+ <path d="M97 139q55 19 112 0M96 275q58 22 111-3" stroke="#f5d99b" stroke-width="9" fill="none"/>
+ <path d="M147 103V49h-24q24-28 49 0h-18v54M119 57h56" stroke="#b87c3e" stroke-width="9" fill="#efc97b" stroke-linecap="round"/>
+ <path d="M211 180q74-10 74-84l25-9q-13 109-99 118" fill="#d7a354" stroke="#a46c33" stroke-width="6"/>
+ <path d="M205 162q74-50 90 22q-8 71-82 70" fill="none" stroke="#ad7238" stroke-width="16"/>
+ <path d="M126 331 102 373h104l-28-42" fill="#bd8241" stroke="#a97133" stroke-width="6"/>
+ </g>
+ <!-- porcelain Arabic coffee cup / dark coffee surface -->
+ <g filter="url(#s)"><ellipse cx="454" cy="441" rx="154" ry="45" fill="#ded8ca"/>
+ <path d="M343 295h211l-23 135q-76 40-166 0Z" fill="#fffcf3" stroke="#c6ab7c" stroke-width="8"/>
+ <ellipse cx="448" cy="296" rx="107" ry="41" fill="#fff8e9" stroke="#bf9a63" stroke-width="7"/>
+ <ellipse cx="448" cy="301" rx="87" ry="31" fill="#75482d"/><ellipse cx="440" cy="296" rx="55" ry="13" fill="#ac7649" opacity=".75"/>
+ <path d="M553 334q73-22 68 35q-4 44-79 37" fill="none" stroke="#d2ba91" stroke-width="18"/>
+ <path d="M365 386q88 31 166 0" fill="none" stroke="#e2c78d" stroke-width="12"/></g>
+ <!-- dates & cardamom -->
+ <ellipse cx="339" cy="490" rx="39" ry="26" transform="rotate(-18 339 490)" fill="#8d4f2a"/><ellipse cx="391" cy="507" rx="38" ry="23" transform="rotate(18 391 507)" fill="#a65d31"/>
+ <g stroke="#bd8954" stroke-width="4" fill="none"><path d="M326 485q10-8 23 0m23 18q15-9 28 1"/></g>
+ <g fill="#6e8e61"><ellipse cx="510" cy="510" rx="13" ry="6" transform="rotate(35 510 510)"/><ellipse cx="527" cy="521" rx="13" ry="6" transform="rotate(-20 527 521)"/></g>
+ <circle cx="591" cy="115" r="8" fill="#d6a35a"/><circle cx="139" cy="530" r="11" fill="#d6a35a"/><circle cx="579" cy="541" r="4" fill="#d6a35a"/>
+ </svg>

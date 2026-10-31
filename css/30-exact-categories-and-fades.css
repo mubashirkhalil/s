@@ -1,0 +1,414 @@
+/* AFGR — 2026-10-26 owner refinements.
+ *  - The Discover hero is restored by removing 29's hero overrides.
+ *  - Category labels come solely from live Admin -> Menu Categories.
+ *  - Photographs fade softly from right to left on offer and reservation cards.
+ */
+
+/* The green marquee text still comes from Admin -> Settings -> Top Bar Text.
+   Doubling 22s to 44s halves its actual running speed. */
+html body #website.ao-arabian-app #aoApp #aoHome .ao-fresh-strip > .ao-ticker-track {
+  animation-duration: 44s !important;
+}
+
+/* Keep category photos & labels clean: no synthetic asterisk ornaments. */
+html body #website.ao-arabian-app #aoApp #aoHome .ao-category-track > .ao-category .ao-category-image::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Feature cards: the photograph genuinely spans beneath the copy, while a
+   graduated shadow makes the title readable without a harsh image cut-off. */
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-cards {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 13px !important;
+  margin-top: 20px !important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card {
+  display: block !important;
+  position: relative !important;
+  min-width: 0 !important;
+  height: 155px !important;
+  min-height: 155px !important;
+  padding: 0 !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  border: 1px solid rgba(255, 237, 209, .22) !important;
+  background: #25180e !important;
+  box-shadow: 0 14px 30px rgba(54, 37, 21, .20) !important;
+  transition: transform .32s ease, box-shadow .32s ease !important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card img {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: 65% center !important;
+  z-index: 0 !important;
+  filter: saturate(1.13) contrast(1.06) !important;
+  transition: transform .75s cubic-bezier(.19,.81,.25,1), filter .75s !important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background: linear-gradient(90deg,
+    rgba(28, 16, 7, .96) 0%,
+    rgba(28, 16, 7, .81) 26%,
+    rgba(28, 16, 7, .50) 47%,
+    rgba(28, 16, 7, .15) 76%,
+    rgba(28, 16, 7, .01) 100%) !important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card .ao-feature-card-copy {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 3px !important;
+  padding: 16px 15px 14px !important;
+  max-width: 100% !important;
+  text-shadow: 0 1px 6px rgba(0,0,0,.25) !important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy strong {
+  display: block !important;
+  font-size: clamp(22px, 2.25vw, 29px) !important;
+  line-height: .98 !important;
+  color: #fff8f0 !important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy small {
+  color: #ffe3b4 !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  font-size: 9px !important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy b {
+  color: #fffaf0 !important;
+  font-size: 11px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 23px 39px rgba(54,37,21,.28) !important;
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card:hover img {
+  transform: scale(1.09) !important;
+  filter: saturate(1.19) contrast(1.08) !important;
+}
+
+/* Reservation: premium right-edge photograph with a genuinely soft fade
+   underneath the form instead of a hard two-column dividing line. */
+html body #website.ao-arabian-app #aoApp #reservation .reservation-showcase {
+  display: block !important;
+  isolation: isolate !important;
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 380px !important;
+  border-radius: 27px !important;
+  background: linear-gradient(115deg, #fbf1df 0%, #f9edda 43%, #e9cd99 100%) !important;
+  border: 1px solid #e9d6b2 !important;
+  box-shadow: 0 18px 38px rgba(94, 67, 38, .15) !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-showcase-image {
+  display: block !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: auto !important;
+  width: 71% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.12) 13%, rgba(0,0,0,.63) 39%, #000 65%) !important;
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.12) 13%, rgba(0,0,0,.63) 39%, #000 65%) !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-showcase-image::before {
+  display: none !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-showcase-image img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  object-position: center 53% !important;
+  filter: saturate(1.12) contrast(1.03) !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-showcase-copy {
+  display: block !important;
+  position: relative !important;
+  z-index: 2 !important;
+  width: min(65%, 680px) !important;
+  min-width: 0 !important;
+  padding: 25px 30px 23px !important;
+  background: transparent !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-showcase-copy::after {
+  opacity: .45 !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header--compact h3 {
+  font-size: clamp(31px, 2.9vw, 39px) !important;
+  line-height: 1.03 !important;
+  color: #29432c !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-premium-form {
+  margin-top: 17px !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-grid-premium {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 11px 13px !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-field-wide {
+  grid-column: 1 / -1 !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-field input,
+html body #website.ao-arabian-app #aoApp #reservation .reservation-field select {
+  display: block !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  height: 43px !important;
+  border: 1px solid #e0d4be !important;
+  border-radius: 11px !important;
+  background: rgba(255,255,255,.92) !important;
+  color: #2d3f2b !important;
+  font-size: 12px !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-action-row {
+  display: flex !important;
+  justify-content: flex-end !important;
+  margin-top: 9px !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-submit {
+  min-width: 168px !important;
+  height: 43px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 20px rgba(41,92,46,.22) !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-note {
+  text-align: left !important;
+  margin: 8px 0 0 !important;
+}
+
+@media (max-width: 1070px) {
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-showcase-copy {
+    width: 72% !important;
+    padding: 22px !important;
+  }
+}
+@media (max-width: 870px) {
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-showcase-copy {
+    width: 86% !important;
+  }
+}
+@media (max-width: 740px) {
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-cards {
+    grid-template-columns: 1fr !important;
+    gap: 11px !important;
+  }
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card {
+    height: 145px !important;
+    min-height: 145px !important;
+  }
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card-copy strong {
+    font-size: 26px !important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-showcase {
+    border-radius: 21px !important;
+    min-height: 0 !important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-showcase-image {
+    width: 100% !important;
+    opacity: .22 !important;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.13) 48%, transparent 82%) !important;
+    mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.13) 48%, transparent 82%) !important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-showcase-copy {
+    width: 100% !important;
+    padding: 18px 16px 16px !important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header--compact h3 {
+    font-size: 30px !important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-grid-premium {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 9px 10px !important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-action-row {
+    justify-content: stretch !important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-submit {
+    width: 100% !important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-note {
+    font-size: 10px !important;
+  }
+}
+@media (max-width: 350px) {
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-grid-premium {
+    grid-template-columns: 1fr !important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-field-wide {
+    grid-column: 1 !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card,
+  html body #website.ao-arabian-app #aoApp #aoHome .ao-feature-card img {
+    transition: none !important;
+  }
+}
+
+/* Neutralize the old dark reservation heading and oversized orange button.
+   Those belonged to the superseded split-panel layout and otherwise show
+   through over the new photographic reservation treatment. */
+html body #website.ao-arabian-app #aoApp #reservation.section {
+  background: #fdf8f0 !important;
+  margin: 0 !important;
+  padding: 14px 0 18px !important;
+  overflow: visible !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header--compact {
+  display: block !important;
+  width: auto !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 0 7px !important;
+  padding: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  color: #263e2a !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header--compact h3 {
+  display: block !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 0 5px !important;
+  color: #263e2a !important;
+  -webkit-text-fill-color: #263e2a !important;
+  background: none !important;
+  border: 0 !important;
+  font: 750 clamp(29px, 2.65vw, 37px)/1.05 var(--ao-display), Georgia, serif !important;
+  text-align: left !important;
+  text-shadow: none !important;
+  letter-spacing: -.035em !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header--compact h3::before,
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header--compact h3::after {
+  display: none !important;
+  content: none !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header--compact .reservation-intro {
+  display: block !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: left !important;
+  background: none !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header--compact .reservation-intro p,
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header--compact .reservation-intro p:first-child {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font: 500 12px/1.35 'DM Sans',system-ui,sans-serif !important;
+  color: #6c715b !important;
+  text-align: left !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-field-wide {
+  width: calc(100% - 181px) !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-action-row {
+  position: relative !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  width: 171px !important;
+  height: 43px !important;
+  margin: -43px 0 0 auto !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-submit {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 9px !important;
+  width: 171px !important;
+  max-width: 171px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: 43px !important;
+  padding: 0 13px !important;
+  margin: 0 !important;
+  background: linear-gradient(180deg,#47713d,#31592e) !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  color: #fffdf4 !important;
+  font: 800 12px 'DM Sans',system-ui,sans-serif !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  text-shadow: none !important;
+  transform: none !important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-submit:hover {
+  filter: brightness(1.09) !important;
+  transform: translateY(-2px) !important;
+}
+@media (max-width:740px) {
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-field-wide {
+    width: 100% !important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-action-row {
+    display: block !important;
+    margin: 11px 0 0 !important;
+    width: 100% !important;
+    height: 42px !important;
+  }
+  html body #website.ao-arabian-app #aoApp #reservation .reservation-submit {
+    width: 100% !important;
+    max-width: none !important;
+    height: 42px !important;
+  }
+}
+
+/* Stronger selectors than the historic .ao-native-pages reservation theme,
+   which otherwise leaves the restored heading text white on cream. */
+html body #website.ao-arabian-app #aoApp .ao-native-pages #reservation .reservation-form-header.reservation-form-header--compact h3 {
+  color: #273d2b !important;
+  -webkit-text-fill-color: #273d2b !important;
+  background: transparent !important;
+  font-family: var(--ao-display), Georgia, serif !important;
+}
+html body #website.ao-arabian-app #aoApp .ao-native-pages #reservation .reservation-grid-premium > .reservation-field.reservation-field-wide {
+  grid-column: 1 / -1 !important;
+  width: calc(100% - 184px) !important;
+  max-width: none !important;
+}
+@media (max-width:740px) {
+  html body #website.ao-arabian-app #aoApp .ao-native-pages #reservation .reservation-grid-premium > .reservation-field.reservation-field-wide {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,440 @@
+/* AFGR 2026 — owner-directed header, navigation, multilingual, and layout pass.
+   Public customer app only; admin, staff, database and original checkout remain intact. */
+:root{--afgr-rail-width:194px;--afgr-ink:#293f2d;--afgr-muted:#69675b;--afgr-gold:#dc8a31;--afgr-line:#e9dfcf;}
+
+/* A compact navigation rail. The full restaurant name lives exclusively in the header. */
+#website.ao-arabian-app #aoApp{
+  grid-template-columns:var(--afgr-rail-width) minmax(0,1fr)!important;
+  align-content:start;
+  overflow-x:clip;
+}
+#website.ao-arabian-app #aoApp .ao-order-side{display:none!important;}
+#website.ao-arabian-app #aoApp .ao-rail{
+  grid-column:1;grid-row:1;min-width:0;
+  padding:20px 10px 15px!important;
+  background:#fffaf1!important;border-right:1px solid var(--afgr-line);
+  scrollbar-width:thin;overflow-y:auto;overflow-x:hidden;
+}
+#website.ao-arabian-app #aoApp .ao-rail-brand{display:none!important;}
+#website.ao-arabian-app #aoApp .ao-rail-caption{padding:0 9px!important;margin:0 0 11px!important;font-size:9px!important;letter-spacing:1.1px!important;line-height:1.4!important;color:#947e61!important;}
+#website.ao-arabian-app #aoApp .ao-rail-links{gap:4px!important;}
+#website.ao-arabian-app #aoApp .ao-rail-links>button{
+  display:flex;align-items:center;white-space:normal;
+  min-height:43px!important;padding:10px 11px!important;gap:10px!important;
+  font-size:11.7px!important;line-height:1.25!important;font-weight:800!important;
+  color:#43533f!important;border-radius:13px!important;
+}
+#website.ao-arabian-app #aoApp .ao-rail-links>button.is-active{color:#fff!important;}
+#website.ao-arabian-app #aoApp .ao-rail-links>button svg{width:17px!important;height:17px!important;flex-shrink:0!important;}
+#website.ao-arabian-app #aoApp .ao-rail-lower{padding-top:13px!important;margin-top:15px!important;gap:1px!important;}
+#website.ao-arabian-app #aoApp .ao-rail-lower>button{
+  min-height:37px!important;padding:8px 9px!important;font-size:11.4px!important;
+  line-height:1.35!important;font-weight:750!important;gap:8px!important;color:#555c4b!important;
+}
+#website.ao-arabian-app #aoApp .ao-rail-lower>button svg{width:15px!important;height:15px!important;}
+#website.ao-arabian-app #aoApp .ao-rail-special,#website.ao-arabian-app #aoApp .ao-rail-foot{display:none!important;}
+
+/* Always-visible original brand, balanced search and the actual EN/AR controller. */
+#website.ao-arabian-app #aoApp .ao-main-column{grid-column:2;grid-row:1;min-width:0!important;}
+#website.ao-arabian-app #aoApp .ao-toolbar{
+  display:flex!important;align-items:center!important;flex-wrap:nowrap!important;
+  grid-template-columns:none!important;grid-template-rows:none!important;
+  gap:10px!important;height:76px!important;padding:9px 19px!important;
+  background:#fffdf9!important;box-shadow:0 2px 10px rgba(64,54,28,.025)!important;
+}
+#website.ao-arabian-app #aoApp .ao-header-brand{
+  display:flex!important;align-items:center!important;justify-content:flex-start;
+  flex:0 0 auto;gap:11px;min-width:0;max-width:360px;
+  padding:0!important;border:0!important;background:none!important;
+  text-align:left;color:#28472e!important;
+}
+#website.ao-arabian-app #aoApp .ao-header-brand img{
+  display:block;flex:0 0 auto;width:46px;height:46px;object-fit:contain;border-radius:50%;
+  filter:none;box-shadow:0 3px 12px rgba(166,112,37,.10);
+}
+#website.ao-arabian-app #aoApp .ao-header-brand>span{
+  font:800 16px/1.25 'DM Sans',Arial,sans-serif!important;
+  letter-spacing:-.36px!important;color:#28472e!important;white-space:nowrap;
+}
+#website.ao-arabian-app #aoApp .ao-toolbar-search{
+  flex:1 1 220px!important;width:auto!important;min-width:130px!important;
+  max-width:410px!important;height:47px!important;margin:0!important;
+  padding:0 14px!important;border-radius:16px!important;
+  background:#f8f3ea!important;border:1px solid #eae1d3!important;
+}
+#website.ao-arabian-app #aoApp .ao-toolbar-search input{font-size:12px!important;color:#2e4832!important;}
+#website.ao-arabian-app #aoApp .ao-toolbar-contact{flex:0 0 auto!important;min-height:43px!important;padding:10px 12px!important;}
+#website.ao-arabian-app #aoApp .ao-header-language{
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  gap:3px!important;flex:0 0 auto;min-width:99px!important;height:43px!important;
+  padding:5px!important;border-radius:15px!important;
+  background:#f0f4e8!important;border:1px solid #dce7d3!important;
+  color:#386043!important;box-shadow:none!important;transform:none!important;
+  font:800 11px/1 'DM Sans',Arial,sans-serif!important;letter-spacing:0!important;
+  backdrop-filter:none!important;position:static!important;top:auto!important;right:auto!important;
+}
+#website.ao-arabian-app #aoApp .ao-header-language:hover{transform:translateY(-1px)!important;background:#e8efdc!important;border-color:#c1d6b9!important;}
+#website.ao-arabian-app #aoApp .ao-header-language .lang-option{
+  display:inline-flex;align-items:center;justify-content:center;min-width:33px!important;
+  height:30px;min-height:30px!important;padding:0 7px;border-radius:11px!important;
+  color:#5b7056!important;background:transparent!important;box-shadow:none!important;
+  font:800 11px 'DM Sans',Arial,sans-serif!important;
+}
+#website.ao-arabian-app #aoApp .ao-header-language .lang-ar{font-size:12px!important;min-width:36px!important;}
+#website.ao-arabian-app #aoApp .ao-header-language .lang-divider{color:#96aa8f!important;}
+#website.ao-arabian-app #aoApp .ao-header-language[data-active-lang="en"] .lang-en,
+#website.ao-arabian-app #aoApp .ao-header-language[data-active-lang="ar"] .lang-ar{
+  background:#30543a!important;color:white!important;box-shadow:0 2px 6px rgba(46,78,56,.16)!important;
+}
+#website.ao-arabian-app #aoApp .ao-toolbar-account,
+#website.ao-arabian-app #aoApp .ao-toolbar-cart{flex:0 0 43px!important;width:43px!important;min-width:43px!important;height:43px!important;}
+
+/* More visible food, less decorative filler. Four matching columns on desktops. */
+#website.ao-arabian-app #aoApp .ao-content{
+  flex:1 1 auto!important;width:100%!important;max-width:none!important;
+  padding:18px 20px 24px!important;
+}
+#website.ao-arabian-app #aoApp .ao-hero{height:337px!important;}
+#website.ao-arabian-app #aoApp .ao-hero-badges{display:none!important;}
+#website.ao-arabian-app #aoApp .ao-hero-copy{padding:27px 0 24px 29px!important;}
+#website.ao-arabian-app #aoApp .ao-hero h1{font-size:clamp(43px,4.35vw,65px)!important;}
+#website.ao-arabian-app #aoApp .ao-products,
+html body #website.ao-arabian-app #aoApp #menu .items{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:13px!important;align-items:stretch!important;
+}
+#website.ao-arabian-app #aoApp .ao-product,
+html body #website.ao-arabian-app #aoApp #menu .menu-card{
+  min-width:0!important;min-height:0!important;width:auto!important;max-width:none!important;
+  display:flex!important;flex-direction:column!important;
+  border-radius:21px!important;border:1px solid #ede1ce!important;
+  background:#fffdfa!important;box-shadow:0 10px 22px rgba(76,56,24,.09)!important;
+  overflow:hidden!important;
+}
+#website.ao-arabian-app #aoApp .ao-product-art,
+html body #website.ao-arabian-app #aoApp #menu .menu-card .media{
+  position:relative!important;height:158px!important;min-height:158px!important;
+  overflow:hidden!important;background:#f6eddc!important;
+}
+#website.ao-arabian-app #aoApp .ao-product-art img,
+html body #website.ao-arabian-app #aoApp #menu .menu-card .media img{width:100%!important;height:100%!important;object-fit:cover!important;}
+#website.ao-arabian-app #aoApp .ao-product-content,
+html body #website.ao-arabian-app #aoApp #menu .menu-card .content{
+  flex:1!important;display:flex!important;flex-direction:column!important;
+  gap:5px!important;padding:12px 13px 13px!important;min-width:0!important;
+}
+#website.ao-arabian-app #aoApp .ao-product-content h3,
+html body #website.ao-arabian-app #aoApp #menu .menu-card h4{
+  font:750 17px/1.2 'Fraunces',Georgia,serif!important;
+  min-height:0!important;margin:3px 0!important;color:#29462f!important;
+  overflow-wrap:anywhere!important;
+}
+#website.ao-arabian-app #aoApp .ao-product-content p,
+html body #website.ao-arabian-app #aoApp #menu .menu-card .content>p{
+  font:500 11px/1.45 'DM Sans',Arial,sans-serif!important;
+  margin:0 0 8px!important;min-height:30px!important;color:#777468!important;
+  display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden!important;
+}
+#website.ao-arabian-app #aoApp .ao-product-bottom,
+html body #website.ao-arabian-app #aoApp #menu .menu-card .price{margin-top:auto!important;align-items:center!important;gap:7px!important;}
+#website.ao-arabian-app #aoApp .ao-product-bottom strong,
+html body #website.ao-arabian-app #aoApp #menu .menu-card .price .selling-price{font-size:12px!important;font-weight:900!important;color:#32563a!important;}
+#website.ao-arabian-app #aoApp .ao-product-bottom>button,
+html body #website.ao-arabian-app #aoApp #menu .menu-card .price button{width:36px!important;min-width:36px!important;height:36px!important;min-height:36px!important;flex-shrink:0!important;}
+#website.ao-arabian-app #aoApp .ao-route-heading{padding:6px 0 15px!important;margin:0!important;}
+#website.ao-arabian-app #aoApp .ao-route-heading h1{font-size:clamp(31px,3vw,41px)!important;margin:6px 0 0!important;}
+#website.ao-arabian-app #aoApp .ao-favorites-view{min-height:0!important;}
+#website.ao-arabian-app #aoApp .ao-native-pages .section{padding:7px 0 19px!important;}
+#website.ao-arabian-app #aoApp #menu>.app-section-heading{margin:0 0 15px!important;padding:7px 0!important;}
+html body #website.ao-arabian-app #aoApp #menu .section-title{font-size:clamp(31px,3.2vw,44px)!important;}
+html body #website.ao-arabian-app #aoApp #menu .variation-shell{margin:6px 0!important;}
+
+/* Booking is a compact, balanced two-column form on desktops. */
+#website.ao-arabian-app #aoApp #reservation .reservation-wrap{max-width:860px!important;width:100%!important;}
+#website.ao-arabian-app #aoApp #reservation .reservation-form-shell{
+  max-width:none!important;width:100%!important;padding:20px!important;
+  border-radius:24px!important;box-shadow:0 15px 30px rgba(78,59,34,.10)!important;
+}
+#website.ao-arabian-app #aoApp #reservation .reservation-form-header{
+  background:linear-gradient(115deg,#294c36,#3f6a47)!important;
+  border-radius:20px!important;min-height:0!important;
+  padding:21px 25px!important;margin:0 0 17px!important;
+}
+#website.ao-arabian-app #aoApp #reservation .reservation-form-header h3{
+  color:#fffdf6!important;-webkit-text-fill-color:#fffdf6!important;
+  font:750 clamp(26px,3vw,38px)/1.15 'Fraunces',Georgia,serif!important;
+  margin:0 0 6px!important;
+}
+#website.ao-arabian-app #aoApp #reservation .reservation-form-header .reservation-intro p:first-child{display:none!important;}
+#website.ao-arabian-app #aoApp #reservation .reservation-form-header .reservation-intro p{
+  color:#eef5e9!important;opacity:1!important;margin:0!important;font-size:12px!important;
+}
+#website.ao-arabian-app #aoApp #reservation .reservation-grid{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  column-gap:16px!important;row-gap:13px!important;
+}
+#website.ao-arabian-app #aoApp #reservation .reservation-grid .reservation-field{min-width:0!important;grid-column:auto!important;}
+#website.ao-arabian-app #aoApp #reservation .reservation-grid .reservation-field.full-width{grid-column:1/-1!important;}
+#website.ao-arabian-app #aoApp #reservation .reservation-field label{
+  display:block!important;color:#35543d!important;font-weight:800!important;font-size:12px!important;margin:0 0 6px!important;
+}
+#website.ao-arabian-app #aoApp #reservation .reservation-field :is(input,select){
+  height:48px!important;min-height:48px!important;background:#fffaf2!important;
+  border:1px solid #ddcfba!important;border-radius:13px!important;
+  padding:0 13px!important;color:#2e4936!important;font-size:13px!important;
+}
+#website.ao-arabian-app #aoApp #reservation .reservation-submit{
+  min-height:48px!important;padding:12px 22px!important;
+  background:linear-gradient(180deg,#f7a54a,#df6e23)!important;
+  border-radius:14px!important;color:#fff!important;font-weight:900!important;
+  box-shadow:0 7px 18px rgba(203,112,38,.16)!important;
+}
+#website.ao-arabian-app #aoApp #reservation .reservation-note{font-size:11px!important;color:#7a796c!important;margin:7px 0 0!important;}
+
+/* Native pages: consistent typography and no ornamental surplus copy. */
+#website.ao-arabian-app #aoApp #offers .offers-header{margin:2px 0 15px!important;gap:8px!important;}
+#website.ao-arabian-app #aoApp #offers .offers-header p{font-size:12px!important;line-height:1.5!important;margin:5px 0 0!important;color:#6f7166!important;}
+#website.ao-arabian-app #aoApp #offers .offers-highlight{display:none!important;}
+#website.ao-arabian-app #aoApp #offers .offers-extra-wrap{margin-top:12px!important;}
+#website.ao-arabian-app #aoApp #offers .offers-shell{padding:0!important;}
+#website.ao-arabian-app #aoApp #gallery .gallery-shell{padding:0!important;}
+#website.ao-arabian-app #aoApp #gallery .gallery-kicker{margin-bottom:5px!important;}
+#website.ao-arabian-app #aoApp #gallery .gallery-intro{margin:2px 0 15px!important;font-size:12px!important;line-height:1.5!important;color:#707464!important;max-width:550px!important;}
+#website.ao-arabian-app #aoApp #contact .contact-header{margin:0 auto 16px!important;}
+#website.ao-arabian-app #aoApp #contact .contact-subtitle{margin:6px auto!important;font-size:12px!important;line-height:1.5!important;}
+#website.ao-arabian-app #aoApp #contact .contact-form-text{display:none!important;}
+#website.ao-arabian-app #aoApp #contact .contact-social-heading{display:none!important;}
+#website.ao-arabian-app #aoApp #contact .contact-info-text{margin:0 0 14px!important;}
+#website.ao-arabian-app #aoApp #contact .contact-layout{gap:16px!important;}
+#website.ao-arabian-app #aoApp #contact :is(.contact-info-panel,.contact-form-panel){padding:18px!important;}
+
+/* Full-width, single global footer with real policy/terms actions. */
+#website.ao-arabian-app #aoApp .ao-home .ao-footer{display:none!important;}
+#website.ao-arabian-app #aoApp .ao-page-footer{
+  display:grid!important;grid-column:1/-1!important;grid-row:2!important;
+  grid-template-columns:1fr 1.25fr;column-gap:28px;row-gap:15px;
+  width:100%!important;min-width:0;padding:23px clamp(18px,3.5vw,65px) 17px!important;
+  margin:0!important;border:0!important;border-top:1px solid #dacfb9!important;
+  background:linear-gradient(180deg,#fffaf1,#f8f0e2)!important;
+  color:#3d523e!important;position:relative;z-index:2;
+}
+#website.ao-arabian-app #aoApp .ao-footer-identity{display:flex;align-items:center;gap:11px;min-width:0;}
+#website.ao-arabian-app #aoApp .ao-footer-identity img{width:42px;height:42px;border-radius:50%;object-fit:contain;flex-shrink:0;}
+#website.ao-arabian-app #aoApp .ao-footer-identity div{display:flex;flex-direction:column;gap:5px;}
+#website.ao-arabian-app #aoApp .ao-footer-identity strong{font:800 13px/1.3 'DM Sans',sans-serif;color:#285036!important;}
+#website.ao-arabian-app #aoApp .ao-footer-identity small{font-size:11px;font-weight:550;color:#857963;}
+#website.ao-arabian-app #aoApp .ao-footer-nav,
+#website.ao-arabian-app #aoApp .ao-footer-bottom nav{display:flex!important;align-items:center!important;justify-content:flex-end!important;flex-wrap:wrap!important;gap:8px 15px!important;}
+#website.ao-arabian-app #aoApp .ao-page-footer button{
+  border:none!important;background:none!important;text-decoration:none!important;
+  padding:8px 2px!important;border-radius:0!important;
+  color:#355b3e!important;font:800 11px 'DM Sans',sans-serif!important;
+  transition:color .18s ease!important;
+}
+#website.ao-arabian-app #aoApp .ao-page-footer button:hover{text-decoration:underline!important;text-underline-offset:4px!important;color:#bc652a!important;}
+#website.ao-arabian-app #aoApp .ao-footer-bottom{
+  grid-column:1/-1;border-top:1px solid #e5dbc8;padding-top:13px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px 24px;
+}
+#website.ao-arabian-app #aoApp .ao-footer-bottom>span{font:600 10px/1.5 'DM Sans',sans-serif;color:#736d5d!important;}
+#website.ao-arabian-app #aoApp .ao-footer-bottom nav{justify-content:flex-start!important;}
+#website.ao-arabian-app #aoApp .ao-footer-bottom nav button{font-size:10px!important;}
+
+/* Clear and predictable content direction for Arabic, without flipping layout columns. */
+html[data-lang="ar"] #website.ao-arabian-app #aoApp .ao-content,
+html[data-lang="ar"] #website.ao-arabian-app #aoApp .ao-native-pages{direction:rtl;text-align:right;}
+html[data-lang="ar"] #website.ao-arabian-app #aoApp .ao-rail{direction:rtl;text-align:right;}
+html[data-lang="ar"] #website.ao-arabian-app #aoApp .ao-header-brand{direction:ltr;text-align:left;}
+html[data-lang="ar"] #website.ao-arabian-app #aoApp .ao-toolbar-search input{direction:rtl;text-align:right;}
+html[data-lang="ar"] #website.ao-arabian-app #aoApp .ao-page-footer{direction:rtl;text-align:right;}
+html[data-lang="ar"] #website.ao-arabian-app #aoApp .ao-footer-identity{direction:ltr;}
+
+@media(max-width:1260px){
+  :root{--afgr-rail-width:187px;}
+  #website.ao-arabian-app #aoApp .ao-header-brand{max-width:300px;}
+  #website.ao-arabian-app #aoApp .ao-header-brand>span{font-size:14px!important;letter-spacing:-.35px!important;}
+  #website.ao-arabian-app #aoApp .ao-header-brand img{width:43px;height:43px;}
+  #website.ao-arabian-app #aoApp .ao-toolbar-search{max-width:310px!important;}
+  #website.ao-arabian-app #aoApp .ao-toolbar-contact{display:none!important;}
+}
+@media(max-width:1080px){
+  #website.ao-arabian-app #aoApp .ao-products,
+  html body #website.ao-arabian-app #aoApp #menu .items{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+  #website.ao-arabian-app #aoApp .ao-hero{height:327px!important;}
+  #website.ao-arabian-app #aoApp .ao-hero h1{font-size:clamp(41px,4.9vw,55px)!important;}
+  #website.ao-arabian-app #aoApp .ao-toolbar-search{max-width:none!important;}
+}
+@media(max-width:935px){
+  #website.ao-arabian-app #aoApp{grid-template-columns:minmax(0,1fr)!important;}
+  #website.ao-arabian-app #aoApp .ao-rail{display:none!important;}
+  #website.ao-arabian-app #aoApp .ao-main-column{grid-column:1;grid-row:1;}
+  #website.ao-arabian-app #aoApp .ao-page-footer{grid-column:1!important;grid-row:2!important;}
+  #website.ao-arabian-app #aoApp .ao-toolbar{height:75px!important;}
+  #website.ao-arabian-app #aoApp .ao-header-brand>span{font-size:15px!important;}
+  #website.ao-arabian-app #aoApp .ao-content{padding:16px 18px 24px!important;}
+  #website.ao-arabian-app #aoApp .ao-products,
+  html body #website.ao-arabian-app #aoApp #menu .items{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+}
+@media(max-width:740px){
+  #website.ao-arabian-app #aoApp{padding-bottom:calc(76px + env(safe-area-inset-bottom))!important;}
+  #website.ao-arabian-app #aoApp .ao-toolbar{
+    height:127px!important;padding:9px 15px 12px!important;
+    display:grid!important;grid-template-columns:minmax(0,1fr) 80px 42px!important;
+    grid-template-rows:56px 43px!important;grid-template-areas:'brand lang cart' 'search search search'!important;
+    gap:6px 7px!important;align-content:start!important;
+  }
+  #website.ao-arabian-app #aoApp .ao-header-brand{grid-area:brand;min-width:0!important;max-width:none!important;gap:8px!important;}
+  #website.ao-arabian-app #aoApp .ao-header-brand img{width:41px;height:41px;}
+  #website.ao-arabian-app #aoApp .ao-header-brand>span{font:800 13px/1.18 'DM Sans',sans-serif!important;white-space:normal!important;letter-spacing:-.27px!important;overflow-wrap:normal!important;}
+  #website.ao-arabian-app #aoApp .ao-header-language{grid-area:lang;width:80px!important;min-width:80px!important;height:40px!important;padding:3px!important;}
+  #website.ao-arabian-app #aoApp .ao-header-language .lang-option{min-width:28px!important;height:30px!important;padding:0 4px!important;font-size:10px!important;}
+  #website.ao-arabian-app #aoApp .ao-header-language .lang-ar{min-width:32px!important;font-size:10px!important;}
+  #website.ao-arabian-app #aoApp .ao-toolbar-search{grid-area:search!important;grid-column:auto!important;grid-row:auto!important;height:43px!important;width:100%!important;max-width:none!important;}
+  #website.ao-arabian-app #aoApp .ao-toolbar-account{display:none!important;}
+  #website.ao-arabian-app #aoApp .ao-toolbar-cart{grid-area:cart!important;grid-column:auto!important;grid-row:auto!important;width:41px!important;min-width:41px!important;height:41px!important;}
+  #website.ao-arabian-app #aoApp .ao-content{padding:0 13px 15px!important;}
+  #website.ao-arabian-app #aoApp .ao-hero{height:259px!important;}
+  #website.ao-arabian-app #aoApp .ao-hero-copy{padding:16px 13px!important;}
+  #website.ao-arabian-app #aoApp .ao-products,
+  html body #website.ao-arabian-app #aoApp #menu .items{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}
+  #website.ao-arabian-app #aoApp .ao-product-art,
+  html body #website.ao-arabian-app #aoApp #menu .menu-card .media{height:148px!important;min-height:148px!important;}
+  #website.ao-arabian-app #aoApp .ao-product-content,
+  html body #website.ao-arabian-app #aoApp #menu .menu-card .content{padding:10px 11px!important;}
+  #website.ao-arabian-app #aoApp .ao-product-content h3,
+  html body #website.ao-arabian-app #aoApp #menu .menu-card h4{font-size:15px!important;}
+  #website.ao-arabian-app #aoApp #reservation .reservation-form-shell{padding:14px!important;border-radius:18px!important;}
+  #website.ao-arabian-app #aoApp #reservation .reservation-form-header{padding:17px!important;border-radius:16px!important;}
+  #website.ao-arabian-app #aoApp #reservation .reservation-grid{grid-template-columns:minmax(0,1fr)!important;gap:12px!important;}
+  #website.ao-arabian-app #aoApp #reservation .reservation-grid .reservation-field{grid-column:1!important;}
+  #website.ao-arabian-app #aoApp .ao-page-footer{
+    grid-template-columns:1fr!important;row-gap:12px!important;
+    padding:18px 18px calc(22px + env(safe-area-inset-bottom))!important;
+  }
+  #website.ao-arabian-app #aoApp .ao-footer-nav{justify-content:flex-start!important;}
+  #website.ao-arabian-app #aoApp .ao-footer-bottom{align-items:flex-start!important;flex-direction:column!important;}
+  #website.ao-arabian-app #aoApp .ao-page-footer button{min-height:34px!important;}
+}
+@media(max-width:380px){
+  #website.ao-arabian-app #aoApp .ao-toolbar{grid-template-columns:minmax(0,1fr) 70px 40px!important;padding:9px 12px 10px!important;gap:6px!important;}
+  #website.ao-arabian-app #aoApp .ao-header-brand img{width:37px;height:37px;}
+  #website.ao-arabian-app #aoApp .ao-header-brand>span{font-size:11.5px!important;line-height:1.13!important;}
+  #website.ao-arabian-app #aoApp .ao-header-language{width:70px!important;min-width:70px!important;}
+  #website.ao-arabian-app #aoApp .ao-header-language .lang-option{min-width:24px!important;padding:0 3px!important;}
+  #website.ao-arabian-app #aoApp .ao-header-language .lang-ar{min-width:28px!important;font-size:9px!important;}
+  #website.ao-arabian-app #aoApp .ao-product-art,
+  html body #website.ao-arabian-app #aoApp #menu .menu-card .media{height:134px!important;min-height:134px!important;}
+}
+@media(prefers-reduced-motion:reduce){
+  #website.ao-arabian-app #aoApp :is(.ao-page-footer button,.ao-header-language,.ao-product){transition:none!important;}
+}
+
+/* Mobile header placement: explicit grid coordinates override the legacy
+   grid-row/grid-column declarations which were still winning over grid-area. */
+@media(max-width:740px){
+ #website.ao-arabian-app #aoApp .ao-header-brand{
+   grid-column:1!important;grid-row:1!important;align-self:center!important;
+ }
+ #website.ao-arabian-app #aoApp .ao-header-language{
+   grid-column:2!important;grid-row:1!important;align-self:center!important;
+ }
+ #website.ao-arabian-app #aoApp .ao-toolbar-cart{
+   grid-column:3!important;grid-row:1!important;align-self:center!important;
+ }
+ #website.ao-arabian-app #aoApp .ao-toolbar-search{
+   grid-column:1 / -1!important;grid-row:2!important;align-self:center!important;
+ }
+}
+@media(min-width:1550px){
+ #website.ao-arabian-app #aoApp .ao-toolbar{
+   justify-content:space-between!important;
+ }
+}
+
+/* Reservation fix: the legacy desktop form had a 0.78fr/1.25fr two-pane
+   grid. The new header and form are intentionally stacked full-width. */
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-shell{
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ justify-content:flex-start!important;gap:0!important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header,
+html body #website.ao-arabian-app #aoApp #reservation #reservationForm{
+ width:100%!important;max-width:none!important;min-width:0!important;flex:0 0 auto!important;
+}
+html body #website.ao-arabian-app #aoApp #reservation #reservationForm{
+ display:block!important;margin:0!important;padding:0!important;
+}
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .media{
+ height:158px!important;min-height:158px!important;
+}
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content{
+ padding:12px 13px 13px!important;gap:5px!important;text-align:left!important;
+}
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content h4{
+ font:750 17px/1.2 'Fraunces',Georgia,serif!important;min-height:0!important;margin:3px 0!important;
+}
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content>p{
+ font:500 11px/1.45 'DM Sans',Arial,sans-serif!important;min-height:30px!important;
+ margin:0 0 8px!important;color:#777468!important;
+}
+#website.ao-arabian-app #aoApp .ao-content{max-width:1300px!important;}
+html[data-lang="ar"] #website.ao-arabian-app #aoApp #menu .items .menu-card .content{text-align:right!important;}
+@media(max-width:740px){
+ html body #website.ao-arabian-app #aoApp #menu .items .menu-card .media{height:148px!important;min-height:148px!important;}
+ html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content{padding:10px 11px!important;}
+ html body #website.ao-arabian-app #aoApp #menu .items .menu-card .content h4{font-size:15px!important;}
+}
+@media(max-width:380px){
+ html body #website.ao-arabian-app #aoApp #menu .items .menu-card .media{height:134px!important;min-height:134px!important;}
+}
+
+/* Consistent alignment on the reservations banner. */
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header,
+html body #website.ao-arabian-app #aoApp #reservation .reservation-form-header h3{
+ text-align:left!important;
+}
+html body #website.ao-arabian-app #aoApp #reservation .reservation-grid>.reservation-field:nth-child(1),
+html body #website.ao-arabian-app #aoApp #reservation .reservation-grid>.reservation-field:nth-child(2){grid-column:auto!important;}
+@media(max-width:740px){
+ html body #website.ao-arabian-app #aoApp #reservation .reservation-grid>.reservation-field:nth-child(1),
+ html body #website.ao-arabian-app #aoApp #reservation .reservation-grid>.reservation-field:nth-child(2){grid-column:1!important;}
+}
+
+/* Native Menu cards mirror the Popular Dishes card art and metadata. */
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .media{
+ display:grid!important;place-items:center!important;
+ background:radial-gradient(ellipse at center,#fff8e8 20%,#f3ead7 100%)!important;
+}
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .media:before{
+ content:'';position:absolute;inset:15px;border:1px dashed #e3ceb0;
+ border-radius:50%;transform:scale(.85);opacity:.7;pointer-events:none;
+}
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .media>img{
+ width:90%!important;height:90%!important;border-radius:50%!important;
+ object-fit:cover!important;position:relative!important;z-index:1;
+ transform:rotate(-5deg)!important;
+ filter:drop-shadow(0 10px 12px rgba(92,65,37,.17))!important;
+ transition:transform .5s ease!important;
+}
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card:hover .media>img{
+ transform:rotate(1deg) scale(1.09)!important;
+}
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .ao-native-sticker{
+ position:absolute;z-index:4;top:10px;right:10px;
+ padding:6px 9px;background:#fff9e9ed;color:#8d6836;
+ border-radius:15px;font-size:8px;font-weight:900;letter-spacing:.3px;
+ box-shadow:0 4px 10px rgba(93,66,31,.12);
+}
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .ao-menu-category{
+ font-size:9px!important;letter-spacing:.7px!important;font-weight:900!important;color:#a17f56!important;
+ text-transform:none!important;line-height:1.25!important;
+}
+html body #website.ao-arabian-app #aoApp #menu .items .menu-card .ao-native-heart{
+ left:10px!important;right:auto!important;top:10px!important;z-index:5!important;
+}
+
+/* Keep the toolbar actions aligned with the right edge on ordinary laptops. */
+@media(min-width:1190px) and (max-width:1549px){
+ #website.ao-arabian-app #aoApp .ao-toolbar-contact{margin-left:auto!important;}
+}

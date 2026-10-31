@@ -1,0 +1,458 @@
+/* AFGR workspace repair, 2026-10-27.
+   Admin/staff only. Isolates legacy dark-theme panels from the light workspace.
+   Does not change storefront, checkout, customer navigation or Supabase logic. */
+#adminPanel, #staffPanel {
+  --ws-ink: #19382d;
+  --ws-muted: #526b5d;
+  --ws-soft: #718578;
+  --ws-border: #dce7dd;
+  --ws-paper: #ffffff;
+  --ws-wash: #f7faf7;
+}
+html body :is(#adminPanel, #staffPanel) .content {
+  color: var(--ws-ink) !important;
+  line-height: 1.5;
+  font-size: 13px;
+}
+html body :is(#adminPanel, #staffPanel) .content :is(.admin-menu-manager,.admin-menu-card,.dashboard-card,.admin-card,.panel-section,.settings-card,.settings-group,.form-section,.request-card,.staff-section-card,.analytics-surface,.unified-reporting-module) {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+/* The menu editor's dark-theme headings were almost white on white. */
+html body :is(#adminPanel, #staffPanel) .content :is(.admin-menu-header,.admin-menu-card-head) h3,
+html body :is(#adminPanel, #staffPanel) .content :is(.admin-menu-header,.admin-menu-card-head) h4,
+html body :is(#adminPanel, #staffPanel) .content :is(.admin-menu-card,.settings-group,.settings-card,.notification-setting-card,.form-group,.admin-notif-section-block) :is(h3,h4,h5,legend),
+html body :is(#adminPanel, #staffPanel) .content :is(.dashboard-toolbar-copy,.table-title-group,.report-summary-panel) :is(h3,h4,strong),
+html body :is(#adminPanel, #staffPanel) .content :is(.disabled-products-widget,.disabled-products-list) :is(h4,strong,.dp-name) {
+  color: var(--ws-ink) !important;
+  text-shadow: none !important;
+}
+html body :is(#adminPanel, #staffPanel) .content :is(.admin-menu-header,.admin-menu-card-head,.table-toolbar,.dashboard-toolbar-copy,.notification-setting-card,.disabled-products-widget,.form-group,.restaurant-name-style-block,.settings-group,.settings-card) p,
+html body :is(#adminPanel, #staffPanel) .content :is(.disabled-products-sub,.disabled-products-empty,.disabled-products-list .dp-category,.dashboard-order-meta) {
+  color: var(--ws-muted) !important;
+  opacity: 1 !important;
+}
+/* Fix card interiors that still use charcoal overlays inherited from the old theme. */
+html body :is(#adminPanel, #staffPanel) .content :is(.admin-menu-card,.admin-notif-section-block,.notification-setting-card,.restaurant-name-style-block,.settings-card,.settings-group) {
+  background: var(--ws-paper) !important;
+  border: 1px solid var(--ws-border) !important;
+  color: var(--ws-ink) !important;
+  border-radius: 17px !important;
+  box-shadow: 0 7px 20px rgba(24,58,41,.055) !important;
+}
+html body :is(#adminPanel, #staffPanel) .content .admin-menu-card {
+  padding: clamp(13px,1.7vw,21px) !important;
+  margin: 15px 0 !important;
+  overflow: hidden !important;
+}
+html body :is(#adminPanel, #staffPanel) .content .admin-menu-card-head {margin-bottom: 15px !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-menu-card-head h4 {font-size: 17px !important;line-height:1.3 !important;margin:0 0 4px !important;letter-spacing:-.02em !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-menu-card-head p {font-size:12px !important;margin:0 !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-menu-header {gap:12px !important;margin-bottom:18px !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-menu-header h3 {font-size:clamp(21px,2.1vw,27px) !important;line-height:1.2 !important;margin:0 0 5px !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-menu-header p {margin:0 !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-menu-search-wrap {min-width:0;flex:0 1 340px !important;max-width:100% !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-menu-search-input {width:100% !important;padding-left:37px !important;padding-right:35px !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-menu-search-icon {color:#4f7561 !important;z-index:1;}
+html body :is(#adminPanel, #staffPanel) .content .admin-menu-search-clear {color:#3e6050 !important;background:#eaf1eb !important;}
+/* Notifications: make the primary and per-section toggles legible. */
+html body :is(#adminPanel, #staffPanel) .content .admin-notif-section-block {padding:18px !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-notif-block-head {border-bottom-color:var(--ws-border) !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-notif-block-head h5 {color:var(--ws-ink) !important;font-size:16px !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-notif-block-head p {color:var(--ws-muted) !important;opacity:1 !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-notif-pref-list .toggle-row {
+  background:var(--ws-wash) !important;border:1px solid var(--ws-border) !important;
+  border-radius:12px !important;padding:13px 14px !important;min-width:0;
+}
+html body :is(#adminPanel, #staffPanel) .content .admin-notif-pref-list .toggle-row strong {color:var(--ws-ink) !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-notif-pref-list .toggle-row small {color:var(--ws-muted) !important;opacity:1 !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-notif-pref-list .toggle-row > span {min-width:0;}
+html body :is(#adminPanel, #staffPanel) .content .admin-notif-pref-list .switch {flex:0 0 auto !important;}
+html body :is(#adminPanel, #staffPanel) .content .restaurant-name-style-block {padding:14px !important;}
+html body :is(#adminPanel, #staffPanel) .content .restaurant-name-style-block > p,
+html body :is(#adminPanel, #staffPanel) .content .restaurant-name-style-block p[style] {color:var(--ws-muted) !important;}
+/* Keep input affordances visible and keep toggles as toggles. */
+html body :is(#adminPanel, #staffPanel) .content .form-group > label,
+html body :is(#adminPanel, #staffPanel) .content .form-group > div > label {color:#314f3e !important;font-weight:750 !important;}
+html body :is(#adminPanel, #staffPanel) .content :is(input:not([type="checkbox"]):not([type="radio"]),textarea,select) {
+  border-color:#cfded1 !important;background:#fff !important;color:#1d382c !important;
+}
+html body :is(#adminPanel, #staffPanel) .content :is(input,select,textarea):disabled {background:#f0f4f0 !important;color:#5b7062 !important;opacity:.8;}
+html body :is(#adminPanel, #staffPanel) .content :is(select,option) {background:#fff !important;color:#19382d !important;}
+html body :is(#adminPanel, #staffPanel) .content input::placeholder,
+html body :is(#adminPanel, #staffPanel) .content textarea::placeholder {color:#73877a !important;opacity:1;}
+/* A reusable, predictable work-table layout. Tables stay horizontally scrollable
+   on narrow devices rather than cutting off fields or hiding controls. */
+html body :is(#adminPanel, #staffPanel) .content :is(.table,.admin-compact-table,.advanced-report-table) {background:#fff !important;border-color:var(--ws-border) !important;box-shadow:none !important;}
+html body :is(#adminPanel, #staffPanel) .content .admin-menu-categories-card table {min-width:0 !important;}
+html body :is(#adminPanel, #staffPanel) .content :is(.table,.admin-compact-table) th {background:#eef4ef !important;color:#405c4b !important;}
+html body :is(#adminPanel, #staffPanel) .content :is(.table,.admin-compact-table) td {background:#fff !important;color:#334f40 !important;}
+html body :is(#adminPanel, #staffPanel) .content .table-title-group strong[style] {color:var(--ws-ink) !important;}
+html body :is(#adminPanel, #staffPanel) .content :is(.compact-table-wrap,.table-responsive,.table-wrapper,.data-table-wrap,.analytics-table-wrap,.advanced-report-table-scroll) {
+  max-width:100% !important;overflow-x:auto !important;overflow-y:visible;
+  -webkit-overflow-scrolling:touch;
+  border-radius:13px;
+}
+html body :is(#adminPanel, #staffPanel) .content :is(.admin-menu-categories-card,.admin-menu-products-card) .admin-compact-table {width:100% !important;}
+html body :is(#adminPanel, #staffPanel) .content :is(.dashboard-main-grid,.admin-insight-grid,.analytics-panel-grid,.notification-settings-grid,.restaurant-name-style-grid,.settings-grid) > * {min-width:0 !important;}
+/* Old dark card copy on the light dashboard was invisible. */
+html body :is(#adminPanel, #staffPanel) .content :is(.disabled-products-sub,.disabled-products-empty,.disabled-products-list .dp-category,.disabled-products-list .dp-name) {color:#50695a !important;}
+html body :is(#adminPanel, #staffPanel) .content .disabled-products-list li {background:#fcf7f4 !important;border-color:#f2ddd0 !important;}
+html body :is(#adminPanel, #staffPanel) .content :is(.analytics-status-card,.report-summary-panel,.notification-setting-card) :is(p,small,span) {color:var(--ws-muted) !important;}
+/* Preserve intentionally dark statistics/chart cards; keep their writing light. */
+html body :is(#adminPanel, #staffPanel) .content :is(.dashboard-chart,.analytics-chart-card,.analytics-chart-grid .analytics-chart-card) {background:#173d31 !important;border-color:#2a5847 !important;color:#e9f4ed !important;}
+html body :is(#adminPanel, #staffPanel) .content :is(.dashboard-chart,.analytics-chart-card) :is(h3,h4,h5,p,small,span) {color:#ecf5ed !important;}
+/* Consistent spacing and responsive treatment for fields and actions. */
+html body :is(#adminPanel, #staffPanel) .content :is(.table-toolbar,.admin-menu-header,.dashboard-toolbar,.workspace-section-intro) {min-width:0;}
+html body :is(#adminPanel, #staffPanel) .content button {white-space:normal;overflow-wrap:break-word;}
+html body :is(#adminPanel, #staffPanel) .content :is(.admin-menu-card,.admin-menu-manager,.form-group,.dashboard-shell,.analytics-surface,.panel-section) img {max-width:100%;}
+html body :is(#adminPanel, #staffPanel) .content :focus-visible {outline:3px solid #7aa58a !important;outline-offset:2px !important;}
+/* Only staff/admin modals: restore form readability if panel theme is active. */
+body:has(#adminPanel.active) :is(#editItemModal,#editStaffModal,#offerModal,#editOfferModal) .modal-content,
+body:has(#staffPanel.active) :is(#editItemModal,#editStaffModal,#offerModal,#editOfferModal) .modal-content {color:#f8f3e8;}
+@media(max-width:1120px) {
+  html body :is(#adminPanel,#staffPanel).workspace-nav-open nav {z-index:2705 !important;}
+  .workspace-drawer-overlay {z-index:2695 !important;}
+  html body :is(#adminPanel,#staffPanel) .content :is(.dashboard-main-grid,.admin-insight-grid,.restaurant-name-style-grid,.analytics-panel-grid) {grid-template-columns:minmax(0,1fr) !important;}
+}
+@media(max-width:768px) {
+  html body :is(#adminPanel,#staffPanel) .content {overflow-x:hidden !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-header {display:flex !important;align-items:stretch !important;flex-direction:column !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-search-wrap {flex:1 1 auto !important;width:100% !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-card {padding:13px !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table {display:table !important;width:100% !important;min-width:0 !important;overflow:visible !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table th,
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td {padding:9px !important;max-width:none !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td:last-child {white-space:nowrap;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td button {min-height:35px !important;padding:8px 10px !important;min-width:0 !important;}
+  /* Mobile product cards from legacy CSS have bright lettering on a white surface. */
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-products-card .admin-compact-table {display:block !important;min-width:0 !important;background:transparent !important;border:0 !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-products-card .admin-compact-table tr {background:#fff !important;border:1px solid var(--ws-border) !important;box-shadow:0 2px 6px #143b240b !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-products-card .admin-compact-table td:first-child {color:var(--ws-ink) !important;border-color:var(--ws-border) !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-products-card .admin-compact-table td::before {color:#516f5e !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-products-card .admin-compact-table td {color:var(--ws-ink) !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-products-card .admin-compact-table td:last-child {border-top-color:var(--ws-border) !important;flex-wrap:wrap !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-notif-block-head {flex-direction:row !important;align-items:center !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-notif-block-head .switch {align-self:center !important;}
+  html body :is(#adminPanel,#staffPanel) .content :is(.notification-settings-grid,.analytics-chart-grid,.dashboard-main-grid,.admin-insight-grid,.analytics-panel-grid,.settings-grid) {grid-template-columns:minmax(0,1fr) !important;}
+  html body :is(#adminPanel,#staffPanel) .content :is(.table-toolbar,.dashboard-toolbar,.analytics-filter-bar) {min-width:0 !important;flex-wrap:wrap !important;}
+}
+@media(max-width:460px) {
+  html body :is(#adminPanel,#staffPanel) .content .admin-notif-section-block {padding:14px !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-notif-pref-list .toggle-row {gap:8px;padding:11px !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-notif-pref-list .toggle-row strong {font-size:12px !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-notif-pref-list .toggle-row small {font-size:10px !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table th,
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td {font-size:11px !important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td:last-child {white-space:normal;}
+}
+/* Scrolling reports and account tables: keep all columns accessible by touch. */
+html body :is(#adminPanel,#staffPanel) .content .workspace-table-scroll {
+  display:block !important;width:100% !important;max-width:100% !important;
+  overflow-x:auto !important;overflow-y:hidden !important;
+  -webkit-overflow-scrolling:touch;scrollbar-width:thin;
+  background:#fff;border:1px solid var(--ws-border);border-radius:14px;
+  margin:0 0 18px;box-shadow:0 3px 11px #153e2709;
+}
+html body :is(#adminPanel,#staffPanel) .content .workspace-table-scroll > table {
+  width:100% !important;min-width:680px !important;margin:0 !important;
+  display:table !important;border:0 !important;overflow:visible !important;
+}
+html body :is(#adminPanel,#staffPanel) .content .workspace-table-scroll th,
+html body :is(#adminPanel,#staffPanel) .content .workspace-table-scroll td {white-space:normal !important;}
+/* True toggles (the old track was nearly white on the new light theme). */
+html body :is(#adminPanel,#staffPanel) .content .switch {position:relative !important;display:inline-block !important;width:54px !important;height:30px !important;flex:0 0 54px !important;}
+html body :is(#adminPanel,#staffPanel) .content .switch > input {position:absolute !important;opacity:0 !important;width:1px !important;height:1px !important;}
+html body :is(#adminPanel,#staffPanel) .content .switch > .switch-slider,
+html body :is(#adminPanel,#staffPanel) .content .switch-slider {background:#bfcec2 !important;border:1px solid #aebfae !important;box-shadow:inset 0 1px 4px #00000013 !important;}
+html body :is(#adminPanel,#staffPanel) .content .switch-slider::before {background:#fff !important;box-shadow:0 2px 6px #0003 !important;}
+html body :is(#adminPanel,#staffPanel) .content .switch input:checked + .switch-slider {background:#287450 !important;border-color:#287450 !important;}
+html body :is(#adminPanel,#staffPanel) .content .switch input:focus-visible + .switch-slider {outline:3px solid #7aa58a !important;outline-offset:2px !important;}
+/* Preserve row headings and status badges with sufficient contrast. */
+html body :is(#adminPanel,#staffPanel) .content :is(.staff-section-card,.staff-section-card-grid) :is(h4,h5,strong) {color:var(--ws-ink) !important;}
+html body :is(#adminPanel,#staffPanel) .content :is(.staff-section-card,.staff-section-card-grid) :is(p,small) {color:var(--ws-muted) !important;}
+
+/* ===========================================================================
+   AFGR Workspace UX v2 - admin and staff only.
+   Added after prior workspace fixes so storefront / checkout / Get App remain
+   completely untouched. Strong contrast, clearer structure, usable touch sizes.
+   =========================================================================== */
+html body :is(#adminPanel,#staffPanel) {
+  --ws-v2-ink:#173a2e;
+  --ws-v2-secondary:#405e4e;
+  --ws-v2-muted:#647b6c;
+  --ws-v2-line:#dae6da;
+  --ws-v2-paper:#ffffff;
+  --ws-v2-soft:#f5f9f5;
+  --ws-v2-focus:#327957;
+}
+/* Sidebar finder is useful when a manager has access to many modules. */
+html body :is(#adminPanel,#staffPanel) nav .ws-nav-finder {
+  display:flex;align-items:center;gap:10px;position:sticky;top:-23px;z-index:4;
+  width:100%;min-width:0;margin:0 0 16px;padding:7px 12px;
+  background:#25503d;border:1px solid #3a6b54;border-radius:12px;
+  color:#c8e0d1;box-shadow:0 5px 15px rgba(5,24,14,.08);
+}
+html body :is(#adminPanel,#staffPanel) nav .ws-nav-finder:focus-within {
+  border-color:#a0ddba;box-shadow:0 0 0 3px rgba(133,214,164,.22);
+}
+html body :is(#adminPanel,#staffPanel) nav .ws-nav-finder svg {
+  flex:none;width:17px;height:17px;stroke:currentColor;fill:none;
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
+}
+html body :is(#adminPanel,#staffPanel) nav input.ws-nav-search {
+  display:block;width:100%;min-width:0;min-height:32px;line-height:1.35;
+  border:0!important;outline:0!important;box-shadow:none!important;
+  background:transparent!important;color:#fff!important;
+  padding:4px 0!important;border-radius:0!important;
+  font:600 12px/1.3 var(--app-font,'Poppins',sans-serif)!important;
+}
+html body :is(#adminPanel,#staffPanel) nav input.ws-nav-search::placeholder {color:#bcdbca!important;opacity:1!important;}
+html body :is(#adminPanel,#staffPanel) nav .ws-nav-empty {
+  margin:6px 8px 12px;padding:12px 10px;text-align:center;
+  border:1px dashed #557b65;border-radius:10px;color:#d8ebde;
+  font:600 12px/1.5 var(--app-font,'Poppins',sans-serif);
+}
+html body :is(#adminPanel,#staffPanel) nav li[hidden],
+html body :is(#adminPanel,#staffPanel) nav .ws-nav-empty[hidden] {display:none!important;}
+html body :is(#adminPanel,#staffPanel) nav li:focus-visible,
+html body :is(#adminPanel,#staffPanel) .workspace-menu-toggle:focus-visible,
+html body :is(#adminPanel,#staffPanel) header .logout:focus-visible {
+  outline:3px solid #9fdbb8!important;outline-offset:3px!important;
+}
+html body :is(#adminPanel,#staffPanel) .workspace-header-mobile-page {display:none;}
+/* Avoid duplicated section title between page breadcrumb and section module. */
+html body :is(#adminPanel,#staffPanel) .content .ws-duplicate-section-title {display:none!important;}
+/* Stable white tables: historical dark-theme styles targeted these descendants. */
+html body :is(#adminPanel,#staffPanel) .content :is(.erp-table,.analytics-table,.advanced-report-table,.admin-compact-table,.table) {
+  background:#fff!important;color:var(--ws-v2-ink)!important;
+}
+html body :is(#adminPanel,#staffPanel) .content :is(.erp-table,.analytics-table,.advanced-report-table,.admin-compact-table,.table) td,
+html body :is(#adminPanel,#staffPanel) .content :is(.erp-table,.analytics-table) :is(.erp-identity-cell strong,.bill-products-cell strong),
+html body :is(#adminPanel,#staffPanel) .content :is(.erp-table,.analytics-table) :is(.erp-identity-cell span,.erp-muted-text,.bill-products-cell) {
+  color:var(--ws-v2-ink)!important;opacity:1!important;
+}
+html body :is(#adminPanel,#staffPanel) .content :is(.erp-table,.analytics-table,.advanced-report-table,.admin-compact-table,.table) th {
+  background:#edf4ed!important;color:#375442!important;
+  border-bottom:1px solid #d5e3d6!important;
+}
+html body :is(#adminPanel,#staffPanel) .content :is(.erp-table,.analytics-table,.advanced-report-table,.admin-compact-table,.table) tbody tr:hover td {
+  background:#f4f8f3!important;
+}
+html body :is(#adminPanel,#staffPanel) .content :is(.erp-table-wrap,.analytics-table-wrap,.workspace-table-scroll,.table-responsive,.table-wrapper,.compact-table-wrap,.data-table-wrap,.analytics-table-wrap,.advanced-report-table-scroll).ws-v2-scroll-region {
+  max-width:100%!important;overflow-x:auto!important;overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:#b3cbb5 #f4f8f3;
+  -webkit-overflow-scrolling:touch;
+}
+html body :is(#adminPanel,#staffPanel) .content .ws-v2-table-hint {
+  display:none;align-items:center;gap:8px;width:max-content;max-width:100%;
+  margin:7px 0;padding:5px 9px;border-radius:8px;
+  background:#e9f3e8;color:#365b46;border:1px solid #d7e7d5;
+  font:750 11px/1.4 var(--app-font,'Poppins',sans-serif);
+}
+html body :is(#adminPanel,#staffPanel) .content .ws-v2-table-hint svg {width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8;}
+/* The mobile account cards were charcoal with near-black body copy. */
+html body :is(#adminPanel,#staffPanel) .content .admin-data-card {
+  min-width:0!important;background:#fff!important;border:1px solid var(--ws-v2-line)!important;
+  color:var(--ws-v2-ink)!important;border-radius:17px!important;
+  box-shadow:0 7px 20px rgba(25,55,40,.055)!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .admin-mobile-card {
+  min-width:0!important;background:#fff!important;color:var(--ws-v2-ink)!important;
+  border:1px solid var(--ws-v2-line)!important;border-radius:14px!important;
+  box-shadow:0 3px 13px rgba(25,55,40,.055)!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .admin-mobile-card :is(strong,b,h3,h4,p) {color:var(--ws-v2-ink)!important;}
+html body :is(#adminPanel,#staffPanel) .content .admin-mobile-field span {color:#4e6957!important;}
+html body :is(#adminPanel,#staffPanel) .content .admin-mobile-field :is(strong,p) {color:#203f31!important;}
+html body :is(#adminPanel,#staffPanel) .content .admin-mobile-card-list {min-width:0!important;}
+html body :is(#adminPanel,#staffPanel) .content :is(.erp-muted-text,.dashboard-order-meta,.report-summary-line span) {color:#4f6958!important;}
+/* Content hierarchy and card rhythm */
+html body :is(#adminPanel,#staffPanel) .content .workspace-section-intro {min-width:0;gap:12px;}
+html body :is(#adminPanel,#staffPanel) .content .workspace-section-intro p {color:#607769!important;line-height:1.55!important;}
+html body :is(#adminPanel,#staffPanel) .content :is(.admin-page-shell,.admin-menu-manager,.reservation-admin-page,.dashboard-shell,.analytics-surface,.settings-grid,.about-admin-grid,.announcement-settings-grid) {min-width:0!important;max-width:100%!important;}
+html body :is(#adminPanel,#staffPanel) .content .admin-page-shell {gap:16px!important;}
+html body :is(#adminPanel,#staffPanel) .content .admin-page-head {min-width:0!important;}
+html body :is(#adminPanel,#staffPanel) .content :is(.form-group,.form-section,.form-row,.admin-toolbar,.admin-mobile-field) {min-width:0;}
+html body :is(#adminPanel,#staffPanel) .content :is(input:not([type=checkbox]):not([type=radio]),select,textarea) {
+  font-family:var(--app-font,'Poppins',sans-serif)!important;
+  color:#1c3d2c!important;background:#fff!important;border:1px solid #bfcfc1!important;
+  max-width:100%!important;box-shadow:none!important;
+}
+html body :is(#adminPanel,#staffPanel) .content :is(input:not([type=checkbox]):not([type=radio]),select,textarea):focus-visible {
+  border-color:var(--ws-v2-focus)!important;box-shadow:0 0 0 3px rgba(56,139,91,.15)!important;
+}
+html body :is(#adminPanel,#staffPanel) .content :is(.field-hint,.form-group small,.admin-menu-card-head p) {color:#506b58!important;line-height:1.6!important;}
+html body :is(#adminPanel,#staffPanel) .content .form-group > label {color:#254735!important;font-weight:800!important;}
+html body :is(#adminPanel,#staffPanel) .content :is(.settings-card,.settings-group,.notification-setting-card,.request-card,.admin-menu-card,.admin-data-card) {min-width:0;}
+html body :is(#adminPanel,#staffPanel) .content :is(button.btn,button[type=submit],.admin-action-btn) {min-height:42px!important;transition:filter .18s ease,box-shadow .18s ease!important;}
+html body :is(#adminPanel,#staffPanel) .content :is(button.btn,button[type=submit],.admin-action-btn):not(:disabled):hover {filter:brightness(1.09);box-shadow:0 5px 13px #153f2d20!important;}
+html body :is(#adminPanel,#staffPanel) .content button:disabled {opacity:.6!important;cursor:not-allowed!important;}
+/* Dashboard icons are locally drawn SVGs, so they never disappear offline. */
+html body :is(#adminPanel,#staffPanel) .content .analytics-kpi-icon svg.ws-kpi-svg {
+  display:block;width:22px;height:22px;fill:none;stroke:#28694b;
+  stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;
+}
+/* Empty modules should be visible and purposeful rather than a lonely line. */
+html body :is(#adminPanel,#staffPanel) .content p.ws-v2-empty-state {
+  display:flex;align-items:center;justify-content:center;min-height:125px;
+  padding:26px 18px!important;margin:14px 0 20px!important;
+  background:#fff!important;border:1px dashed #b7d2bf!important;
+  border-radius:15px!important;color:#516c5d!important;
+  text-align:center!important;font:600 13px/1.6 var(--app-font,'Poppins',sans-serif)!important;
+}
+/* Make modals opened from the workspace consistent with the light theme. */
+body:has(:is(#adminPanel.active,#staffPanel.active)) .modal:not(#orderDetailsModal) .modal-content {
+  background:#fff!important;color:#1c4030!important;border-color:#d7e4d6!important;
+  max-height:calc(100dvh - 24px)!important;overscroll-behavior:contain;
+}
+body:has(:is(#adminPanel.active,#staffPanel.active)) .modal:not(#orderDetailsModal) .modal-content :is(h2,h3,h4,h5,legend,strong) {color:#1d4030!important;}
+body:has(:is(#adminPanel.active,#staffPanel.active)) .modal:not(#orderDetailsModal) .modal-content :is(p,small,label,.field-hint,.product-enable-status,.offer-enable-status) {color:#4f6b59!important;opacity:1!important;}
+body:has(:is(#adminPanel.active,#staffPanel.active)) .modal:not(#orderDetailsModal) .modal-content :is(input:not([type=checkbox]):not([type=radio]),select,textarea) {color:#1d4030!important;background:#f8fbf7!important;border:1px solid #cedfce!important;}
+body:has(:is(#adminPanel.active,#staffPanel.active)) .modal:not(#orderDetailsModal) .modal-content input::placeholder {color:#718775!important;opacity:1!important;}
+body:has(:is(#adminPanel.active,#staffPanel.active)) .modal:not(#orderDetailsModal) .modal-content :is(button.btn,button[type=submit]) {min-height:43px!important;}
+@media(max-width:1120px) {
+  html body :is(#adminPanel,#staffPanel) nav .ws-nav-finder {top:0;}
+  html body :is(#adminPanel,#staffPanel).workspace-nav-open nav {box-shadow:15px 0 46px #112d2170!important;}
+  html body :is(#adminPanel,#staffPanel) .workspace-menu-toggle {min-height:42px!important;min-width:42px!important;}
+  html body :is(#adminPanel,#staffPanel) .content :is(.erp-table-wrap,.analytics-table-wrap,.workspace-table-scroll).ws-v2-scroll-region:not([hidden]) + .ws-v2-table-hint,
+  html body :is(#adminPanel,#staffPanel) .content .ws-v2-table-hint {font-size:11px;}
+  html body :is(#adminPanel,#staffPanel) .content .ws-v2-table-hint:not([hidden]) {display:inline-flex;}
+}
+@media(max-width:768px) {
+  /* Mobile section title remains readable instead of ellipsizing restaurant name. */
+  html body :is(#adminPanel,#staffPanel) .workspace-header-title > strong[id] {display:none!important;}
+  html body :is(#adminPanel,#staffPanel) .workspace-header-mobile-page {
+    display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    max-width:calc(100vw - 165px);font:800 15px/1.25 var(--app-font,'Poppins',sans-serif);
+    color:#1d4131;
+  }
+  html body :is(#adminPanel,#staffPanel) .content {padding-bottom:calc(28px + env(safe-area-inset-bottom,0px))!important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table,
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table tbody {
+    display:block!important;width:100%!important;border:0!important;overflow:visible!important;
+  }
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table thead {display:none!important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table tr:not([hidden]) {
+    display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;
+    align-items:center;gap:10px;width:100%;padding:8px 0;
+    border-bottom:1px solid #e7eee7!important;background:#fff!important;
+  }
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td {
+    display:block!important;min-width:0!important;border:0!important;background:transparent!important;
+    padding:3px 7px!important;color:#254a35!important;font-size:13px!important;
+  }
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td:first-child {font-weight:750;overflow-wrap:anywhere;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td.admin-row-actions {
+    display:flex!important;align-items:center!important;justify-content:flex-end!important;
+    flex-wrap:wrap!important;gap:6px!important;white-space:normal!important;
+  }
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td.admin-row-actions button {
+    min-width:0!important;width:auto!important;min-height:37px!important;
+    padding:8px 10px!important;font-size:11px!important;
+  }
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td.admin-row-actions button:nth-child(2) {
+    background:#fff5f3!important;color:#ad4436!important;border:1px solid #f2d9d3!important;
+  }
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table tr.admin-menu-search-empty {display:block!important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table tr.admin-menu-search-empty[hidden] {display:none!important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table tr.admin-menu-search-empty td {text-align:left!important;color:#61796b!important;}
+  html body :is(#adminPanel,#staffPanel) .content :is(.admin-toolbar,.dashboard-toolbar,.table-toolbar,.analytics-filter-bar) {max-width:100%;flex-wrap:wrap;gap:10px!important;}
+  html body :is(#adminPanel,#staffPanel) .content :is(.settings-grid,.notification-settings-grid,.admin-mobile-grid,.announcement-settings-grid,.about-admin-grid) {grid-template-columns:minmax(0,1fr)!important;}
+  html body :is(#adminPanel,#staffPanel) .content :is(input:not([type=checkbox]):not([type=radio]),select,textarea) {font-size:16px!important;min-height:45px!important;}
+  html body :is(#adminPanel,#staffPanel) .content .workspace-section-intro h2 {font-size:clamp(23px,6.4vw,29px)!important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-page-head {gap:12px!important;padding:16px!important;}
+  html body :is(#adminPanel,#staffPanel) .content :is(.admin-data-card,.admin-menu-card,.analytics-surface,.request-card) {border-radius:15px!important;}
+  html body :is(#adminPanel,#staffPanel) .content .analytics-kpi-card {min-width:0!important;}
+  body:has(:is(#adminPanel.active,#staffPanel.active)) .modal:not(#orderDetailsModal) .modal-content :is(input:not([type=checkbox]):not([type=radio]),select,textarea) {font-size:16px!important;}
+}
+@media(max-width:410px) {
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td.admin-row-actions button {min-height:38px!important;padding:7px 9px!important;font-size:10.5px!important;}
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table tr {gap:5px!important;}
+  html body :is(#adminPanel,#staffPanel) nav .ws-nav-finder {margin-bottom:13px;}
+}
+
+/* v2 QA refinements: dark management-page headers must retain light copy. */
+html body :is(#adminPanel,#staffPanel) .content .admin-page-head .admin-page-title-block p {
+  color:#d4ddd5!important;opacity:1!important;line-height:1.6!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .admin-page-head .admin-page-eyebrow {
+  color:#d7d1c5!important;opacity:1!important;
+}
+@media(max-width:768px) {
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td.admin-row-actions {
+    flex-wrap:nowrap!important;min-width:111px!important;width:auto!important;
+  }
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td.admin-row-actions button {
+    display:inline-flex!important;flex:0 0 auto!important;align-items:center!important;
+    justify-content:center!important;width:auto!important;margin:0!important;
+  }
+}
+@media(max-width:768px) {
+  html body :is(#adminPanel,#staffPanel) .content .admin-menu-categories-card .admin-compact-table td.admin-row-actions {
+    flex-direction:row!important;align-items:center!important;justify-content:flex-end!important;
+  }
+}
+
+/* v2 QA: account selection checkboxes were stretching to full card width,
+   squeezing the customer/staff identity completely off-screen. */
+html body :is(#adminPanel,#staffPanel) .content .admin-mobile-card-head {
+  display:flex!important;align-items:center!important;gap:12px!important;
+  width:100%;max-width:100%;min-width:0;
+}
+html body :is(#adminPanel,#staffPanel) .content .admin-mobile-card-head input.user-select-checkbox {
+  appearance:auto!important;display:block!important;position:static!important;
+  flex:0 0 19px!important;width:19px!important;max-width:19px!important;
+  min-width:19px!important;height:19px!important;min-height:19px!important;
+  margin:0!important;accent-color:#247451!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .admin-mobile-card-head .erp-identity-cell {
+  flex:1 1 auto!important;min-width:0!important;max-width:100%!important;
+  overflow-wrap:anywhere!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .admin-mobile-card .erp-identity-cell strong {color:#193c2c!important;font-size:14px!important;}
+html body :is(#adminPanel,#staffPanel) .content .admin-mobile-card .erp-identity-cell span {color:#587261!important;opacity:1!important;}
+html body :is(#adminPanel,#staffPanel) .content .admin-chip-list {max-width:100%!important;gap:6px!important;}
+html body :is(#adminPanel,#staffPanel) .content .admin-chip {
+  background:#edf4ec!important;color:#3b5f48!important;
+  border:1px solid #d2e4d1!important;box-shadow:none!important;
+  font-size:10px!important;min-height:25px!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .erp-table input.user-select-checkbox {
+  appearance:auto!important;width:17px!important;height:17px!important;
+  min-width:17px!important;min-height:17px!important;max-width:17px!important;
+  accent-color:#267551!important;
+}
+
+/* v2 populated-order QA: statuses on a light table must not inherit the old
+   pale-on-charcoal palette. These are panel-only; order modal is untouched. */
+html body :is(#adminPanel,#staffPanel) .content .status-pill {
+  background:#edf4ee!important;color:#2e6546!important;
+  border:1px solid #d2e4d3!important;font-weight:800!important;
+  font-size:11px!important;line-height:1.25!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .status-pill.status-pending {
+  background:#fff3db!important;color:#875509!important;border-color:#f1d69b!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .status-pill.status-accepted {
+  background:#e9f3fe!important;color:#215d91!important;border-color:#c6dff5!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .status-pill.status-preparing {
+  background:#fff0e8!important;color:#9a4c21!important;border-color:#f4d1bb!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .status-pill.status-out-for-delivery {
+  background:#f2edff!important;color:#6446a1!important;border-color:#dacff4!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .status-pill.status-delivered {
+  background:#e8f8ef!important;color:#176b41!important;border-color:#bee4ce!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .status-pill.status-cancelled {
+  background:#fff0ee!important;color:#a33331!important;border-color:#ecc8c5!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .orders-table-customer strong {
+  color:#254a37!important;font-weight:800!important;overflow-wrap:normal!important;
+}
+html body :is(#adminPanel,#staffPanel) .content .orders-table-customer small {
+  color:#536e5d!important;opacity:1!important;
+}

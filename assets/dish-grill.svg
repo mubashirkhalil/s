@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 680" role="img" aria-label="Illustration of a fresh mixed grill platter">
+ <defs>
+  <radialGradient id="plateg" cx="45%" cy="40%" r="65%"><stop stop-color="#ffffff"/><stop offset=".83" stop-color="#f5f2e9"/><stop offset="1" stop-color="#d4d6ca"/></radialGradient>
+  <radialGradient id="foodg" cx="50%" cy="35%" r="75%"><stop stop-color="#f5c66f"/><stop offset="1" stop-color="#bd6e26"/></radialGradient>
+  <linearGradient id="kebab" x2="1" y2="1"><stop stop-color="#e9a157"/><stop offset=".43" stop-color="#ac512c"/><stop offset="1" stop-color="#5e3223"/></linearGradient>
+  <linearGradient id="chicken" x2=".8" y2="1"><stop stop-color="#fbc26b"/><stop offset=".5" stop-color="#df803c"/><stop offset="1" stop-color="#925029"/></linearGradient>
+  <radialGradient id="lemon"><stop stop-color="#fff9b3"/><stop offset="1" stop-color="#e4b528"/></radialGradient>
+  <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="19"/></filter>
+  <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="13" stdDeviation="16" flood-color="#07251b" flood-opacity=".36"/></filter>
+ </defs>
+ <rect width="720" height="680" rx="48" fill="#E1EFE2"/><ellipse cx="365" cy="361" rx="277" ry="244" fill="#001b12" opacity=".38" filter="url(#shadow)"/>
+ <g filter="url(#soft)">
+ <ellipse cx="360" cy="331" rx="265" ry="244" fill="#d3d9cb"/>
+ <ellipse cx="360" cy="319" rx="258" ry="239" fill="url(#plateg)"/>
+ <ellipse cx="360" cy="319" rx="224" ry="205" fill="#f6f5ea" stroke="#e5e8de" stroke-width="3"/>
+ </g>
+ <!-- rice bed -->
+ <ellipse cx="359" cy="323" rx="193" ry="172" fill="#eac38a" opacity=".85"/>
+ <ellipse cx="359" cy="312" rx="184" ry="165" fill="url(#foodg)" opacity=".88"/>
+ <g fill="none" stroke-linecap="round" stroke-width="3.4" opacity=".86">
+  <path d="M231 252l14 7 M247 288l17 5 M214 322l16 -1 M246 372l17 8 M280 398l13 -7 M308 222l14 -3 M342 196l11 13 M391 197l8 11 M432 234l-9 7 M476 278l-13 6 M483 327l-17 -3 M443 381l-16 -9 M402 429l-15 -7 M338 438l11 -11 M297 349l17 3 M363 377l-17 2 M399 334l11 10 M342 284l11 -9 M289 274l12 9" stroke="#ffde91"/>
+  <path d="M258 232l8 13 M279 313l14 2 M319 372l6 -12 M378 222l17 2 M451 315l-13 8 M410 403l-15 1 M363 420l-12 -2 M241 350l15 0 M340 244l17 5 M392 300l-18 -6" stroke="#9f6d33"/>
+ </g>
+ <!-- skewers -->
+ <g transform="translate(0 -15) rotate(-17 342 306)">
+  <path d="M220 290L502 288" stroke="#dfc5a0" stroke-width="7" stroke-linecap="round"/>
+  <g fill="url(#kebab)" stroke="#8b4024" stroke-width="3">
+   <rect x="238" y="264" width="51" height="49" rx="18"/><rect x="293" y="265" width="54" height="47" rx="17"/><rect x="349" y="265" width="57" height="47" rx="17"/><rect x="410" y="265" width="54" height="47" rx="17"/>
+  </g>
+  <g stroke="#5e2a21" stroke-width="5" stroke-linecap="round" opacity=".65"><path d="M250 278l19 19 M311 273l23 26 M366 275l23 29 M424 275l18 24"/></g>
+ </g>
+ <g transform="rotate(20 354 365)">
+  <path d="M219 371L505 369" stroke="#dac4a6" stroke-width="7" stroke-linecap="round"/>
+  <g fill="url(#chicken)" stroke="#b55e31" stroke-width="3"><rect x="234" y="349" width="61" height="44" rx="16"/><rect x="300" y="346" width="61" height="46" rx="18"/><rect x="367" y="346" width="62" height="46" rx="18"/><rect x="435" y="350" width="52" height="44" rx="17"/></g>
+  <g stroke="#984425" stroke-width="5" stroke-linecap="round" opacity=".75"><path d="M245 362l30 18 M316 359l29 17 M384 357l31 20 M447 361l24 18"/></g>
+ </g>
+ <!-- veggies greens and cherry tomatoes -->
+ <g fill="#427f4c"><path d="M184 300q27 -45 55 -24q-19 9 -55 24"/><path d="M212 286q-15 -49 23 -47q-13 23 -23 47"/><path d="M484 358q43 -20 50 12q-22 -10 -50 -12"/><path d="M468 406q-6 49 32 43q-17 -19 -32 -43"/><path d="M322 468q9 -44 47 -31q-15 21 -47 31"/></g>
+ <g fill="#72a45d"><path d="M179 332q42 -45 56 -5q-27 8 -56 5"/><path d="M466 234q26 -35 49 -4q-23 2 -49 4"/><path d="M442 445q37 -24 42 9q-22 -4 -42 -9"/></g>
+ <g fill="#ce573b"><circle cx="233" cy="429" r="23"/><circle cx="480" cy="241" r="21"/><circle cx="284" cy="196" r="18"/></g>
+ <g fill="#ee9170"><ellipse cx="227" cy="421" rx="8" ry="5"/><ellipse cx="472" cy="234" rx="7" ry="4"/><ellipse cx="278" cy="189" rx="6" ry="4"/></g>
+ <!-- lemon wedges -->
+ <g transform="translate(452 426) rotate(-25)"><path d="M0 -39A39 39 0 0 1 39 0L0 0Z" fill="url(#lemon)" stroke="#fff8c6" stroke-width="5"/><path d="M4 -28l-1 24 M16 -23L5 -4 M27 -11L5 -3" stroke="#fff0b6" stroke-width="2.5"/></g>
+ <g transform="translate(215 225) rotate(28)"><path d="M0 -32A32 32 0 0 1 32 0L0 0Z" fill="url(#lemon)" stroke="#fff7bd" stroke-width="5"/><path d="M5 -25V-4 M22 -12L5 -4" stroke="#fff0b6" stroke-width="2.5"/></g>
+ <!-- parsley -->
+ <g fill="#246d44"><circle cx="286" cy="438" r="9"/><circle cx="295" cy="428" r="9"/><circle cx="305" cy="441" r="9"/><circle cx="299" cy="449" r="8"/><circle cx="435" cy="207" r="8"/><circle cx="448" cy="200" r="8"/><circle cx="450" cy="214" r="8"/></g>
+ <g fill="none" stroke="#ffffff" stroke-width="4" opacity=".22"><ellipse cx="360" cy="319" rx="247" ry="228"/></g>
+ <circle cx="589" cy="118" r="7" fill="#eead55"/><circle cx="134" cy="511" r="9" fill="#f6ce76"/><circle cx="590" cy="540" r="4" fill="#f6ce76"/>
+</svg>

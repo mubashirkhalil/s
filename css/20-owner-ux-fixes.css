@@ -1,0 +1,158 @@
+/* AFGR — owner-requested compact desktop, single cart, clean categories and checkout.
+   Override only customer-facing app/checkout. Existing staff and admin remain untouched. */
+:root { --afgr-forest:#284b32; --afgr-ink:#2f4332; --afgr-muted:#616d5e; --afgr-papyrus:#fffdf7; --afgr-ember:#e97625; }
+
+/* Only one shopping bag: the established cart drawer opened by the header/dock icon.
+   This rule is deliberately independent of width and browser zoom. */
+#website.ao-arabian-app #aoApp {grid-template-columns:250px minmax(0,1fr) !important;min-height:0!important;}
+#website.ao-arabian-app #aoApp .ao-order-side {display:none!important;width:0!important;visibility:hidden!important;}
+#website.ao-arabian-app #aoApp .ao-main-column{min-width:0!important;min-height:0!important;display:block!important;}
+#website.ao-arabian-app #aoApp .ao-content{display:block!important;flex:none!important;min-height:0!important;width:100%!important;max-width:100%!important;padding:13px 17px 17px!important;}
+/* The empty native-page outlet was flex-growing under Home, leaving a giant gap after the footer. */
+#website.ao-arabian-app #aoApp .ao-native-pages{display:none!important;flex:none!important;min-height:0!important;height:auto!important;}
+#website.ao-arabian-app #aoApp:not([data-ao-route="home"]):not([data-ao-route="favorites"]) .ao-native-pages{display:block!important;}
+#website.ao-arabian-app #aoApp .ao-rail{height:100dvh!important;min-height:0!important;}
+#website.ao-arabian-app #aoApp .ao-footer{margin-bottom:0!important;padding-bottom:10px!important;}
+#website.ao-arabian-app #aoApp .ao-page-footer{margin-top:12px!important;padding-bottom:8px!important;}
+#website.ao-arabian-app #aoApp .ao-rail-brand{padding-bottom:12px!important;}
+#website.ao-arabian-app #aoApp .ao-rail-links{gap:1px!important;}
+#website.ao-arabian-app #aoApp .ao-rail-links>button{min-height:39px!important;padding:9px 11px!important;font-size:12px!important;gap:9px!important;color:#445341!important;}
+#website.ao-arabian-app #aoApp .ao-rail-links>button.is-active{color:#fff!important;}
+#website.ao-arabian-app #aoApp .ao-rail-lower{margin-top:12px!important;padding-top:12px!important;}
+#website.ao-arabian-app #aoApp .ao-rail-lower>button{min-height:35px!important;padding:8px 11px!important;color:#495847!important;}
+#website.ao-arabian-app #aoApp .ao-toolbar{height:68px!important;padding:8px 16px!important;gap:10px!important;}
+#website.ao-arabian-app #aoApp .ao-toolbar-search{height:45px!important;}
+#website.ao-arabian-app #aoApp .ao-toolbar-search input{font-size:12px!important;}
+#website.ao-arabian-app #aoApp .ao-hero{height:316px!important;border-radius:27px!important;}
+#website.ao-arabian-app #aoApp .ao-hero-copy{padding:29px 0 19px 33px!important;}
+#website.ao-arabian-app #aoApp .ao-hero h1{font-size:clamp(44px,3.8vw,61px)!important;margin:12px 0 9px!important;}
+#website.ao-arabian-app #aoApp .ao-hero-copy>p{font-size:12px!important;line-height:1.55!important;margin-bottom:14px!important;}
+#website.ao-arabian-app #aoApp .ao-hero-badges{margin-top:15px!important;}
+#website.ao-arabian-app #aoApp .ao-categories-heading{margin-top:13px!important;}
+#website.ao-arabian-app #aoApp .ao-section-heading{margin-bottom:7px!important;}
+#website.ao-arabian-app #aoApp .ao-category-track{gap:8px!important;padding:4px 2px 11px!important;}
+#website.ao-arabian-app #aoApp .ao-category{min-width:85px!important;flex-basis:85px!important;padding:4px 3px!important;}
+#website.ao-arabian-app #aoApp .ao-category .ao-category-image{width:76px!important;height:76px!important;}
+#website.ao-arabian-app #aoApp .ao-category strong{font-size:10px!important;}
+/* Remove the star/sparkle badges which look like unrelated AI app branding. */
+#website.ao-arabian-app #aoApp .ao-category .ao-category-image:after{content:none!important;display:none!important;}
+#website.ao-arabian-app #aoApp .ao-fresh-strip{height:25px!important;margin:3px 0 15px!important;}
+#website.ao-arabian-app #aoApp .ao-popular-heading{margin-top:5px!important;margin-bottom:10px!important;}
+#website.ao-arabian-app #aoApp .ao-products{grid-template-columns:repeat(auto-fit,minmax(195px,1fr))!important;gap:12px!important;}
+#website.ao-arabian-app #aoApp .ao-product-art{height:168px!important;}
+#website.ao-arabian-app #aoApp .ao-product-content{padding:12px!important;}
+#website.ao-arabian-app #aoApp .ao-product-content h3{min-height:0!important;font-size:16px!important;}
+/* Favorites on LEFT; quality label on RIGHT. Same rule for live menu cards. */
+#website.ao-arabian-app #aoApp .ao-product-heart{left:10px!important;right:auto!important;}
+#website.ao-arabian-app #aoApp .ao-product-sticker{left:auto!important;right:11px!important;max-width:65%;text-align:right!important;}
+#website.ao-arabian-app #aoApp #menu .menu-card .ao-native-heart{left:10px!important;right:auto!important;}
+#website.ao-arabian-app #aoApp .ao-story{margin-top:16px!important;}
+#website.ao-arabian-app #aoApp .ao-spotlights{margin-top:17px!important;}
+
+/* Add-to-bag movement runs only after a genuine cart addition and respects reduced motion. */
+body .ao-fly-photo{position:fixed!important;width:52px!important;height:52px!important;object-fit:cover!important;border-radius:50%!important;z-index:12000!important;pointer-events:none!important;box-shadow:0 8px 21px #25201455,0 0 0 4px #fffaf0!important;will-change:transform,opacity!important;}
+#aoApp .ao-cart-land{animation:afgrCartLand .44s cubic-bezier(.2,.8,.2,1)!important;}
+@keyframes afgrCartLand{0%{transform:scale(1)}40%{transform:scale(1.23)}70%{transform:scale(.94)}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){body .ao-fly-photo{display:none!important}#aoApp .ao-cart-land{animation:none!important;}}
+
+/* Checkout: old dark mode rules were painting white letters over white cards.
+   Rebuild a single, high-contrast vertical checkout with stable product rows. */
+html body #checkoutModal.checkout-ecommerce-modal{background:rgba(23,32,23,.62)!important;backdrop-filter:blur(6px)!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-ecommerce-content{background:#faf7f0!important;border:1px solid #e7ddce!important;color:var(--afgr-ink)!important;border-radius:25px!important;box-shadow:0 25px 80px #10171066!important;width:min(1010px,calc(100vw - 28px))!important;max-width:1010px!important;max-height:calc(100dvh - 24px)!important;overflow-y:auto!important;overflow-x:hidden!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-modern-shell{color:#304437!important;padding:clamp(16px,2.1vw,26px)!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-modern-header{padding-right:48px!important;margin-bottom:19px!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-kicker{color:#aa672b!important;font-size:10px!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-modern-header h3{color:#254b33!important;font:800 clamp(25px,2.8vw,34px)/1.15 'DM Sans',Arial,sans-serif!important;letter-spacing:-.035em!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-modern-header p{color:#687062!important;font-size:12px!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-header-badge{background:#e8efde!important;border:1px solid #d6e5ca!important;color:#2d5135!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-close-btn{background:#2c4b32!important;color:#fff!important;border-radius:13px!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-step-card{background:#fffdf9!important;border:1px solid #eae0d2!important;box-shadow:0 8px 28px #4a3e2d11!important;border-radius:19px!important;overflow:visible!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-section-head{background:#f5efe5!important;border-bottom:1px solid #e7ddcd!important;padding:13px 16px!important;border-radius:18px 18px 0 0!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-step-number{background:linear-gradient(140deg,#f6ad53,#e57723)!important;color:#fff!important;box-shadow:none!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-section-title-wrap strong{color:#2c4532!important;font-size:14px!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-section-title-wrap span:not(.checkout-step-number){color:#697164!important;opacity:1!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-section-chip{background:#e9ede0!important;border:1px solid #d9e2d0!important;color:#4c674d!important;font-size:10px!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-list{background:#fffdf9!important;display:flex!important;flex-direction:column!important;gap:9px!important;padding:12px 14px!important;max-height:none!important;height:auto!important;overflow:visible!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row{display:grid!important;grid-template-columns:74px minmax(0,1fr) minmax(210px,255px) 34px!important;grid-template-areas:'image info prices remove'!important;align-items:center!important;gap:13px!important;padding:12px 13px!important;min-height:96px!important;border-radius:15px!important;background:#fbf7ef!important;border:1px solid #ece3d7!important;box-shadow:none!important;color:#2d4334!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row:hover{background:#f5f0e8!important;border-color:#d5c6b4!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-image{grid-area:image!important;width:74px!important;height:74px!important;min-width:74px!important;border-radius:12px!important;box-shadow:none!important;border:1px solid #eadac6!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-info{grid-area:info!important;min-width:0!important;display:flex!important;flex-direction:column!important;gap:4px!important;overflow:visible!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-info strong{color:#263f2d!important;font-size:13px!important;line-height:1.3!important;font-weight:900!important;overflow-wrap:anywhere!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-variation-line{color:#687366!important;background:none!important;border:0!important;padding:0!important;font-size:11px!important;min-height:0!important;max-width:100%!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-deals span{color:#276b47!important;background:#e5f4e7!important;border:1px solid #c9e4d1!important;font-size:10px!important;font-weight:800!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-totals{display:grid!important;grid-area:prices!important;grid-template-columns:45px 1fr 1fr!important;gap:8px!important;align-items:center!important;min-width:0!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-qty,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-money{grid-area:auto!important;min-width:0!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:flex-end!important;gap:5px!important;text-align:right!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-qty span,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-money span{color:#718072!important;opacity:1!important;font-size:10px!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-qty strong,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-money strong{color:#2c5037!important;font-size:12px!important;font-weight:900!important;white-space:nowrap!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-price strong{color:#b95725!important;font-size:13px!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-remove-item{grid-area:remove!important;align-self:center!important;justify-self:center!important;width:31px!important;height:36px!important;background:#fff2ec!important;color:#b95732!important;border:1px solid #f2d5c8!important;border-radius:10px!important;display:grid!important;place-items:center!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-remove-item:hover{background:#fbe2d7!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary{background:#fffdf9!important;color:#314735!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary :is(.summary-row,.summary-row span,.summary-row strong){color:#3d5542!important;font-size:12px!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary .summary-row.total,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-order-summary .summary-row.total *{color:#265037!important;font-size:17px!important;font-weight:900!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-customer-panel :is(label,p,small){color:#425644!important;opacity:1!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-customer-panel :is(input,textarea,select){background:#fffaf2!important;color:#2a4230!important;border:1px solid #dacfbf!important;font-size:13px!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-customer-panel :is(input,textarea)::placeholder{color:#77786c!important;opacity:1!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-submit-section{background:transparent!important;box-shadow:none!important;border:0!important;padding:4px 0 0!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-place-btn{background:linear-gradient(180deg,#f7a34a,#df671e)!important;color:#fff!important;border-radius:15px!important;box-shadow:0 10px 20px #c7682526!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-place-btn *,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-final-place-btn :is(strong,span){color:#fff!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-continue-btn{background:#ebf0e4!important;border:1px solid #d8e0d0!important;color:#2d5036!important;box-shadow:none!important;border-radius:15px!important;}
+@media(max-width:760px){
+ html body #checkoutModal.checkout-ecommerce-modal{padding:5px!important;align-items:stretch!important;}
+ html body #checkoutModal.checkout-ecommerce-modal .checkout-ecommerce-content{width:100%!important;max-height:calc(100dvh - 10px)!important;border-radius:17px!important;}
+ html body #checkoutModal.checkout-ecommerce-modal .checkout-modern-shell{padding:16px!important;}
+ html body #checkoutModal.checkout-ecommerce-modal .checkout-modern-header{grid-template-columns:1fr!important;gap:9px!important;padding-right:38px!important;}
+ html body #checkoutModal.checkout-ecommerce-modal .checkout-header-badge{justify-self:start!important;min-height:34px!important;padding:7px 10px!important;}
+ html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row{grid-template-columns:64px minmax(0,1fr) 32px!important;grid-template-areas:'image info remove' 'prices prices prices'!important;gap:9px!important;padding:10px!important;}
+ html body #checkoutModal.checkout-ecommerce-modal .checkout-product-image{width:64px!important;height:64px!important;min-width:64px!important;}
+ html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-totals{grid-template-columns:55px 1fr 1fr!important;border-top:1px solid #e8dfd4!important;padding-top:9px!important;}
+ html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-qty,
+ html body #checkoutModal.checkout-ecommerce-modal .checkout-product-row .checkout-product-money{align-items:start!important;text-align:left!important;}
+ html body #checkoutModal.checkout-ecommerce-modal .checkout-product-price{align-items:end!important;text-align:right!important;}
+}
+@media(max-width:935px){
+ #website.ao-arabian-app #aoApp{grid-template-columns:minmax(0,1fr)!important;}
+ #website.ao-arabian-app #aoApp .ao-content{padding:12px 15px 22px!important;}
+ #website.ao-arabian-app #aoApp .ao-toolbar{height:69px!important;}
+}
+@media(max-width:740px){
+ #website.ao-arabian-app #aoApp{padding-bottom:calc(76px + env(safe-area-inset-bottom))!important;}
+ #website.ao-arabian-app #aoApp .ao-toolbar{height:125px!important;padding:11px 15px 9px!important;}
+ #website.ao-arabian-app #aoApp .ao-content{padding:0 13px 14px!important;}
+ #website.ao-arabian-app #aoApp .ao-hero{height:264px!important;}
+ #website.ao-arabian-app #aoApp .ao-hero-copy{padding:17px 13px!important;}
+ #website.ao-arabian-app #aoApp .ao-hero h1{font-size:clamp(32px,8.8vw,45px)!important;}
+ #website.ao-arabian-app #aoApp .ao-categories-heading{margin-top:8px!important;}
+ #website.ao-arabian-app #aoApp .ao-category-track{gap:6px!important;padding-bottom:7px!important;margin:0 -13px!important;padding-left:13px!important;}
+ #website.ao-arabian-app #aoApp .ao-category{min-width:76px!important;flex:0 0 76px!important;}
+ #website.ao-arabian-app #aoApp .ao-category .ao-category-image{width:65px!important;height:65px!important;}
+ #website.ao-arabian-app #aoApp .ao-product-art{height:148px!important;}
+ #website.ao-arabian-app #aoApp .ao-products{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+ #website.ao-arabian-app #aoApp .ao-product-sticker{font-size:7px!important;}
+ #website.ao-arabian-app #aoApp .ao-rail{display:none!important;}
+}
+@media(max-width:365px){
+ #website.ao-arabian-app #aoApp .ao-hero{height:251px!important;}
+ #website.ao-arabian-app #aoApp .ao-product-art{height:132px!important;}
+ #website.ao-arabian-app #aoApp .ao-products{gap:8px!important;}
+}
+
+/* Six legacy smoke dividers were outside #aoApp, below its footer. */
+#website.ao-arabian-app > .smoke-divider{display:none!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;}
+/* Let the full brand name fit the left rail without creating a sideways scrollbar. */
+#website.ao-arabian-app #aoApp{grid-template-columns:290px minmax(0,1fr)!important;}
+#website.ao-arabian-app #aoApp .ao-rail{overflow-x:hidden!important;}
+#website.ao-arabian-app #aoApp .ao-rail-brand strong{font-size:12.8px!important;letter-spacing:-.30px!important;white-space:nowrap!important;}
+/* Visible and touch-friendly checkout form captions, independent of prior theme. */
+html body #checkoutModal.checkout-ecommerce-modal .checkout-customer-panel .checkout-field>span,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-details-form .checkout-field>span,
+html body #checkoutModal.checkout-ecommerce-modal .checkout-payment-note>label{color:#34503b!important;opacity:1!important;font-size:12px!important;font-weight:800!important;text-transform:none!important;letter-spacing:.01em!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-payment-note p{color:#315035!important;background:#f4f0e6!important;border:1px solid #e3d9cb!important;}
+html body #checkoutModal.checkout-ecommerce-modal .checkout-remove-item svg{display:block!important;width:16px!important;height:16px!important;stroke:#ac5536!important;fill:none!important;stroke-width:1.8!important;}
+@media(max-width:1190px) and (min-width:936px){#website.ao-arabian-app #aoApp{grid-template-columns:260px minmax(0,1fr)!important;}#website.ao-arabian-app #aoApp .ao-rail-brand strong{font-size:11.3px!important;}}
+@media(max-width:935px){#website.ao-arabian-app #aoApp{grid-template-columns:minmax(0,1fr)!important;}}

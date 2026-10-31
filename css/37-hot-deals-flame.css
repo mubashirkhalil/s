@@ -1,0 +1,47 @@
+/* AFGR: high-definition emoji flame for the Hot Deals category.
+   No raster food art on this category: platform color-emoji text stays crisp
+   at high device-pixel ratios; all other category images are unchanged. */
+html body #website.ao-arabian-app #aoApp #aoHome .ao-category[data-ao-category="hot-deals"] .ao-category-image.afgr-hot-flame-disc,
+html body #website.ao-arabian-app #aoApp #menu .category-slider-wrap .categories > button[data-cat="hot-deals"] .afgr-cat-visual.afgr-hot-flame-menu {
+  position:relative !important;
+  display:grid !important;
+  place-items:center !important;
+  isolation:isolate !important;
+  overflow:visible !important;
+  background:radial-gradient(circle at 50% 68%,#a53612 0%,#64200b 36%,#330f0c 72%,#1e0d0b 100%) !important;
+  border:3px solid #fff4d7 !important;
+  border-radius:50% !important;
+  box-shadow:0 0 0 4px #ffc464,0 7px 18px #b54b2455,inset 0 2px 13px #fba3364a !important;
+  transition:transform .28s ease,box-shadow .28s ease !important;
+}
+html body #website.ao-arabian-app #aoApp .afgr-hot-flame-disc .afgr-fire-emoji,
+html body #website.ao-arabian-app #aoApp .afgr-hot-flame-menu .afgr-fire-emoji {
+  display:block !important;
+  position:relative !important;
+  z-index:1 !important;
+  line-height:1 !important;
+  width:max-content !important;
+  font-size:clamp(42px,4vw,53px) !important;
+  font-style:normal !important;
+  font-weight:normal !important;
+  font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif !important;
+  filter:drop-shadow(0 3px 4px #180b0aaa) drop-shadow(0 0 8px #ffa43f99) !important;
+  text-shadow:none !important;
+  user-select:none !important;
+  pointer-events:none !important;
+  transform:translateY(-1px);
+}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-category[data-ao-category="hot-deals"]:is(:hover,.is-active) .afgr-hot-flame-disc,
+html body #website.ao-arabian-app #aoApp #menu .category-slider-wrap .categories > button[data-cat="hot-deals"]:is(:hover,.active) .afgr-hot-flame-menu {
+  box-shadow:0 0 0 4px #ffd077,0 0 0 7px #ec772c77,0 10px 24px #b54b2470,inset 0 2px 13px #fba3366b !important;
+}
+@media (max-width:740px){
+  html body #website.ao-arabian-app #aoApp .afgr-hot-flame-disc .afgr-fire-emoji,
+  html body #website.ao-arabian-app #aoApp .afgr-hot-flame-menu .afgr-fire-emoji {
+    font-size:43px !important;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  html body #website.ao-arabian-app #aoApp .afgr-hot-flame-disc,
+  html body #website.ao-arabian-app #aoApp .afgr-hot-flame-menu { transition:none !important; }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 680" role="img" aria-label="Illustration of fresh golden kunafa dessert">
+ <defs><radialGradient id="plate" cx="42%" cy="35%"><stop stop-color="#fff"/><stop offset=".8" stop-color="#fafaf5"/><stop offset="1" stop-color="#dde1d9"/></radialGradient><filter id="s"><feDropShadow dx="0" dy="20" stdDeviation="17" flood-color="#283c32" flood-opacity=".2"/></filter></defs>
+ <rect width="720" height="680" rx="45" fill="#fff0de"/>
+ <g filter="url(#s)"><ellipse cx="360" cy="330" rx="264" ry="237" fill="url(#plate)"/><ellipse cx="360" cy="320" rx="221" ry="197" fill="#fffcf5" stroke="#e8e8df" stroke-width="5"/></g>
+ <!-- golden kunafa on the plate -->
+ <ellipse cx="366" cy="380" rx="179" ry="93" fill="#f4dcc0"/>
+ <g transform="rotate(-8 359 339)" filter="url(#s)">
+ <path d="M240 274h231l13 124q-130 42-260 0Z" fill="#b97232" stroke="#985423" stroke-width="5"/>
+ <path d="M239 273q110-75 233 0v75q-121 43-233 0Z" fill="#e5a94c" stroke="#ae712e" stroke-width="7"/>
+ <path d="M246 286q110-72 220-2" stroke="#ffdd82" stroke-width="12" fill="none" stroke-linecap="round"/>
+ <g fill="none" stroke="#f7c468" stroke-width="8" stroke-linecap="round"><path d="m254 302 36 32m-21-39 47 46m-14-48 40 50m-4-52 42 53m-2-53 41 50m-3-44 30 36m-162 5 45-38m-14 45 58-57m-20 64 57-64m-19 67 57-62m-16 56 54-53m-7 54 40-41"/></g>
+ <path d="M240 361q114 42 231 0v25q-120 40-231 0Z" fill="#faf0e0"/>
+ <path d="M240 390q118 32 231 0v13q-125 39-231 0Z" fill="#dc963d"/>
+ </g>
+ <g fill="#51935e"><circle cx="317" cy="260" r="9"/><circle cx="334" cy="251" r="8"/><circle cx="349" cy="258" r="10"/><circle cx="373" cy="246" r="7"/><circle cx="395" cy="257" r="9"/><circle cx="410" cy="265" r="7"/><circle cx="279" cy="421" r="6"/><circle cx="448" cy="426" r="6"/></g>
+ <g fill="#315f42"><rect x="335" y="247" width="5" height="10" rx="2" transform="rotate(-25 335 247)"/><rect x="405" y="262" width="5" height="11" rx="2" transform="rotate(30 405 262)"/></g>
+ <g fill="none" stroke="#cf8847" stroke-width="5" stroke-linecap="round"><path d="M212 427q-24 9-32 26 M490 426q27 4 38 17"/></g>
+ <circle cx="591" cy="115" r="8" fill="#f5bb7c"/><circle cx="139" cy="530" r="11" fill="#f5bb7c"/><circle cx="579" cy="541" r="4" fill="#f5bb7c"/>
+ </svg>

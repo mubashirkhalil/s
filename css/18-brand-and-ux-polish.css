@@ -1,0 +1,227 @@
+/* Al Fursan Grills & Restaurant · Brand & usability refinement.
+   Editorial Arabic grill identity. All app layout changes are scoped to #aoApp;
+   legacy customer backend, admin panel and staff panel are intentionally untouched. */
+:root{--afgr-olive:#325333;--afgr-olive-deep:#263f2d;--afgr-gold:#f5b849;--afgr-rust:#b8552d;--afgr-paper:#fffdf8;--afgr-cream:#faf4e8}
+#aoApp{font-size:14px;-webkit-font-smoothing:antialiased}
+#aoApp button,#aoApp a{touch-action:manipulation}
+#aoApp button:focus-visible,#aoApp a:focus-visible,#aoApp input:focus-visible,#aoApp select:focus-visible,#aoApp textarea:focus-visible,
+#aoApp [role="button"]:focus-visible{outline:3px solid #df8227!important;outline-offset:3px!important}
+#aoApp .ao-symbols{pointer-events:none}
+/* The owner's supplied horse-and-cart mark, faithfully retained in the app. */
+#aoApp .ao-logo-emblem{width:50px;height:50px;min-width:50px;border-radius:50%;display:grid;place-items:center;background:#ffb52e!important;box-shadow:0 3px 14px #92532329;border:1px solid #deba65;overflow:hidden}
+#aoApp .ao-logo-emblem img{width:100%!important;height:100%!important;object-fit:contain!important;filter:none!important;transform:none!important}
+#aoApp .ao-rail-brand{gap:9px;padding:0 0 23px!important;align-items:center;min-width:0;width:100%}
+#aoApp .ao-rail-brand>span:last-child{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+#aoApp .ao-rail-brand strong{font:750 16px/1.08 'DM Sans',sans-serif!important;letter-spacing:-.45px!important;color:#263b29;white-space:normal!important}
+#aoApp .ao-rail-brand small{font:700 10px/1.25 'DM Sans',sans-serif!important;letter-spacing:.05px!important;color:#7b5b39;white-space:normal!important}
+#aoApp .ao-mobile-brand{gap:8px!important;min-width:0;text-align:left}
+#aoApp .ao-mobile-brand>span{min-width:0}
+#aoApp .ao-mobile-brand>img{width:43px!important;height:43px!important;min-width:43px;border-radius:50%;object-fit:contain!important;filter:none!important;box-shadow:0 2px 8px #bc623020}
+#aoApp .ao-mobile-brand strong{font:800 17px/1.1 'DM Sans',sans-serif!important;color:#273e2c;white-space:normal!important;letter-spacing:-.4px}
+#aoApp .ao-mobile-brand small{font:650 10px/1.2 'DM Sans',sans-serif!important;letter-spacing:0!important;color:#8d633b;white-space:normal!important}
+#aoApp .ao-intro-logo{max-width:95%;display:flex;align-items:center;justify-content:center;gap:9px}
+#aoApp .ao-intro-logo img{width:46px!important;height:46px!important;min-width:46px;border-radius:50%;object-fit:contain;filter:none!important}
+#aoApp .ao-intro-logo strong{font:800 15px/1.2 'DM Sans',sans-serif;text-align:left;color:#31482d;letter-spacing:-.2px;max-width:235px}
+/* Remove artificial burst/starburst motifs; genuine brand and familiar app glyphs remain. */
+#aoApp .ao-rail-special:before,#aoApp .ao-ornament,#aoApp .ao-food-orbit,#aoApp .ao-detail-sparkles,#aoApp .ao-intro-decoration{display:none!important}
+#aoApp .ao-rail-sun{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fff8e12b;color:#ffcf77;border:1px solid #ffebb842}
+#aoApp .ao-rail-sun svg{width:19px;height:19px;stroke:currentColor;stroke-width:1.8;fill:none}
+#aoApp .ao-order-illustration>span,#aoApp .ao-order-empty>span{font-size:0!important}
+#aoApp .ao-order-illustration>span svg,#aoApp .ao-order-empty>span svg{width:24px;height:24px;stroke:currentColor;stroke-width:1.8;fill:none}
+#aoApp .ao-rail-special{margin-top:18px!important;min-height:0!important;padding:15px 15px 16px!important;gap:6px!important;border-radius:19px!important}
+#aoApp .ao-rail-special strong{font-size:22px!important;line-height:1.1!important}
+#aoApp .ao-rail-foot{margin:12px 6px 0!important;font-size:8px!important}
+#aoApp .ao-rail{padding:19px 14px 15px!important}
+#aoApp .ao-rail-caption{font-size:9px!important;margin-bottom:10px!important;letter-spacing:1.2px!important}
+#aoApp .ao-rail-links{gap:2px!important}
+#aoApp .ao-rail-links button{padding:11px 11px!important;border-radius:13px!important;min-height:42px!important;font-size:12px!important;gap:10px!important}
+#aoApp .ao-rail-lower{padding-top:11px!important;margin-top:11px!important}
+#aoApp .ao-rail-lower>button{padding:10px 11px!important;min-height:38px!important;font-size:11px!important}
+/* Useful toolbar actions are plain, recognizable controls rather than symbolic ornaments. */
+#aoApp .ao-toolbar{height:76px!important;padding:9px 17px!important;gap:10px!important}
+#aoApp .ao-toolbar-greet{min-width:235px!important;max-width:266px;white-space:normal!important}
+#aoApp .ao-toolbar-greet>strong{font:800 13px/1.2 'DM Sans',sans-serif!important;white-space:normal!important;letter-spacing:-.2px!important;color:#27452c}
+#aoApp .ao-toolbar-greet>small{font-size:10px!important;color:#867967!important}
+#aoApp .ao-toolbar-search{max-width:none!important;height:46px!important;min-width:115px!important;border-radius:15px!important}
+#aoApp .ao-toolbar-search input{font-size:12px!important}
+#aoApp .ao-toolbar-search kbd{display:none!important}
+#aoApp .ao-toolbar-contact{display:inline-flex;align-items:center;gap:5px;border:0;background:#eaf0de;color:#325632;border-radius:12px;padding:11px 12px;font-size:11px;font-weight:850;min-height:43px;white-space:nowrap;transition:background .2s,transform .2s}
+#aoApp .ao-toolbar-contact svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9}
+#aoApp .ao-toolbar-contact:hover{background:#d7e5c6;transform:translateY(-2px)}
+#aoApp .ao-toolbar-account,#aoApp .ao-toolbar-cart{width:42px!important;min-width:42px;height:42px!important;min-height:42px}
+#aoApp .ao-toolbar-location{display:none!important}
+/* Deliberate rhythm: reduce accidental blank gaps while retaining breathing room. */
+#aoApp .ao-content{padding:17px 17px 26px!important}
+#aoApp .ao-hero{height:350px!important;border-radius:28px!important}
+#aoApp .ao-hero-copy{padding:32px 0 24px 31px!important}
+#aoApp .ao-hero h1{font-size:clamp(43px,4vw,62px)!important;line-height:1.08!important;margin:14px 0 11px!important}
+#aoApp .ao-hero-copy>p{font-size:13px!important;line-height:1.56!important;margin-bottom:14px!important}
+#aoApp .ao-hero-badges{margin-top:13px!important;gap:12px!important}
+#aoApp .ao-categories-heading{margin-top:19px!important}
+#aoApp .ao-section-heading{margin-bottom:10px!important}
+#aoApp .ao-category-track{gap:10px!important;padding-bottom:12px!important}
+#aoApp .ao-popular-heading{margin-top:5px!important;margin-bottom:13px!important}
+#aoApp .ao-section-heading h2{font-size:clamp(25px,2.5vw,35px)!important}
+#aoApp .ao-products{gap:12px!important}
+#aoApp .ao-product{border-radius:20px!important}
+#aoApp .ao-product-content h3{font-size:16px!important;line-height:1.2!important}
+#aoApp .ao-product-content p{color:#726b5e!important}
+#aoApp .ao-product-content{padding:11px 12px!important}
+#aoApp .ao-product-bottom>button{min-height:39px!important;min-width:39px!important}
+#aoApp .ao-spotlights{margin-top:20px!important;gap:12px!important}
+#aoApp .ao-story{margin-top:22px!important}
+#aoApp .ao-footer{border-top:1px solid #eadfce;padding-top:15px!important;margin-top:19px!important;gap:10px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#aoApp .ao-footer strong{color:#315331;font:800 12px 'DM Sans',sans-serif!important;letter-spacing:-.2px}
+#aoApp .ao-footer span{color:#9d876c;font-size:9px!important;letter-spacing:.15px!important}
+#aoApp .ao-footer button{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:12px;background:#e9efdd;color:#385a32;padding:8px 12px;font-size:11px;font-weight:800}
+#aoApp .ao-footer button svg{height:15px;width:15px;fill:none;stroke:currentColor;stroke-width:1.9}
+#aoApp .ao-hero-label b{display:none}
+/* Social channels: show the real platform identity alongside its icon, not mystery circles. */
+#aoApp #contact .contact-info-panel,#aoApp #contact .contact-form-panel{background:#fffdfa!important;color:#344a34!important;border:1px solid #e9dfce!important;border-radius:24px!important;box-shadow:0 10px 35px #69572d14!important;backdrop-filter:none!important;padding:20px!important}
+#aoApp #contact .contact-info-panel:before,#aoApp #contact .contact-info-panel:after,
+#aoApp #contact .contact-form-panel:before,#aoApp #contact .contact-form-panel:after{display:none!important}
+#aoApp #contact .contact-info-title,#aoApp #contact .contact-form-title{color:#2c4e34!important;font-family:'Fraunces',Georgia,serif!important;font-size:22px!important}
+#aoApp #contact .contact-info-text,#aoApp #contact .contact-form-text{color:#817664!important;font-size:12px!important;line-height:1.55!important}
+#aoApp #contact .contact-info,#aoApp #contact #contactInfo{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:8px 0 21px!important;text-align:left}
+#aoApp #contact .afgr-contact-method{display:flex;flex-direction:column;gap:7px;min-width:0;text-decoration:none;background:#f7f1e6;border:1px solid #eadfca;border-radius:15px;padding:13px 14px;color:#2c4935;min-height:68px;transition:transform .2s,border-color .2s}
+#aoApp #contact a.afgr-contact-method:hover{transform:translateY(-3px);border-color:#c79d65}
+#aoApp #contact .afgr-contact-method-label{font:800 10px 'DM Sans',sans-serif;text-transform:uppercase;letter-spacing:.7px;color:#a2642e}
+#aoApp #contact .afgr-contact-method-value{font:750 12px/1.4 'DM Sans',sans-serif;color:#345038;overflow-wrap:anywhere}
+#aoApp #contact .contact-social-heading{text-align:left;color:#315333;font:750 16px 'DM Sans',sans-serif;margin:12px 0 12px}
+#aoApp #contact .contact-socials,#aoApp #contact #contactSocials{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px!important;margin:0!important;text-align:left}
+#aoApp #contact .contact-socials .contact-icon-link{position:relative!important;display:flex!important;align-items:center!important;justify-content:flex-start!important;width:auto!important;min-height:54px!important;height:auto!important;padding:10px 12px!important;gap:10px!important;overflow:visible!important;border-radius:15px!important;background:#fff9ee!important;border:1px solid #e9deca!important;color:#2d4134!important;box-shadow:none!important;text-decoration:none;font-size:13px!important;font-weight:800;transition:transform .2s,border-color .2s,background .2s}
+#aoApp #contact .contact-socials .contact-icon-link:before{display:none!important}
+#aoApp #contact .contact-socials .contact-icon-link:hover{transform:translateY(-3px)!important;border-color:#d6ad7b!important;background:#fff2d9!important;box-shadow:0 8px 16px #6b4d2d18!important}
+#aoApp #contact .contact-brand-icon{display:grid;place-items:center;width:29px;height:29px;min-width:29px;flex-shrink:0}
+#aoApp #contact .contact-brand-icon svg{width:25px;height:25px;display:block}
+#aoApp #contact .contact-brand-name{display:block;flex:1;min-width:0;color:#344c36;font-size:12px;font-weight:800;letter-spacing:0}
+#aoApp #contact .contact-brand-arrow{color:#b77b41;font-size:16px;font-weight:800;line-height:1}
+#aoApp #contact .contact-field label{color:#38563d!important;font-size:12px!important}
+#aoApp #contact input,#aoApp #contact textarea{background:#fffaf3!important;color:#2e4933!important;border:1px solid #dbd1c1!important;border-radius:13px!important;font-size:13px!important}
+#aoApp #contact input:focus,#aoApp #contact textarea:focus{outline:2px solid #db9b50!important;outline-offset:1px}
+#aoApp #contact .contact-subtitle,#aoApp #contact .contact-form-note{color:#7c756a!important}
+#aoApp #contact .contact-submit{background:#325932!important;color:white!important;border:0!important;border-radius:13px!important;min-height:49px!important}
+/* Unmistakable, complete restaurant identity in the welcome view. */
+#aoApp .ao-intro-head{margin-top:1px!important}
+#aoApp .ao-intro-head h1{margin-top:20px!important}
+#aoApp .ao-intro-tags>span{min-height:41px!important;display:flex;align-items:center;justify-content:center}
+/* More menu: full secondary navigation accessible in two taps on a phone. */
+#aoApp .ao-more-layer[hidden]{display:none!important}
+#aoApp .ao-more-layer{position:fixed;inset:0;z-index:140;display:flex;align-items:flex-end;justify-content:center}
+#aoApp .ao-more-shade{position:absolute;inset:0;background:#1c241aba;animation:afgrFade .2s ease-out}
+#aoApp .ao-more-sheet{z-index:1;position:relative;width:min(600px,100%);max-height:min(87dvh,820px);overflow:auto;overscroll-behavior:contain;background:#fffcf6;border-radius:27px 27px 0 0;padding:23px 21px calc(22px + env(safe-area-inset-bottom));box-shadow:0 -15px 60px #1c241a44;animation:afgrSheet .3s cubic-bezier(.19,.83,.26,1)}
+#aoApp .ao-more-sheet>header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-bottom:1px solid #ede2d4;padding-bottom:13px}
+#aoApp .ao-more-sheet>header .ao-more-kicker{color:#a16c3e;font-size:10px;font-weight:900;letter-spacing:.4px}
+#aoApp .ao-more-sheet>header h2{color:#27452f;font:750 24px/1.16 'Fraunces',Georgia,serif;margin:8px 0 4px}
+#aoApp .ao-more-sheet>header p{color:#867c70;font-size:11px;margin:0}
+#aoApp .ao-more-sheet>header>button{width:41px;height:41px;min-width:41px;display:grid;place-items:center;background:#f2eadf;border:0;border-radius:50%;color:#3e5039}
+#aoApp .ao-more-sheet>header>button svg{width:19px;height:19px}
+#aoApp .ao-more-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:16px}
+#aoApp .ao-more-actions>button{display:flex;align-items:center;gap:10px;min-width:0;min-height:61px;padding:12px 12px;border:1px solid #eae0d2;border-radius:15px;background:#fff8ec;color:#324b36;font-size:12px;font-weight:800;text-align:left}
+#aoApp .ao-more-actions>button:hover{background:#eaf0dd;border-color:#c0cfb0}
+#aoApp .ao-more-actions>button svg{width:20px;height:20px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.8}
+#aoApp .ao-more-actions>button>span{flex:1;line-height:1.25}
+#aoApp .ao-more-actions>button svg:last-child{height:15px;width:15px;opacity:.7}
+#aoApp .ao-more-foot{color:#978779;font-size:10px;text-align:center;margin:20px 0 0}
+body.ao-more-open{overflow:hidden!important}
+@keyframes afgrFade{from{opacity:0}}
+@keyframes afgrSheet{from{transform:translateY(50%);opacity:.6}to{transform:none;opacity:1}}
+/* Less visual clutter; more useful space for the dishes. */
+#aoApp .ao-order-shell{padding-top:17px!important;padding-bottom:17px!important}
+#aoApp .ao-order-side{padding-top:77px!important}
+#aoApp .ao-order-icon svg{width:20px;height:20px}
+@media(max-width:1480px){#aoApp{grid-template-columns:218px minmax(0,1fr) 270px!important}#aoApp .ao-rail-brand{gap:8px}#aoApp .ao-toolbar-greet{min-width:205px!important;max-width:230px}#aoApp .ao-toolbar-greet>strong{font-size:12px!important}#aoApp .ao-content{padding:15px 15px 25px!important}}
+@media(max-width:1189px){#aoApp{grid-template-columns:218px minmax(0,1fr)!important}#aoApp .ao-toolbar-contact{display:none!important}}
+@media(max-width:935px){#aoApp{grid-template-columns:1fr!important}#aoApp .ao-toolbar-greet{display:none!important}#aoApp .ao-content{padding:16px 21px!important}#aoApp .ao-toolbar{height:75px!important}}
+@media(max-width:740px){
+ #aoApp{padding-bottom:76px!important}
+ #aoApp .ao-toolbar{height:126px!important;display:grid!important;grid-template-columns:minmax(0,1fr) 41px 41px!important;grid-template-rows:45px 46px!important;gap:9px 9px!important;padding:11px 16px 9px!important;align-content:start!important}
+ #aoApp .ao-mobile-brand{grid-column:1;grid-row:1;gap:7px!important}
+ #aoApp .ao-mobile-brand>img{width:41px!important;height:41px!important;min-width:41px!important}
+ #aoApp .ao-mobile-brand strong{font-size:15px!important;line-height:1.15!important}
+ #aoApp .ao-mobile-brand small{font-size:10px!important;line-height:1.15!important}
+ #aoApp .ao-toolbar-account,#aoApp .ao-toolbar-cart{width:41px!important;min-width:41px;height:41px!important;min-height:41px!important}
+ #aoApp .ao-toolbar-search{grid-row:2;grid-column:1/4;height:46px!important}
+ #aoApp .ao-content{padding:0 15px 24px!important}
+ #aoApp .ao-categories-heading{margin-top:5px!important}
+ #aoApp .ao-section-heading{margin-bottom:6px!important}
+ #aoApp .ao-category-track{gap:5px!important;margin:0 -15px 0!important;padding-left:15px!important;padding-bottom:7px!important}
+ #aoApp .ao-popular-heading{margin-top:4px!important;margin-bottom:10px!important}
+ #aoApp .ao-products{gap:9px!important}
+ #aoApp .ao-product-art{height:150px!important}
+ #aoApp .ao-product-content{padding:10px!important}
+ #aoApp .ao-product-content h3{font-size:15px!important;min-height:0!important;margin-bottom:5px!important}
+ #aoApp .ao-product-content p{font-size:10.5px!important;line-height:1.42!important;min-height:29px!important}
+ #aoApp .ao-product-bottom strong{font-size:12px!important}
+ #aoApp .ao-product-bottom>button{min-height:38px!important;min-width:38px!important;width:38px!important;height:38px!important}
+ #aoApp .ao-hero{height:265px!important;margin-top:17px!important}
+ #aoApp .ao-hero-copy{padding:17px 14px!important}
+ #aoApp .ao-hero h1{font-size:clamp(34px,9.1vw,48px)!important;margin:9px 0 9px!important}
+ #aoApp .ao-hero-copy>p{font-size:10px!important;max-width:54%!important}
+ #aoApp .ao-big-food{width:197px!important;height:197px!important}
+ #aoApp .ao-spotlights{margin-top:13px!important}
+ #aoApp .ao-story{margin-top:14px!important}
+ #aoApp .ao-footer{padding-top:12px!important;margin-top:13px!important;gap:7px!important}
+ #aoApp .ao-dock{height:73px!important}
+ #aoApp .ao-dock>button{min-width:44px!important;min-height:44px!important}
+ #aoApp .ao-intro-logo strong{font-size:13px!important;max-width:205px!important}
+ #aoApp #contact .contact-info,#aoApp #contact #contactInfo{grid-template-columns:1fr!important}
+ #aoApp #contact .contact-socials,#aoApp #contact #contactSocials{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ #aoApp .ao-toolbar-contact{display:none!important}
+}
+@media(max-width:350px){
+ #aoApp .ao-toolbar{padding-left:12px!important;padding-right:12px!important;column-gap:7px!important}
+ #aoApp .ao-mobile-brand strong{font-size:13px!important}
+ #aoApp .ao-mobile-brand small{font-size:9px!important}
+ #aoApp .ao-mobile-brand>img{height:38px!important;width:38px!important;min-width:38px!important}
+ #aoApp .ao-content{padding-left:12px!important;padding-right:12px!important}
+ #aoApp .ao-hero{height:254px!important}
+ #aoApp .ao-hero h1{font-size:33px!important}
+ #aoApp .ao-big-food{height:178px!important;width:178px!important}
+ #aoApp .ao-product-art{height:134px!important}
+ #aoApp .ao-product-content h3{font-size:14px!important}
+ #aoApp .ao-more-actions{gap:7px!important}
+ #aoApp .ao-more-actions>button{padding:9px 8px;font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){#aoApp .ao-more-shade,#aoApp .ao-more-sheet{animation:none!important}}
+/* Critical legacy integration fix: section-to-section decorative smoke dividers
+   were moved into the SPA outlet and took up 60px each even when their section
+   was hidden. These are not standalone screens, so they must not affect layout. */
+#aoApp .ao-native-pages>.smoke-divider{display:none!important;height:0!important;margin:0!important;padding:0!important}
+#aoApp .ao-native-pages>section.ao-native-active{scroll-margin-top:80px!important}
+#aoApp .ao-native-pages #contact.contact-premium-section{padding:15px 0 25px!important;background:none!important}
+#aoApp .ao-native-pages #contact .contact-header{margin:0 auto 15px!important}
+#aoApp .ao-native-pages #contact .contact-kicker{font-size:10px;color:#a17443!important;letter-spacing:1.3px!important}
+#aoApp .ao-native-pages #contact .contact-subtitle{font-size:12px!important;line-height:1.55!important}
+#aoApp .ao-native-pages #contact .contact-layout{gap:13px!important;align-items:stretch!important}
+/* Visible content by default even if the reveal observer cannot run. Animation
+   is a decorative enhancement, never a requirement for reading the page. */
+#aoApp .ao-reveal{opacity:1!important;translate:0 0!important}
+#aoApp .ao-reveal.ao-visible{animation:afgrArrive .5s ease-out both}
+@keyframes afgrArrive{from{opacity:.78;translate:0 10px}to{opacity:1;translate:0 0}}
+/* Clear semantic grill marker replaces an arbitrary burst or percentage claim. */
+#aoApp .ao-hero-stamp>svg{width:25px;height:25px;stroke:#fbe5b3;stroke-width:1.7;fill:none;flex-shrink:0}
+#aoApp .ao-hero-stamp>small{font-size:8px!important;letter-spacing:.65px!important;margin-top:4px}
+@media(max-width:740px){
+ #aoApp .ao-native-pages #contact.contact-premium-section{padding:7px 0 22px!important}
+ #aoApp .ao-native-pages #contact .contact-shell{width:100%!important}
+ #aoApp .ao-native-pages #contact .contact-header{margin:0 auto 13px!important}
+ #aoApp .ao-native-pages #contact .contact-layout{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:13px!important}
+ #aoApp .ao-native-pages #contact .contact-info-panel{order:0}
+ #aoApp .ao-native-pages #contact .contact-form-panel{order:1}
+ #aoApp #contact .contact-info,#aoApp #contact #contactInfo{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important;margin:8px 0 16px!important}
+ #aoApp #contact .afgr-contact-method{padding:10px!important;min-height:59px}
+ #aoApp #contact .afgr-contact-method-value{font-size:10.5px!important;line-height:1.35!important}
+ #aoApp #contact .contact-social-heading{margin:7px 0 9px!important;font-size:14px!important}
+ #aoApp #contact .contact-socials .contact-icon-link{min-height:49px!important;padding:8px!important;gap:6px!important}
+ #aoApp #contact .contact-brand-icon{height:25px;width:25px;min-width:25px}
+ #aoApp #contact .contact-brand-icon svg{height:24px;width:24px}
+ #aoApp #contact .contact-brand-name{font-size:11px!important}
+ #aoApp #contact .contact-info-panel,#aoApp #contact .contact-form-panel{padding:15px!important}
+ #aoApp .ao-hero-stamp>svg{height:17px;width:17px}
+ #aoApp .ao-hero-stamp>small{font-size:5px!important}
+}
+@media(prefers-reduced-motion:reduce){#aoApp .ao-reveal.ao-visible{animation:none!important}}
+
+/* Full legal restaurant name also appears in the existing management workspaces. */
+.panel .workspace-brand strong{font-size:13px!important;line-height:1.27!important;letter-spacing:-.2px!important;white-space:normal!important;overflow-wrap:anywhere}

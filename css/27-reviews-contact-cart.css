@@ -1,0 +1,151 @@
+/* AFGR October 2026 — guest review feed, clean Contact logos and user-visible motion.
+   Public customer site only; no change to admin/staff layouts. */
+html body #website.ao-arabian-app #aoApp #gallery .gallery-intro{display:none!important;margin:0!important;padding:0!important}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-kicker{margin-bottom:3px!important}
+html body #website.ao-arabian-app #aoApp #gallery .gallery-shell{padding-top:12px!important}
+html body #website.ao-arabian-app #aoApp #contact .contact-info-text{display:none!important;margin:0!important;padding:0!important}
+html body #website.ao-arabian-app #aoApp #contact .contact-info-panel .contact-panel-content{padding-top:18px!important;gap:0!important}
+html body #website.ao-arabian-app #aoApp #contact .contact-info-title{margin:0 0 12px!important}
+/* Leave the genuine official-brand artwork unadorned, without extra outlined
+   circles, faux shadows or inherited strokes on the brands' filled paths. */
+html body #website.ao-arabian-app #aoApp #contact .contact-brand-icon,
+html body #website.ao-arabian-app #aoApp #contact .contact-brand-icon::before,
+html body #website.ao-arabian-app #aoApp #contact .contact-brand-icon::after{
+  border:0!important;border-radius:0!important;background:none!important;
+  box-shadow:none!important;filter:none!important;outline:0!important;
+}
+html body #website.ao-arabian-app #aoApp #contact .contact-brand-icon{width:32px!important;height:32px!important;min-width:32px!important;padding:2px!important;display:grid!important;place-items:center!important}
+html body #website.ao-arabian-app #aoApp #contact .contact-brand-icon svg{width:27px!important;height:27px!important;stroke:none!important;filter:none!important;box-shadow:none!important;overflow:visible!important}
+html body #website.ao-arabian-app #aoApp #contact .contact-brand-icon svg path,
+html body #website.ao-arabian-app #aoApp #contact .contact-brand-icon svg circle{stroke:none!important;stroke-width:0!important}
+html body #website.ao-arabian-app #aoApp #contact .contact-icon-link::before,
+html body #website.ao-arabian-app #aoApp #contact .contact-icon-link::after{display:none!important;content:none!important}
+
+/* Google Maps-inspired, but clearly first-party AFGR reviews (no simulated
+   Google branding, Google ratings, or verified-customer claims). */
+html body #website.ao-arabian-app #aoApp #testimonials{padding:0!important;max-width:none!important}
+html body #website.ao-arabian-app #aoApp #testimonials .testimonials-shell.afgr-review-shell{width:100%!important;max-width:1120px!important;margin:0 auto!important;padding:8px 0 22px!important;color:#273b2c!important}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-reviews-top{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:17px!important;border-bottom:1px solid #e5e4dc!important;padding:9px 4px 23px!important;margin:0 0 23px!important}
+#aoApp #testimonials .afgr-reviews-identity{display:flex;align-items:center;gap:14px;min-width:0}
+#aoApp #testimonials .afgr-reviews-identity>img{width:54px;height:54px;object-fit:contain;flex-shrink:0}
+#aoApp #testimonials .afgr-reviews-kicker{color:#aa7344;font-size:9px;font-weight:900;letter-spacing:1.9px}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-reviews-identity h2{font:800 clamp(29px,3vw,41px)/1.1 'Fraunces',Georgia,serif!important;margin:4px 0!important;color:#304d36!important}
+html body #website.ao-arabian-app #aoApp #testimonials .afgr-reviews-identity p{font:500 12px/1.5 'DM Sans',sans-serif!important;color:#7f8379!important;margin:2px 0 0!important}
+#aoApp #testimonials .afgr-write-review-btn{display:flex;align-items:center;justify-content:center;gap:9px;background:#345a38;color:white;border:none;border-radius:999px;padding:13px 23px;min-height:46px;font-size:12px;font-weight:800;white-space:nowrap;box-shadow:0 9px 18px #28452d24;transition:transform .2s,background .2s,box-shadow .2s}
+#aoApp #testimonials .afgr-write-review-btn:hover{background:#d87d36;transform:translateY(-3px);box-shadow:0 14px 25px #9b5c281b}
+#aoApp #testimonials .afgr-reviews-layout{display:grid;grid-template-columns:minmax(220px,286px) minmax(0,1fr);gap:clamp(19px,3vw,40px);align-items:start}
+#aoApp #testimonials .afgr-review-insights{background:#fffdf7;border:1px solid #e7e3da;border-radius:21px;padding:22px 18px;box-shadow:0 8px 20px #293a2810}
+#aoApp #testimonials .afgr-rating-big{display:flex;align-items:center;gap:14px;padding-bottom:17px;border-bottom:1px solid #e8e5dd}
+#aoApp #testimonials .afgr-rating-big>strong{font:800 54px/1 'DM Sans',sans-serif;letter-spacing:-2px;color:#2c4936}
+#aoApp #testimonials .afgr-rating-big>div{display:flex;flex-direction:column;gap:5px}
+#aoApp #testimonials .afgr-review-stars{color:#e79a3e;font-size:19px;white-space:nowrap;letter-spacing:1px}
+#aoApp #testimonials .afgr-rating-big small{font-size:11px;color:#757e73}
+#aoApp #testimonials .afgr-rating-histogram{display:grid;gap:9px;padding:20px 0 14px}
+#aoApp #testimonials .afgr-hist-row{display:grid;grid-template-columns:37px minmax(0,1fr) 20px;gap:11px;align-items:center;color:#6b7369;font-size:11px;font-weight:700}
+#aoApp #testimonials .afgr-hist-track{height:8px;border-radius:999px;background:#e8ede5;overflow:hidden}
+#aoApp #testimonials .afgr-hist-fill{height:100%;display:block;border-radius:inherit;background:linear-gradient(90deg,#f0bb5b,#eaa143);transition:width .55s}
+#aoApp #testimonials .afgr-hist-count{text-align:right}
+#aoApp #testimonials .afgr-review-pledge{border-top:1px solid #ece5da;padding-top:15px;color:#657265;display:flex;gap:9px;align-items:flex-start;font-size:10px;line-height:1.65}
+#aoApp #testimonials .afgr-review-pledge svg{color:#406945;flex-shrink:0}
+#aoApp #testimonials .afgr-review-feed{background:#fffefa;border:1px solid #eae6e0;border-radius:21px;overflow:hidden;min-width:0;box-shadow:0 8px 20px #293a280d}
+#aoApp #testimonials .afgr-review-feed-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:19px 22px 17px;border-bottom:1px solid #eee8df}
+#aoApp #testimonials .afgr-review-feed-head>strong{font-size:17px;font-weight:850;color:#293e2d}
+#aoApp #testimonials .afgr-review-feed-head label{font-size:11px;color:#787a72;display:flex;align-items:center;gap:8px;white-space:nowrap}
+#aoApp #testimonials .afgr-review-feed-head select{background:#f8f6f0;color:#35573e;border:1px solid #deddd5;border-radius:11px;padding:9px 11px;font-size:11px;font-weight:800;max-width:160px}
+html body #website.ao-arabian-app #aoApp #testimonials #aoGuestReviewsGrid.ao-review-grid{display:block!important;grid-template-columns:none!important;gap:0!important;margin:0!important;background:transparent!important;width:100%!important;min-height:90px!important}
+#aoApp #testimonials .afgr-review-entry{display:block;background:none;border:0;box-shadow:none;padding:21px 23px 22px;margin:0;border-bottom:1px solid #eee9e2;border-radius:0;transition:background .22s}
+#aoApp #testimonials .afgr-review-entry:hover{background:#fbfaf5}
+#aoApp #testimonials .afgr-review-entry:last-child{border-bottom:0}
+#aoApp #testimonials .afgr-review-person{display:flex;align-items:center;gap:12px}
+#aoApp #testimonials .afgr-review-person-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#f2b86b,#cd7d43);display:grid;place-items:center;color:#fff;font-size:18px;font-weight:900;flex-shrink:0;overflow:hidden}
+#aoApp #testimonials .afgr-review-person-avatar img{width:100%;height:100%;object-fit:cover}
+#aoApp #testimonials .afgr-review-person-name{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+#aoApp #testimonials .afgr-review-person-name strong{color:#263d2f;font-size:13px;line-height:1.3;font-weight:900;overflow-wrap:anywhere}
+#aoApp #testimonials .afgr-review-person-name small{color:#90968c;font-size:11px}
+#aoApp #testimonials .afgr-review-date{font-size:11px;color:#91948c;flex-shrink:0;margin-left:auto}
+#aoApp #testimonials .afgr-review-rating-line{display:flex;align-items:center;gap:12px;margin:12px 0 7px}
+#aoApp #testimonials .afgr-review-rating-line .afgr-review-stars{color:#eaa23b;font-size:19px;letter-spacing:1.2px}
+#aoApp #testimonials .afgr-review-rating-line small{color:#83897e;font-size:11px}
+#aoApp #testimonials .afgr-review-copy{margin:0;color:#404c40;font-size:13px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere}
+#aoApp #testimonials .afgr-review-feed-empty{text-align:center;padding:45px 20px;color:#344d39}
+#aoApp #testimonials .afgr-empty-stars{color:#ebb05d;font-size:24px}
+#aoApp #testimonials .afgr-review-feed-empty h3{font-size:19px;margin:12px 0 5px}
+#aoApp #testimonials .afgr-review-feed-empty p{font-size:12px;line-height:1.6;color:#80887e;margin-bottom:20px}
+#aoApp #testimonials .afgr-review-feed-empty button{background:#365d39;color:white;border:0;padding:12px 19px;border-radius:14px;font-weight:800}
+html body #website.ao-arabian-app #aoApp #testimonials #testimonialsSlider,
+html body #website.ao-arabian-app #aoApp #testimonials #testimonialsControls{display:none!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important}
+/* Review submission dialog: actual Supabase insert, with clear error feedback. */
+html body #website.ao-arabian-app #aoApp .afgr-review-modal[hidden]{display:none!important}
+#aoApp .afgr-review-modal{position:fixed;inset:0;z-index:4100;display:flex;align-items:center;justify-content:center;padding:14px;overflow:auto}
+#aoApp .afgr-review-scrim{position:absolute;inset:0;background:rgba(20,36,24,.66);backdrop-filter:blur(5px)}
+#aoApp .afgr-review-dialog{width:min(510px,100%);max-height:min(94dvh,780px);overflow:auto;background:#fffdf8;color:#293c2c;border-radius:24px;padding:clamp(18px,3vw,30px);box-shadow:0 35px 85px #162c174a;position:relative;z-index:2;animation:afgrReviewEnter .3s cubic-bezier(.2,.9,.25,1)}
+@keyframes afgrReviewEnter{from{opacity:0;transform:translateY(17px) scale(.97)}to{opacity:1;transform:none}}
+#aoApp .afgr-review-dialog>header{display:flex;justify-content:space-between;gap:10px;margin:0 0 19px!important;padding-bottom:14px;border-bottom:1px solid #e9e4d8}
+#aoApp .afgr-review-dialog>header>div>span{font-size:10px;font-weight:900;letter-spacing:1.2px;color:#b67f4b}
+#aoApp .afgr-review-dialog h2{font:800 29px/1.1 'Fraunces',Georgia,serif;color:#2e5436;margin:5px 0 8px}
+#aoApp .afgr-review-dialog header p{margin:0;font-size:12px;line-height:1.5;color:#748272}
+#aoApp .afgr-review-dialog header>button{width:39px;height:39px;flex-shrink:0;background:#f3eadb;color:#34543c;font-size:25px;display:grid;place-items:center;border:0;border-radius:50%}
+#aoApp .afgr-review-dialog form{display:grid;gap:9px}
+#aoApp .afgr-review-dialog form>label{font-size:12px;font-weight:900;color:#39543d;margin-top:7px}
+#aoApp .afgr-review-dialog input,#aoApp .afgr-review-dialog textarea{width:100%;min-width:0;border:1px solid #dfd9cd!important;border-radius:14px!important;background:#fffaf0!important;color:#263f2d!important;font:500 13px/1.5 'DM Sans',sans-serif!important;padding:12px 13px!important}
+#aoApp .afgr-review-dialog textarea{resize:vertical;min-height:104px}
+#aoApp .afgr-review-rate{border:0;padding:9px 0 5px;margin:0;min-width:0}
+#aoApp .afgr-review-rate legend{font-size:12px;font-weight:900;color:#39543d}
+#aoApp .afgr-review-star-picker{display:flex;gap:3px;align-items:center}
+#aoApp .afgr-review-star-picker>button{font-size:36px;color:#c9c9c0;border:0;background:none;padding:1px 3px;line-height:1.3;transition:transform .2s,color .2s}
+#aoApp .afgr-review-star-picker>button:hover{transform:scale(1.15)}
+#aoApp .afgr-review-star-picker>button.is-active{color:#e99e3b}
+#aoApp #aoReviewRatingText{font-size:11px;color:#8b877d;display:block}
+#aoApp .afgr-review-form-hint{font-size:11px;line-height:1.55;color:#7d897c;margin:4px 0}
+#aoApp .afgr-review-feedback{font-size:12px;line-height:1.5;color:#bf592c;margin:0;min-height:0}
+#aoApp .afgr-review-submit{border:0;border-radius:15px;padding:15px 18px;background:linear-gradient(130deg,#335d38,#456e43);color:white;font:900 13px 'DM Sans',sans-serif;display:flex;justify-content:space-between;align-items:center;margin-top:3px}
+#aoApp .afgr-review-submit:disabled{opacity:.65;cursor:progress}
+body.afgr-review-open{overflow:hidden!important}
+@media(max-width:800px){#aoApp #testimonials .afgr-reviews-layout{grid-template-columns:1fr;gap:14px}#aoApp #testimonials .afgr-review-insights{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);align-items:center;gap:12px;padding:15px 17px}#aoApp #testimonials .afgr-rating-big{border:0;padding:0}#aoApp #testimonials .afgr-rating-histogram{padding:5px 0}#aoApp #testimonials .afgr-review-pledge{grid-column:1/-1;padding-top:8px}}
+@media(max-width:540px){
+  html body #website.ao-arabian-app #aoApp #testimonials .testimonials-shell.afgr-review-shell{padding:0 0 20px!important}
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-reviews-top{align-items:flex-start!important;padding:6px 0 17px!important;margin:0 0 14px!important;gap:10px!important}
+  #aoApp #testimonials .afgr-reviews-identity>img{width:42px;height:42px}
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-reviews-identity h2{font-size:27px!important}
+  html body #website.ao-arabian-app #aoApp #testimonials .afgr-reviews-identity p{font-size:10px!important;line-height:1.3!important}
+  #aoApp #testimonials .afgr-reviews-kicker{font-size:8px}
+  #aoApp #testimonials .afgr-write-review-btn{min-height:40px;padding:10px 13px;font-size:10px;margin-top:4px}
+  #aoApp #testimonials .afgr-review-insights{grid-template-columns:1fr 1.22fr;gap:10px;padding:13px}
+  #aoApp #testimonials .afgr-rating-big{gap:8px}
+  #aoApp #testimonials .afgr-rating-big>strong{font-size:44px}
+  #aoApp #testimonials .afgr-rating-big .afgr-review-stars{font-size:14px}
+  #aoApp #testimonials .afgr-review-pledge{font-size:9px}
+  #aoApp #testimonials .afgr-review-feed-head{padding:15px 13px;gap:6px}
+  #aoApp #testimonials .afgr-review-feed-head>strong{font-size:13px}
+  #aoApp #testimonials .afgr-review-feed-head label{font-size:10px;gap:3px}
+  #aoApp #testimonials .afgr-review-feed-head select{padding:6px;font-size:10px;max-width:112px}
+  #aoApp #testimonials .afgr-review-entry{padding:15px 13px}
+  #aoApp #testimonials .afgr-review-person-avatar{height:38px;width:38px}
+  #aoApp #testimonials .afgr-review-person-name strong{font-size:12px}
+  #aoApp #testimonials .afgr-review-date{font-size:9px}
+  #aoApp .afgr-review-dialog{padding:19px;max-height:calc(100dvh - 20px);border-radius:22px}
+}
+@media(max-width:365px){#aoApp #testimonials .afgr-reviews-identity>img{display:none}#aoApp #testimonials .afgr-write-review-btn{padding:9px}#aoApp #testimonials .afgr-review-insights{display:block}#aoApp #testimonials .afgr-review-pledge{margin-top:4px}}
+@media(prefers-reduced-motion:reduce){#aoApp .afgr-review-dialog{animation:none!important}}
+/* Independent food flight portal, immune to old .ao-fly-photo rules and
+   their OS-level reduced-motion display:none. Smaller, faster motion is
+   used for visitors requesting reduced animation, never a vanishing image. */
+html body>img.afgr-cart-flight-photo{
+  position:fixed!important;left:0!important;top:0!important;
+  width:90px;height:90px;display:block!important;visibility:visible!important;
+  object-fit:cover!important;border-radius:50%!important;
+  border:4px solid #fffef8!important;background:#ecdac0!important;
+  pointer-events:none!important;z-index:2147483646!important;
+  max-width:none!important;max-height:none!important;
+  box-shadow:0 10px 25px #20372148,0 0 0 3px #edaa4a99!important;
+  will-change:transform,opacity!important;transform-origin:center center!important;
+}
+html body>span.afgr-cart-flight-burst{
+  position:fixed;left:0;top:0;display:grid;place-items:center;
+  width:25px;height:25px;border-radius:50%;background:#ed9a3e;color:white;
+  font-size:19px;font-weight:900;pointer-events:none;z-index:2147483647;
+  opacity:0;will-change:transform,opacity;
+}
+/* No extra heading or whitespace above category thumbnails on Discover. */
+html body #website.ao-arabian-app #aoApp #aoHome .ao-categories-heading{display:none!important;margin:0!important;padding:0!important}
+html body #website.ao-arabian-app #aoApp #aoHome .ao-category-track{margin-top:4px!important}
